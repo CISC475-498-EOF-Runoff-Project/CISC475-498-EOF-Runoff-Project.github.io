@@ -3,8 +3,39 @@
   <head>
     <title>TAB NAME!</title>
   </head>
+  <style>
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: rgb(26, 199, 127);
+    }
+    
+    li {
+      float: left;
+    }
+    
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    li a:hover {
+      background-color: rgb(68, 233, 156);
+    }
+    </style>
   <body>
-    <h1>Hello World</h1>
+    <h1>Welcome to ...</h1>
+    <ul>
+      <li><a class="active" href="#Today">Today</a></li>
+      <li><a href="#Tomorrow">Tomorrow</a></li>
+      <li><a href="#Day3">Day3</a></li>
+      <li><a href="#Day4">Day4</a></li>
+    </ul>
     <div>
       <!--
       <a href="https://CISC475-498-EOF-Runoff-Project.github.io/images/event.pdf" target="_blank">PDF.</a>
