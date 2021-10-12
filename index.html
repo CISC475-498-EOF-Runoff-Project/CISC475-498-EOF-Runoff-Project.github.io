@@ -6,25 +6,55 @@
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
 }
-.header {
-    background-color: #f1f1f1;
-    padding: 20px;
-    text-align: center;
-  }
-  .footer {
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+.rightcolumn {
+  float: left;
+  width: 25%;
   background-color: #f1f1f1;
-  padding: 10px;
+  padding-left: 20px;
+}
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+  }
+ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.footer {
+  background-color: #f1f1f1;
+  padding: 20px;
   text-align: center;
 }
-  </style>
-  </head>
-  <body>
-  <div class="header">
-    <h1>Welcome to ...</h1>
-  </div>
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Welcome to ...</h1>
+</div>
   <style>
     ul {
       list-style-type: none;
@@ -59,11 +89,27 @@ body {
       <!--
       <a href="https://CISC475-498-EOF-Runoff-Project.github.io/images/event.pdf" target="_blank">PDF.</a>
       <embed src="https://CISC475-498-EOF-Runoff-Project.github.io/images/event.pdf" type="application/pdf" />
-      -->      
+            
       <embed width='800px' height="500px"name="plugin" id="plugin" src="https://CISC475-498-EOF-Runoff-Project.github.io/images/event.pdf" type="application/pdf" internalinstanceid="37" title="">
+      -->   
+      </div>
+    <div class="row">
+      <div class="leftcolumn">
+        <div class="card">
+           <embed width='800px' height="500px"name="plugin" id="plugin" src="https://CISC475-498-EOF-Runoff-Project.github.io/images/event.pdf" type="application/pdf" internalinstanceid="37" title="">
+        </div>
+      </div>
+      <div class="rightcolumn">
+        <div class="card">
+          <h2>Statistics box</h2>
+        </div>
+      </div>
     </div>
-    <div class="footer">
-      <p>@CISC475-498-Team-14</p>
-    </div>
-  </body>
+      
+       
+    
+<div class="footer">
+  <p>@CISC475-498-Team-14</p>
+  </div>
+</body>
 </html>
