@@ -1,5 +1,5 @@
 layout: page
 title: "PAGE TITLE"
-permalink: /sample-page/
+filename: NEW-PAGE.md
 
 hello world
