@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+  }
+  .search-container{
+    float: right;
+    padding: 3px 3px;
+    margin-top: 8px;
+    margin-right: 100px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+  }
+    
+  .leftcolumn {   
+    float: left;
+    width: 50%;
+  }
+  .rightcolumn {
+    float: left;
+    width: 50%;
+    background-color: #f1f1f1;
+    padding-left: 10px;
+  }
+  .card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  @media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+      width: 100%;
+      padding: 0;
+    }
+  }
+  .header {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+    }
+   
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .footer {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .navigation-bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(26, 199, 127);
+  }
+  .navigation-item {
+    float: left;
+  }
+  .navigation-item-a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .navigation-item-a:hover {
+    background-color: rgb(68, 233, 156);
+  }
