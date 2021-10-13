@@ -19,15 +19,18 @@
     width: 50%;
   }
   .rightcolumn {
-    float: left;
-    width: 50%;
-    background-color: #f1f1f1;
+    float: right;
+    width: 30%;
+    background-color: #bdf564;
     padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
   .card {
     background-color: white;
     padding: 20px;
-    margin-top: 20px;
+    margin-top: 0px;
   }
   @media screen and (max-width: 800px) {
     .leftcolumn, .rightcolumn {   
@@ -36,7 +39,7 @@
     }
   }
   .header {
-    background-color: #f1f1f1;
+    background-color: #f88888;
     padding: 20px;
     text-align: center;
     }
