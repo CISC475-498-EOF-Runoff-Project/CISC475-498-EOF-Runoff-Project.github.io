@@ -76,3 +76,9 @@
   .navigation-item-a:hover {
     background-color: rgb(68, 233, 156);
   }
+
+  ul li {
+      display: inline-block;
+      margin-right: 10px;
+      color: #778899;
+  }
