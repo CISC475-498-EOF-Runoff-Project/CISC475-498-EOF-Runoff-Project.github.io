@@ -81,9 +81,13 @@
     background-color: white;
   }
 
+  .page-title {
+    margin-right: 5px;
+  }
+
   .header-link {
-      display: inline-block;
-      margin-right: 10px;
-      color: #778899;
-      background-color: white;
+    display: inline-block;
+    margin-right: 10px;
+    color: #778899;
+    background-color: white;
   }
