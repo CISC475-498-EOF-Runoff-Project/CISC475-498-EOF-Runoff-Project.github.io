@@ -1,0 +1,11 @@
+﻿day,risk,magnitude,probability,x,y,zip code
+Today,3,low,high,1,1,10000
+Tomorrow,4,high,high,1,2,20005
+Day3,2,med,low,2,1,30007
+Day4,2,low,med,2,2,40001
+Day5,1,low,low,2,3,50003
+Day6,3,low,high,3,3,60019
+Day7,2,low,med,3,4,70011
+Day8,4,med,high,4,5,80043
+Day9,2,low,med,5,5,90021
+Day10,2,med,low,5,6,10111

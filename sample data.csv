@@ -1,0 +1,11 @@
+Day,risk,magnitude,probability
+Today,3,low,high
+Tomorrow,4,high,high
+Day3,2,med,low
+Day4,2,low,med
+Day5,1,low,low
+Day6,3,low,high
+Day7,2,low,med
+Day8,4,med,high
+Day9,2,low,med
+Day10,2,med,low
