@@ -21,7 +21,7 @@
   .rightcolumn {
     float: right;
     width: 30%;
-    background-color: #bdf564;
+    background-color: #ffffff;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 10px;
@@ -50,7 +50,7 @@
     clear: both;
   }
   .footer {
-    background-color: #f1f1f1;
+    background-color: hsl(0, 0%, 100%);
     padding: 20px;
     text-align: center;
   }
@@ -91,3 +91,5 @@
     color: #778899;
     background-color: white;
   }
+
+  
