@@ -64,7 +64,16 @@
       <div class="card">
         <embed width='800px' height="500px"name="plugin" id="plugin"  type="application/pdf" internalinstanceid="37" title="">
       </div>
-      <div id="mapid"></div>
+    </div>
+    <div class="rightcolumn">
+      <div class="card">
+        <h2>Statistics box</h2>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div id="mapid"></div>
       <script>
         var mymap = L.map('mapid').setView([47.00, -87.00], 10);
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoicmRlYW4iLCJhIjoiY2t1eWl3dnA2NzNpNTJwbzNvcHRxejdxaCJ9.tIGjuwey9icme7TC-y-U9g', {
@@ -76,12 +85,6 @@
           accessToken: 'pk.eyJ1IjoicmRlYW4iLCJhIjoiY2t1eWl3dnA2NzNpNTJwbzNvcHRxejdxaCJ9.tIGjuwey9icme7TC-y-U9g'
         }).addTo(mymap);
       </script>
-    </div>
-    <div class="rightcolumn">
-      <div class="card">
-        <h2>Statistics box</h2>
-      </div>
-    </div>
   </div>
 
  <div class="footer">
