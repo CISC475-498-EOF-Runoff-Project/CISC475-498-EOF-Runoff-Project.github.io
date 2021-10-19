@@ -24,16 +24,19 @@
 </head>
 
 <body>
-  <header>
-    <nav>
-      <ul class = "page-header">
-        <li class = "header-link">Home</li>
-        <li class = "header-link">Forecast</li>
-        <li class = "header-link">About us</li>
-      </ul>
+  <header class="site-header sticky-top py-1">
+    <nav class="container d-flex flex-column flex-md-row justify-content-between">
+      <a class="py-2 d-none d-md-inline-block" href="#">Home</a>
+      <a class="py-2 d-none d-md-inline-block" href="#">Forecast</a>
+      <a class="py-2 d-none d-md-inline-block" href="#">About us</a>
     </nav>
-    <h1 class = "page-title">Great Lakes Runoff Forecasting</h1>
   </header>
+  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+      <h1 class="display-4 fw-normal">Great Lakes Runoff Forecasting</h1>
+    </div>
+  </div>
+
   <nav>
     <ul class = "navigation-bar">
       <li class = "navigation-item"><a class="active; navigation-item-a" href="#Today" onclick="pdfView(0)">Today</a></li>
@@ -59,18 +62,20 @@
     <h1>Here is a template for future use</h1>
   </div>
 
-  <div class="row">
-    <div class="leftcolumn">
-      <div class="card">
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+      <div class="my-3 py-3">
         <embed width='800px' height="500px"name="plugin" id="plugin"  type="application/pdf" internalinstanceid="37" title="">
       </div>
     </div>
-    <div class="rightcolumn">
-      <div class="card">
-        <h2>Statistics box</h2>
+    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <h2 class="display-5">Statistics box</h2>
       </div>
+      <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
     </div>
   </div>
+  
   
   <div class="row">
     <div id="mapid"></div>
