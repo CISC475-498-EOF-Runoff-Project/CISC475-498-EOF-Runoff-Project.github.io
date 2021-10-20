@@ -147,3 +147,21 @@
     }
   }
 
+  .bg-image {
+    background-image: url("https://i2.wp.com/healthylakes.org/wp-content/uploads/2018/09/brighter-In-Your-State-subject-Great-Lakes-from-Space-Credit-NOAA-Great-Lakes-CoastWatch.-2.jpg?resize=1080%2C675&ssl=1");
+    background-color: #ffffff;
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    }
+    
+  .bg-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+    } 
