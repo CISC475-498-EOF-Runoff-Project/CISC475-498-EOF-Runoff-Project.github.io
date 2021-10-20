@@ -91,9 +91,7 @@
         }).addTo(mymap);
         var imageUrl = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_diff.jpg',
             imageBounds = [[46, -85], [49, -81]],
-        var mapOverlay = L.imageOverlay(imageUrl, imageBounds);
-        mapOverlay.setOpacity(0.5);
-        mapOverlay.addTo(mymap);
+        L.imageOverlay(imageUrl, imageBounds, 0.5).addTo(mymap);
       </script>
   </div>
 
