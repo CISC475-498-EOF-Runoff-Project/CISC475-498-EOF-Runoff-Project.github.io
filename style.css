@@ -99,12 +99,12 @@
   }
 
   .site-header {
-    background-color: rgba(0, 0, 0, .85);
+    background-color: rgba(0, 0, 0, 0.685);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     backdrop-filter: saturate(180%) blur(20px);
   }
   .site-header a {
-    color: #00b7ff;
+    color: #b8cff1;
     transition: color .15s ease-in-out;
   }
 
