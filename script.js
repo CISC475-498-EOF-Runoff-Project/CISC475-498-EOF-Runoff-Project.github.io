@@ -16,4 +16,4 @@ function pdfView(sw) {
     src = "https://CISC475-498-EOF-Runoff-Project.github.io/images/event.pdf"
   }
     document.getElementById('plugin').src = src;
- }
+}
