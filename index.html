@@ -12,10 +12,7 @@
    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
    crossorigin=""/>
   
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-   crossorigin=""></script>
-  <script src="script.js"></script>
+  
   <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/footers/">
   <link href="/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
@@ -102,22 +99,41 @@
   
   <div class="row">
     <div id="mapid"></div>
-      <script>
-        var mymap = L.map('mapid').setView([47.00, -87.00], 5);
-        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoicmRlYW4iLCJhIjoiY2t1eWl3dnA2NzNpNTJwbzNvcHRxejdxaCJ9.tIGjuwey9icme7TC-y-U9g', {
-          attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-          maxZoom: 18,
-          id: 'mapbox/streets-v11',
-          tileSize: 512,
-          zoomOffset: -1,
-          accessToken: 'pk.eyJ1IjoicmRlYW4iLCJhIjoiY2t1eWl3dnA2NzNpNTJwbzNvcHRxejdxaCJ9.tIGjuwey9icme7TC-y-U9g'
-        }).addTo(mymap);
-        var imageUrl = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_clear.png',
-            imageBounds = [[51.2 + 2.0, -100.0 - 2.0], [35.0 - 2.0, -70.0 + 2.0]],
-            imageOverlay = L.imageOverlay(imageUrl, imageBounds).addTo(mymap);
-        imageOverlay.setOpacity(0.5);
-      </script>
    </div>
+</section>
+
+<section id = Background>
+  <div class="slideshow-container">
+    
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_diff.jpg" style="width:100%">
+      <div class="text">Caption Text</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="https://github.com/CISC475-498-EOF-Runoff-Project/CISC475-498-EOF-Runoff-Project.github.io/blob/main/images/homogeneouscoords.jpg?raw=true" style="width:100%">
+      <div class="text">Caption Two</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="img_mountains_wide.jpg" style="width:100%">
+      <div class="text">Caption Three</div>
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    
+    </div>
+    <br>
+    
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
 </section>
 
 
@@ -177,7 +193,15 @@
       <p class="text-center text-muted">&copy; CISC475-498-Team-14</p>
     </footer>
   </div>
-  
 </body>
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+  <script src="script.js"></script>
+  <script src="Background.js"></script>
+  <script src="slidebar.js"></script>   
+  <script src="map.js"></script>   
+
 </html>
  
