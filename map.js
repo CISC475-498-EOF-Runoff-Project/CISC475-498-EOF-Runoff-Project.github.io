@@ -40,7 +40,7 @@ var cfg = {
 
 var heatmapLayer = new HeatmapOverlay(cfg);
 
-var mymap = new L.Map('mapid') {
+var mymap = new L.Map('mapid', {
   center: new L.LatLng(25.6586, -80.3568),
   zoom: 5,
   layers: [baseLayer, imageOverlay, heatmapLayer]
