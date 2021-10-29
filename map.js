@@ -11,4 +11,4 @@ var mymap = L.map('mapid').setView([47.00, -87.00], 5);
             imageBounds = [[51.2 + 2.0, -100.0 - 2.0], [35.0 - 2.0, -70.0 + 2.0]],
             imageOverlay = L.imageOverlay(imageUrl, imageBounds).addTo(mymap);
         imageOverlay.setOpacity(0.5);
-*/
+
