@@ -52,7 +52,7 @@ var mymap = new L.Map('mapid', {
   zoom: 5,
   layers: [baseLayer, imageOverlay, heatmapLayer]
 });
-heatmapLayer.setData(data);
+heatmapLayer.setData(testData);
 imageOverlay.setOpacity(0.5);
 
 /*
