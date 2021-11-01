@@ -29,6 +29,7 @@ Papa.parse('./test_meters.csv', {
   }
 });
 console.log(data);
+console.log('./test_meters.csv');
 
 /*
 $.get('./test_meters.csv', function(csvString) {
