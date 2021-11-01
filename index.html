@@ -23,6 +23,7 @@
     <nav class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="#">Home</a>
       <a class="py-2 d-none d-md-inline-block" href="#Forecast">Forecast</a>
+      <a class="py-2 d-none d-md-inline-block" href="#Background">Background</a>
       <a class="py-2 d-none d-md-inline-block" href="#About">About us</a>
     </nav>
   </header>
@@ -104,37 +105,47 @@
 
 
 <section id = Background>
-  <div class="slideshow-container">
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <h2 class="display-5 text-center">Background</h2>
+        <div class="slideshow-container">
     
-    <div class="mySlides fade">
-      <div class="numbertext">1 / 3</div>
-      <img src="https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_diff.jpg" style="width:100%">
-      <div class="text">Caption Text</div>
+          <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_diff.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+          </div>
+          
+          <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="https://github.com/CISC475-498-EOF-Runoff-Project/CISC475-498-EOF-Runoff-Project.github.io/blob/main/images/homogeneouscoords.jpg?raw=true" style="width:100%">
+            <div class="text">Caption Two</div>
+          </div>
+          
+          <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="img_mountains_wide.jpg" style="width:100%">
+            <div class="text">Caption Three</div>
+          </div>
+          
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          
+          </div>
+          <br>
+          
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+          </div>
+        
+      </div>
+      <div class="bg-body shadow-sm mx-auto" ></div>
     </div>
-    
-    <div class="mySlides fade">
-      <div class="numbertext">2 / 3</div>
-      <img src="https://github.com/CISC475-498-EOF-Runoff-Project/CISC475-498-EOF-Runoff-Project.github.io/blob/main/images/homogeneouscoords.jpg?raw=true" style="width:100%">
-      <div class="text">Caption Two</div>
-    </div>
-    
-    <div class="mySlides fade">
-      <div class="numbertext">3 / 3</div>
-      <img src="img_mountains_wide.jpg" style="width:100%">
-      <div class="text">Caption Three</div>
-    </div>
-    
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    
-    </div>
-    <br>
-    
-    <div style="text-align:center">
-      <span class="dot" onclick="currentSlide(1)"></span> 
-      <span class="dot" onclick="currentSlide(2)"></span> 
-      <span class="dot" onclick="currentSlide(3)"></span> 
-    </div>
+  </div>
+  
 </section>
 
 
