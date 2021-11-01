@@ -10,7 +10,7 @@ var val = document.getElementById("valR").value;
           else if(newVal == 2)                
             document.getElementById("plugin").src = "https://github.com/CISC475-498-EOF-Runoff-Project/CISC475-498-EOF-Runoff-Project.github.io/images/Event0_day1.jpg";
           else if(newVal == 3)
-            document.getElementById("plugin").src = "https://github.com/CISC475-498-EOF-Runoff-Project/CISC475-498-EOF-Runoff-Project.github.io/images/Event0_day2.jpg
+            document.getElementById("plugin").src = "https://github.com/CISC475-498-EOF-Runoff-Project/CISC475-498-EOF-Runoff-Project.github.io/images/Event0_day2.jpg";
           else if(newVal == 4)
             document.getElementById("plugin").src = "https://github.com/CISC475-498-EOF-Runoff-Project/CISC475-498-EOF-Runoff-Project.github.io/imagess/Event0_day3.jpg";
           else if(newVal == 5)
