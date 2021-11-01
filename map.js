@@ -3,7 +3,14 @@ var testData = {
   data: [{lat: 49.6408, lng:-86.7728, count: 3},{lat: 50.75, lng: -90.55, count: 1}, {lat: 49.6408, lng:-88.7728, count: 3},]
 };
 
-var data = Papa.parse('./test_meters.csv')
+var data;
+Papa.parse('./test_meters.csv', {
+  header: true;
+  dynamicTyping: true,
+  complete: function(results) {
+    data = results;
+  }
+});
     
 /*
 $.get('./test_meters.csv', function(csvString) {
