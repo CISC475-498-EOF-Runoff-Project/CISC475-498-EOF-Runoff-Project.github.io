@@ -5,7 +5,7 @@ var testData = {
 
 var data;
 Papa.parse('./test_meters.csv', {
-  header: true;
+  header: true,
   dynamicTyping: true,
   complete: function(results) {
     data = results;
