@@ -59,9 +59,9 @@ var cfg = {
   // which field name in your data represents the latitude - default "lat"
   latField: 'lat',
   // which field name in your data represents the longitude - default "lng"
-  lngField: 'lng',
+  lngField: 'lon',
   // which field name in your data represents the data value - default "value"
-  valueField: 'count'
+  valueField: 'intensity'
 };
 
 
