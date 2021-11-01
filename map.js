@@ -11,6 +11,7 @@ Papa.parse('./test_meters.csv', {
     data = results;
   }
 });
+console.log(data);
     
 /*
 $.get('./test_meters.csv', function(csvString) {
