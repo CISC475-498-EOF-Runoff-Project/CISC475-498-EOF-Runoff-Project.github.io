@@ -6,7 +6,7 @@ var val = document.getElementById("valR").value;
           document.getElementById("range").innerHTML=newVal;
                 
           if(newVal == 1)               
-            document.getElementById("plugin").src = "https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_diff.pdf";            
+            document.getElementById("plugin").src = "https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_day0.pdf";            
           else if(newVal == 2)                
             document.getElementById("plugin").src = "https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_day1.pdf";
           else if(newVal == 3)
