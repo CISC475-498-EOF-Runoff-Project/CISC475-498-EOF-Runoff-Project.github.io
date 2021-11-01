@@ -3,15 +3,17 @@ var testData = {
   data: [{lat: 49.6408, lng:-86.7728, count: 3},{lat: 50.75, lng: -90.55, count: 1}, {lat: 49.6408, lng:-88.7728, count: 3},]
 };
 
-
-$.get('https://www.dropbox.com/s/z9urfgu6wkvc49a/test_meters.csv?dl=0', function(csvString) {
+var data = Papa.parse('./test_meters.csv')
+    
+/*
+$.get('./test_meters.csv', function(csvString) {
   var data = Papa.parse(csvString.trim()).data.filter(
     function(row) { return row.length === 4 }
   ).map(function(a) {
     return [ parseFloat(a[1]), parseFloat(a[2]), parseFloat(a[3]) ]
   })
   })
-
+*/
 /*
 $.get('https://drive.google.com/file/d/1uSPYZUPN4Z1FP4JwS-6zdGlGXvFU2Exw/view?usp=sharing', function(csvString) {
   var data = Papa.parse(csvString.trim()).data.filter(
