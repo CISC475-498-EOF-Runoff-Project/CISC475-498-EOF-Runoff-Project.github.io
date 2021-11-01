@@ -2,7 +2,7 @@ var testData = {
   max: 8,
   data: [{lat: 49.6408, lng:-86.7728, count: 3},{lat: 50.75, lng: -90.55, count: 1}, {lat: 49.6408, lng:-88.7728, count: 3},]
 };
-
+/*
 const fs = require('fs');
 const papa = require('papaparse');
 const file = fs.createReadStream('./test_meters.csv');
@@ -18,9 +18,10 @@ Papa.parse(file, {
         console.log("data");
     }
 });
-/*
+*/
+
 var data;
-Papa.parse('./test_meters.csv', {
+Papa.parse('https://www.dropbox.com/s/z9urfgu6wkvc49a/test_meters.csv?dl=0', {
   header: true,
   dynamicTyping: true,
   complete: function(results) {
@@ -28,7 +29,7 @@ Papa.parse('./test_meters.csv', {
   }
 });
 console.log(data);
-*/
+
 /*
 $.get('./test_meters.csv', function(csvString) {
   var data = Papa.parse(csvString.trim()).data.filter(
