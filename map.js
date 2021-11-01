@@ -10,9 +10,9 @@ var count = 0; // cache the running count
 var data;
 Papa.parse(file, {
     worker: true, // Don't bog down the main thread if its a big file
-    /*step: function(result) {
+    step: function(result) {
         // do stuff with result
-    },*/
+    },
     complete: function(results, file) {
         data = results;
         console.log("data");
