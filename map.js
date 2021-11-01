@@ -21,7 +21,7 @@ Papa.parse(file, {
 */
 
 var data;
-Papa.parse('https://www.dropbox.com/s/z9urfgu6wkvc49a/test_meters.csv?dl=0', {
+Papa.parse('./test_meters.csv', {
   header: true,
   dynamicTyping: true,
   complete: function(results) {
