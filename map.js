@@ -59,7 +59,7 @@ var cfg = {
   // which field name in your data represents the latitude - default "lat"
   latField: 'lat',
   // which field name in your data represents the longitude - default "lng"
-  lngField: 'long',
+  lngField: 'lon',
   // which field name in your data represents the data value - default "value"
   valueField: 'intensity'
 };
@@ -68,7 +68,7 @@ var cfg = {
 var heatmapLayer = new HeatmapOverlay(cfg);
 
 var mymap = new L.Map('mapid', {
-  center: new L.LatLng(47.00, -87.00),
+  center: new L.LatLng(45.00, -87.00),
   zoom: 5,
   layers: [baseLayer, imageOverlay, heatmapLayer]
 });
