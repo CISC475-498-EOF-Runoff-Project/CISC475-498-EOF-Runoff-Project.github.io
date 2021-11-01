@@ -5,9 +5,9 @@ var testData = {
 
 $.get('./test_meters.csv', function(csvString) {
   var data = Papa.parse(csvString.trim()).data.filter(
-    function(row) { return row.length === 6 }
+    function(row) { return row.length === 4 }
   ).map(function(a) {
-    return [ parseFloat(a[1]), parseFloat(a[3]), parseFloat(a[5]) ]
+    return [ parseFloat(a[1]), parseFloat(a[2]), parseFloat(a[3]) ]
   })
   })
 
