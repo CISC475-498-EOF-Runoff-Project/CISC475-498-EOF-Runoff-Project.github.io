@@ -3,7 +3,7 @@ var testData = {
   data: [{lat: 49.6408, lng:-86.7728, count: 3},{lat: 50.75, lng: -90.55, count: 1}, {lat: 49.6408, lng:-88.7728, count: 3},]
 };
 
-$.get('https://drive.google.com/file/d/1uSPYZUPN4Z1FP4JwS-6zdGlGXvFU2Exw/view?usp=sharing', function(csvString) {
+$.get('./test_meters.csv', function(csvString) {
   var data = Papa.parse(csvString.trim()).data.filter(
     function(row) { return row.length === 6 }
   ).map(function(a) {
@@ -11,6 +11,15 @@ $.get('https://drive.google.com/file/d/1uSPYZUPN4Z1FP4JwS-6zdGlGXvFU2Exw/view?us
   })
   })
 
+/*
+$.get('https://drive.google.com/file/d/1uSPYZUPN4Z1FP4JwS-6zdGlGXvFU2Exw/view?usp=sharing', function(csvString) {
+  var data = Papa.parse(csvString.trim()).data.filter(
+    function(row) { return row.length === 6 }
+  ).map(function(a) {
+    return [ parseFloat(a[1]), parseFloat(a[3]), parseFloat(a[5]) ]
+  })
+  })
+*/
 
 var imageUrl = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_clear.png',
             imageBounds = [[51.2 + 2.0, -100.0 - 2.0], [35.0 - 2.0, -70.0 + 2.0]],
