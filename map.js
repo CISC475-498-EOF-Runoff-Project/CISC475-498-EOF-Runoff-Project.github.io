@@ -3,13 +3,17 @@ var testData = {
   data: [{lat: 49.6408, lng:-86.7728, count: 3},{lat: 50.75, lng: -90.55, count: 1}, {lat: 49.6408, lng:-88.7728, count: 3},]
 };
 
+const databaseRef = ref(database);
 function pullFromFirebase() {
-  var data = app.database().ref('cisc475-498-eof-runoff-project-default-rtdb').get(0)
-      .then(function(snapshot) {
-          console.log(data);
-      }, function(error) {
-          console.log('error' + error);
-      });
+  get(child(databaseRef, '1')).then((snapshot) => {
+    if (snapshot.exists()) {
+      console.log(snapshot.val());
+    } else {
+      console.log("No data available");
+    }
+  }).catch((error) => {
+    console.error(error);
+  });
 }
 pullFromFirebase();
 
