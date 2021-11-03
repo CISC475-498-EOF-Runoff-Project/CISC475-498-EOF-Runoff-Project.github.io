@@ -2,6 +2,18 @@ var testData = {
   max: 8,
   data: [{lat: 49.6408, lng:-86.7728, count: 3},{lat: 50.75, lng: -90.55, count: 1}, {lat: 49.6408, lng:-88.7728, count: 3},]
 };
+
+function pullFromFirebase() {
+  var data = firebase.database().ref('cisc475-498-eof-runoff-project-default-rtdb').get(0)
+      .then(function(snapshot) {
+          console.log(data);
+      }, function(error) {
+          console.log('error' + error);
+      });
+}
+pullFromFirebase();
+
+
 /*
 const fs = require('fs');
 const papa = require('papaparse');
