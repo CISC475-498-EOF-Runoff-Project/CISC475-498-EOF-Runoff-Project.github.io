@@ -235,6 +235,13 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
+    
+  var data = app.database().ref('cisc475-498-eof-runoff-project-default-rtdb').get(0)
+      .then(function(snapshot) {
+          console.log(data);
+      }, function(error) {
+          console.log('error' + error);
+      });
 </script>
 // END FIREBASE SDK
 </body>
