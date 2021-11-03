@@ -1,4 +1,5 @@
 //import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-database.js";
+import { ref } from ./index.html;
 const databaseRef = ref(database);
 function pullFromFirebase() {
   get(child(databaseRef, '1')).then((snapshot) => {
