@@ -1,4 +1,4 @@
-/*
+/
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-analytics.js";
 import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-database.js";
@@ -6,9 +6,9 @@ import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const database = getDatabase(app);
-*/
 
-import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-database.js";
+
+//import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-database.js";
 const databaseRef = ref(database);
 function pullFromFirebase() {
   get(child(databaseRef, '1')).then((snapshot) => {
