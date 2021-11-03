@@ -237,12 +237,16 @@
   const analytics = getAnalytics(app);
   const database = getDatabase(app);
     
-  var data = database.ref('cisc475-498-eof-runoff-project-default-rtdb').get(0)
-      .then(function(snapshot) {
-          console.log(data);
-      }, function(error) {
-          console.log('error' + error);
-      });
+  const databaseRef = ref(database);
+  get(child(databaseRef, 'cisc475-498-eof-runoff-project-default-rtdb')).then((snapshot) => {
+    if (snapshot.exists()) {
+      console.log(snapshot.val());
+    } else {
+      console.log("No data available");
+    }
+  }).catch(error) => {
+    console.error(error);
+  });
 </script>
 // END FIREBASE SDK
 </body>
