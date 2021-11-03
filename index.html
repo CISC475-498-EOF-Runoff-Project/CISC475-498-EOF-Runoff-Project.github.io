@@ -238,7 +238,7 @@
   const database = getDatabase(app);
     
   const databaseRef = ref(database);
-  get(child(databaseRef, 'cisc475-498-eof-runoff-project-default-rtdb')).then((snapshot) => {
+  get(child(databaseRef, '0')).then((snapshot) => {
     if (snapshot.exists()) {
       console.log(snapshot.val());
     } else {
