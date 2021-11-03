@@ -4,7 +4,7 @@ var testData = {
 };
 
 function pullFromFirebase() {
-  var data = firebase.database().ref('cisc475-498-eof-runoff-project-default-rtdb').get(0)
+  var data = app.database().ref('cisc475-498-eof-runoff-project-default-rtdb').get(0)
       .then(function(snapshot) {
           console.log(data);
       }, function(error) {
@@ -12,25 +12,6 @@ function pullFromFirebase() {
       });
 }
 pullFromFirebase();
-
-
-/*
-const fs = require('fs');
-const papa = require('papaparse');
-const file = fs.createReadStream('./test_meters.csv');
-var count = 0; // cache the running count
-var data;
-Papa.parse(file, {
-    worker: true, // Don't bog down the main thread if its a big file
-    step: function(result) {
-        // do stuff with result
-    },
-    complete: function(results, file) {
-        data = results;
-        console.log("data");
-    }
-});
-*/
 
 var data;
 Papa.parse('./test_meters.csv', {
