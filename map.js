@@ -2,7 +2,7 @@ var testData = {
   max: 8,
   data: [{lat: 49.6408, lng:-86.7728, count: 3},{lat: 50.75, lng: -90.55, count: 1}, {lat: 49.6408, lng:-88.7728, count: 3},]
 };
-
+import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-database.js";
 const databaseRef = ref(database);
 function pullFromFirebase() {
   get(child(databaseRef, '1')).then((snapshot) => {
