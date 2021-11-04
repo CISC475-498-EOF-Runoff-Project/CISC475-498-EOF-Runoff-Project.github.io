@@ -1,9 +1,14 @@
+
+
 var val = document.getElementById("valR").value;
         document.getElementById("range").innerHTML=val;
         
+//showVal() updates the (right now it is in pdf format) image of the runoff prediction based on where the user slides the slide bar
+//i (erin) am attempting to get the statistics box to show up with this action as well
+
         function showVal(newVal){
           document.getElementById("range").innerHTML=newVal;
-                
+          //call stat box display method      
           if(newVal == 1)               
             document.getElementById("plugin").src = "https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_day0.pdf";            
           else if(newVal == 2)                
