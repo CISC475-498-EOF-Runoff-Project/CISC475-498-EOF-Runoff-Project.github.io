@@ -6,11 +6,17 @@
   <div id="chartDiv" style="width:50%; height:300px; margin:0 auto;"></div>
 </body>
 
+//read in csv file then convert to json
+//it is NOT correct rn
 JSC.fetch("./sample_data_2.csv")
-  .then(response =>response.text())
-  .then(text => {
-    //use csv text
+  .then(response => response.text())
+  .then(text => { let myData = JSC.csv2Json("day,risk,magnitude,probability,x,y,zipcode\n1,3,low,high,1,1,10000",{
+  columns: ["day", "risk", "magnitutde", "probability", "x", "y", "zipcode"]
+}
 });
+
+
+
 
 var chart = JSC.chart("chartDiv", {
   type: "heatmap solid",
