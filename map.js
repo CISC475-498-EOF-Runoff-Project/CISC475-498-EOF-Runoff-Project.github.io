@@ -19,8 +19,8 @@ const database = getDatabase(app);
 
 //import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-database.js";
 const databaseRef = ref(database);
-function pullFromFirebase() {
-  get(child(databaseRef, '1')).then((snapshot) => {
+function pullFromFirebase(id) {
+  get(child(databaseRef, id)).then((snapshot) => {
     if (snapshot.exists()) {
       console.log(snapshot.val());
     } else {
@@ -30,7 +30,7 @@ function pullFromFirebase() {
     console.error(error);
   });
 }
-pullFromFirebase();
+pullFromFirebase(1);
 
 var data;
 Papa.parse('./test_meters.csv', {
