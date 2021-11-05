@@ -2,6 +2,16 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.2.0/firebase
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-analytics.js";
 import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-database.js";
 
+const firebaseConfig = {
+    apiKey: "AIzaSyAtJmn6erCN842Rd6_JtO4-vGEz5vpmjDc",
+    authDomain: "cisc475-498-eof-runoff-project.firebaseapp.com",
+    projectId: "cisc475-498-eof-runoff-project",
+    storageBucket: "cisc475-498-eof-runoff-project.appspot.com",
+    messagingSenderId: "984037978789",
+    appId: "1:984037978789:web:3cefc17cb8e735b88b934c",
+    measurementId: "G-BNHJV3C11Q"
+  };
+
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const database = getDatabase(app);
