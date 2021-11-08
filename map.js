@@ -32,8 +32,10 @@ function pullFromFirebase(id) {
 }
 pullFromFirebase('1');
 
-var data = pullFromFirebase('1');
-
+var temp_data = pullFromFirebase('1');
+var data = [];
+let temp_obj = {lat:temp_data.lat, lng:temp_data.lon, value:temp_data.intensity};
+data.push(temp_obj);
 /*
 $.get('./test_meters.csv', function(csvString) {
   var data = Papa.parse(csvString.trim()).data.filter(
