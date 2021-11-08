@@ -32,16 +32,7 @@ function pullFromFirebase(id) {
 }
 pullFromFirebase('1');
 
-var data;
-Papa.parse('./test_meters.csv', {
-  header: true,
-  dynamicTyping: true,
-  complete: function(results) {
-    data = results;
-  }
-});
-console.log(data);
-console.log('./test_meters.csv');
+var data = pullFromFirebase('1');
 
 /*
 $.get('./test_meters.csv', function(csvString) {
