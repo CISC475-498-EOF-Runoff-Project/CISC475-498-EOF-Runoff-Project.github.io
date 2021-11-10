@@ -33,7 +33,7 @@ function pullFromFirebase(id) {
 }
 //pullFromFirebase('1');
 
-var temp_data = pullFromFirebase('1');
+let temp_data = pullFromFirebase('1');
 console.log(temp_data);
 console.log(typeof(temp_data));
 var data = [];
