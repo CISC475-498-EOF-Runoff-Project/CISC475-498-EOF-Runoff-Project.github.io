@@ -51,6 +51,7 @@
     content: "";
     display: table;
     clear: both;
+    background-color: #1c8f8c;
   }
   
   .navigation-bar {
@@ -86,7 +87,7 @@
   .header-link {
     display: inline-block;
     margin-right: 10px;
-    color: #778899;
+    color: #FD03FD;
     background-color: white;
   }
 
@@ -102,7 +103,7 @@
     backdrop-filter: saturate(180%) blur(20px);
   }
   .site-header a {
-    color: #b8cff1;
+    color: #FF002C;
     transition: color .15s ease-in-out;
   }
 
