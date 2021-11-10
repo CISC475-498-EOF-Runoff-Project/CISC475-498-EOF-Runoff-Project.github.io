@@ -19,6 +19,7 @@ const database = getDatabase(app);
 
 //import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-database.js";
 const databaseRef = ref(database);
+
 function pullFromFirebase(id) {
   get(child(databaseRef, id)).then((snapshot) => {
     if (snapshot.exists()) {
@@ -31,9 +32,18 @@ function pullFromFirebase(id) {
     console.error(error);
   });
 }
+
+function grabFromFirebase {
+    return onValue(ref(db), (snapshot) => {
+      const username = (snapshot.val());
+      // ...
+    }, {
+      onlyOnce: true
+    });
+}
 //pullFromFirebase('1');
 
-let temp_data = pullFromFirebase('1');
+let temp_data = grabFromFirebase('1');
 console.log(temp_data);
 console.log(typeof(temp_data));
 var data = [];
