@@ -34,7 +34,7 @@ function pullFromFirebase(id) {
 }
 
 function grabFromFirebase(id) {
-    return onValue(ref(database, id), (snapshot) => {
+    onValue(ref(database, id), (snapshot) => {
       const username = (snapshot.val());
       return username;
     }, {
