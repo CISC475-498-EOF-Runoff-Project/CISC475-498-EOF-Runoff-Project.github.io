@@ -40,9 +40,11 @@
     }
   }
   .header {
+    /*change this box text color to white*/
     background-color: #1c8f8c;
     padding: 20px;
     text-align: center;
+    color: white; 
     }
    
   .row:after {
