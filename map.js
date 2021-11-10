@@ -33,8 +33,8 @@ function pullFromFirebase(id) {
   });
 }
 
-function grabFromFirebase {
-    return onValue(ref(db), (snapshot) => {
+function grabFromFirebase(id) {
+    return onValue(ref(db, id), (snapshot) => {
       const username = (snapshot.val());
       // ...
     }, {
