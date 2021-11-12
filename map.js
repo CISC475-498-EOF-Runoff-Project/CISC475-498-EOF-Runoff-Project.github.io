@@ -65,14 +65,13 @@ var imageUrl = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_cl
             imageBounds = [[51.2 + 2.0, -100.0 - 2.0], [35.0 - 2.0, -70.0 + 2.0]],
             imageOverlay = L.imageOverlay(imageUrl, imageBounds);
 */
-L.imageOverlay(
+var imageOverlay = L.imageOverlay(
     'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_clear.png',
     [[51.2 + 2.0, -100.0 - 2.0], [35.0 - 2.0, -70.0 + 2.0]],
     {
         opacity: 0.5,
         interactive: true
-    }
-).bindPopup("This is a popup").addTo(mymap);
+    });
   
 
 var baseLayer = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoicmRlYW4iLCJhIjoiY2t1eWl3dnA2NzNpNTJwbzNvcHRxejdxaCJ9.tIGjuwey9icme7TC-y-U9g', {
@@ -117,13 +116,14 @@ imageOverlay.setOpacity(0.5);
 //imageOverlay.bindPopup(imagePopup);
 
 var popup = L.popup();
-
+/*
 function makePopup(e) {
     popup
         .setLatLng(e.latlng)
         .setContent("You clicked map at " + e.latlng.toString())
         .openOn(mymap);
 }
+*/
 function imagePopup(e) {
     console.log("click!");
     //var e = leafletEvent.originalEvent;
@@ -137,8 +137,8 @@ function imagePopup(e) {
 }
 
 const imgWidth = 1500, imgHeight = 1200;
-imageOverlay.on('click', imagePopup);
-mymap.on('click', makePopup);
+imageOverlay.on('click', makePopup);
+//mymap.on('click', makePopup);
 
 /*
 var mymap = L.map('mapid').setView([47.00, -87.00], 5);
