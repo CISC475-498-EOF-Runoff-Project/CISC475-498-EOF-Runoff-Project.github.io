@@ -134,6 +134,7 @@ function imagePopup(e) {
 
 const imgWidth = 1500, imgHeight = 1200;
 imageOverlay.on('click', imagePopup);
+mymap.on('click', makePopup);
 
 /*
 var mymap = L.map('mapid').setView([47.00, -87.00], 5);
