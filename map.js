@@ -15,11 +15,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const database = getDatabase(app);
-
-
-//import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-database.js";
 const databaseRef = ref(database);
-
+/*
 function pullFromFirebase(id) {
   get(child(databaseRef, id)).then((snapshot) => {
     if (snapshot.exists()) {
@@ -32,18 +29,16 @@ function pullFromFirebase(id) {
     console.error(error);
   });
 }
-
-function grabFromFirebase(id) {
-    onValue(ref(database, id), (snapshot) => {
-      const username = (snapshot.val());
-      return username;
-    }, {
-      onlyOnce: true
-    });
+*/
+function pullFromFirebase(id) {
+   coordRef = ref(database, id);
+   onValue(coordRef, (snapshot) => {
+       const firebase_data = snapshot.val()
+       return firebase_data;
 }
 //pullFromFirebase('1');
 
-let temp_data = grabFromFirebase('1');
+var temp_data = pullFromFirebase('1');
 console.log(temp_data);
 console.log(typeof(temp_data));
 var data = {
