@@ -114,10 +114,15 @@ var mymap = new L.Map('mapid', {
 heatmapLayer.setData(data);
 imageOverlay.setOpacity(0.5);
 
-const imgWidth = 1500, imgHeight = 1200;
-imageOverlay.on('click', (leafletEvent) => {
+function makePopup(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked map at " + e.latlng.toString())
+        .openOn(mymap);
+}
+function imagePopup(e) {
     console.log("click!");
-    var e = leafletEvent.originalEvent;
+    //var e = leafletEvent.originalEvent;
     var rect = e.target.getBoundingClientRect();
     var zoomedX = e.clientX - rect.left; //x position within the element.
     var zoomedY = e.clientY - rect.top;  //y position within the element
@@ -125,7 +130,10 @@ imageOverlay.on('click', (leafletEvent) => {
     const x = Math.round(zoomedX * imgWidth / rect.width);
     const y = Math.round(zoomedY * imgHeight / rect.height);
     console.log(x, y);
-});
+}
+
+const imgWidth = 1500, imgHeight = 1200;
+imageOverlay.on('click', imagePopup);
 
 /*
 var mymap = L.map('mapid').setView([47.00, -87.00], 5);
