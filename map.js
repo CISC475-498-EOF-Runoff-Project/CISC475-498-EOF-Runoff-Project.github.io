@@ -125,8 +125,8 @@ function makePopup(e) {
 }
 
 function imagePopup(e) {
-    console.log("click!");
-    //var e = leafletEvent.originalEvent;
+    
+    var e = leafletEvent.originalEvent;
     var rect = e.target.getBoundingClientRect();
     var zoomedX = e.clientX - rect.left; //x position within the element.
     var zoomedY = e.clientY - rect.top;  //y position within the element
@@ -137,7 +137,7 @@ function imagePopup(e) {
     
     popup
         .setLatLng(e.latlng)
-        .setContent("You clicked map at " + e.latlng.toString())
+        .setContent("You clicked image at " + x + " - " + y)
         .openOn(mymap);
 }
 
