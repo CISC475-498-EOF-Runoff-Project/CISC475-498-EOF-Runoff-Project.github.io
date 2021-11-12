@@ -112,6 +112,17 @@ var mymap = new L.Map('mapid', {
 heatmapLayer.setData(data);
 imageOverlay.setOpacity(0.5);
 
+imgOverlay.on('click', (leafletEvent) => {
+    var e = leafletEvent.originalEvent;
+    var rect = e.target.getBoundingClientRect();
+    var zoomedX = e.clientX - rect.left; //x position within the element.
+    var zoomedY = e.clientY - rect.top;  //y position within the element
+
+    const x = Math.round(zoomedX * imgWidth / rect.width);
+    const y = Math.round(zoomedY * imgHeight / rect.height);
+    console.log(x, y);
+});
+
 /*
 var mymap = L.map('mapid').setView([47.00, -87.00], 5);
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoicmRlYW4iLCJhIjoiY2t1eWl3dnA2NzNpNTJwbzNvcHRxejdxaCJ9.tIGjuwey9icme7TC-y-U9g', {
