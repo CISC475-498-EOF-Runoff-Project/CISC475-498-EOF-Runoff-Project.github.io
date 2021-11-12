@@ -134,10 +134,15 @@ function imagePopup(e) {
     const x = Math.round(zoomedX * imgWidth / rect.width);
     const y = Math.round(zoomedY * imgHeight / rect.height);
     console.log(x, y);
+    
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked map at " + e.latlng.toString())
+        .openOn(mymap);
 }
 
 const imgWidth = 1500, imgHeight = 1200;
-imageOverlay.on('click', makePopup);
+imageOverlay.on('click', imagePopup);
 //mymap.on('click', makePopup);
 
 /*
