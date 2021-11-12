@@ -113,6 +113,7 @@ var mymap = new L.Map('mapid', {
 heatmapLayer.setData(data);
 imageOverlay.setOpacity(0.5);
 
+const imgWidth = 1500, imgHeight = 1200;
 imgOverlay.on('click', (leafletEvent) => {
     var e = leafletEvent.originalEvent;
     var rect = e.target.getBoundingClientRect();
