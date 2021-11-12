@@ -35,6 +35,7 @@ function pullFromFirebase(id) {
    onValue(coordRef, (snapshot) => {
        const firebase_data = snapshot.val()
        return firebase_data;
+   });
 }
 //pullFromFirebase('1');
 
