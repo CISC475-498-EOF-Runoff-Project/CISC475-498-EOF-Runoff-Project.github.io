@@ -127,7 +127,7 @@ function makePopup(e) {
 function imagePopup(e) {
     //var e = leafletEvent.originalEvent;
     var temp_event = e.originalEvent;
-    var rect = e.target.getBoundingClientRect();
+    var rect = temp_event.target.getBoundingClientRect();
     var zoomedX = temp_event.clientX - rect.left; //x position within the element.
     var zoomedY = temp_event.clientY - rect.top;  //y position within the element
 
