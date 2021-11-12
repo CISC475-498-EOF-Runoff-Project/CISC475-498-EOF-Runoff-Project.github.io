@@ -109,7 +109,7 @@ var mymap = new L.Map('mapid', {
   center: new L.LatLng(45.00, -87.00),
   zoom: 5,
   //layers: [baseLayer, imageOverlay, heatmapLayer]
-  layers" [baseLayer, imageOverlay]
+  layers: [baseLayer, imageOverlay]
 });
 heatmapLayer.setData(data);
 imageOverlay.setOpacity(0.5);
