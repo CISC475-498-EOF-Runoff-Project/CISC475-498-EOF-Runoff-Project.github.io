@@ -116,14 +116,14 @@ imageOverlay.setOpacity(0.5);
 //imageOverlay.bindPopup(imagePopup);
 
 var popup = L.popup();
-/*
+
 function makePopup(e) {
     popup
         .setLatLng(e.latlng)
         .setContent("You clicked map at " + e.latlng.toString())
         .openOn(mymap);
 }
-*/
+
 function imagePopup(e) {
     console.log("click!");
     //var e = leafletEvent.originalEvent;
