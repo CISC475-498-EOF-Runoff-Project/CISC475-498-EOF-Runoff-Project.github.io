@@ -29,7 +29,7 @@ function pullFromFirebase(id) {
     console.error(error);
   });
 }
-*/
+
 function pullFromFirebase(id) {
    coordRef = ref(database, id);
    onValue(coordRef, (snapshot) => {
@@ -42,6 +42,7 @@ function pullFromFirebase(id) {
 var temp_data = pullFromFirebase('1');
 console.log(temp_data);
 console.log(typeof(temp_data));
+*/
 var data = {
     max: 0,
     data: []
