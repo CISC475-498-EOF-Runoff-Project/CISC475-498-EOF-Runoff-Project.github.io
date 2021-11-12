@@ -113,6 +113,9 @@ var mymap = new L.Map('mapid', {
 });
 heatmapLayer.setData(data);
 imageOverlay.setOpacity(0.5);
+imageOverlay.bindPopup(imagePopup);
+
+var popup = L.popup();
 
 function makePopup(e) {
     popup
