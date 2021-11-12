@@ -46,7 +46,11 @@ function grabFromFirebase(id) {
 let temp_data = grabFromFirebase('1');
 console.log(temp_data);
 console.log(typeof(temp_data));
-var data = [];
+var data = {
+    max: 0,
+    data: []
+};
+
 //let temp_obj = {lat:temp_data.lat, lng:temp_data.lon, value:temp_data.intensity};
 //data.push(temp_obj);
 /*
