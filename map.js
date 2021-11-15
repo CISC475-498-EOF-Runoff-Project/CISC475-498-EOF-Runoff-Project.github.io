@@ -135,9 +135,8 @@ function imagePopup(e) {
     const y = Math.round(zoomedY * imgHeight / rect.height);
     console.log(x, y);
     
-    //var imageToCheck = document.querySelector("img");
-    var imageToCheck = document.querySelectorAll("a[href='https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_clear.png']");
-    //imageToCheck.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_clear.png';
+    var imageToCheck = document.createElement('img');
+    imageToCheck.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_clear.png';
     var canvas = document.createElement('canvas');
     canvas.width = imgWidth;
     canvas.height = imgHeight;
