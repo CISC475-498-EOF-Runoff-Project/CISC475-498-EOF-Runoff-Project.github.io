@@ -135,7 +135,8 @@ function imagePopup(e) {
     const y = Math.round(zoomedY * imgHeight / rect.height);
     console.log(x, y);
     
-    var imageToCheck.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_clear.png';
+    var imageToCheck = document.querySelector("img");
+    imageToCheck.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_clear.png';
     var imageContext = imageToCheck.getContext("2d");
     var pixelData = imageContext.getImageData(x, y, imgWidth, imgHeight);
     console.log(pixelData);
