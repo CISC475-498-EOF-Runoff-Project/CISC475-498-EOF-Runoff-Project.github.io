@@ -143,11 +143,12 @@ function imagePopup(e) {
     canvas.getContext('2d').drawImage(imageToCheck, 0, 0, imgWidth, imgHeight);
     var pixelData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight);
     //console.log(pixelData);
-    console.log(pixelData.data[0]);
+    //console.log(pixelData.data[0]);
     
     popup
         .setLatLng(e.latlng)
-        .setContent("R: " + pixelData.data[0] + ", G: " + pixelData.data[1] + ", B: " + pixelData.data[2])
+        //.setContent("R: " + pixelData.data[0] + ", G: " + pixelData.data[1] + ", B: " + pixelData.data[2])
+        .setContent(<H1>HereisH1</H1><br /><p>This is paragraph</p>)
         .openOn(mymap);
    
 }
