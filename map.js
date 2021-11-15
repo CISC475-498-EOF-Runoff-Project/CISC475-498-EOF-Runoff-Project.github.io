@@ -65,8 +65,8 @@ var imageUrl = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_cl
             imageBounds = [[51.2 + 2.0, -100.0 - 2.0], [35.0 - 2.0, -70.0 + 2.0]],
             imageOverlay = L.imageOverlay(imageUrl, imageBounds);
 */
-window.imageUrl = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_clear.png';
-var imageOverlay = L.imageOverlay(
+var imageUrl = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_clear.png';
+window.imageOverlay = L.imageOverlay(
     imageUrl,
     [[51.2 + 2.0, -100.0 - 2.0], [35.0 - 2.0, -70.0 + 2.0]],
     {
@@ -112,10 +112,9 @@ var mymap = new L.Map('mapid', {
   minZoom: 4,
   maxZoom: 6,
   //layers: [baseLayer, imageOverlay, heatmapLayer]
-  layers: [baseLayer, imageOverlay]
+  layers: [baseLayer, window.imageOverlay]
 });
 heatmapLayer.setData(data);
-imageOverlay.setOpacity(0.5);
 mymap.setMaxBounds([
     [50.73, -100.49],
     [30.13, -64.72]
@@ -176,7 +175,7 @@ function imagePopup(e) {
 }
 
 const imgWidth = 1500, imgHeight = 1200;
-imageOverlay.on('click', imagePopup);
+window.imageOverlay.on('click', imagePopup);
 //mymap.on('click', makePopup);
 
 /*
