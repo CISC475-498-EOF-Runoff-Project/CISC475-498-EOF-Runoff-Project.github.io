@@ -103,7 +103,7 @@
     backdrop-filter: saturate(180%) blur(20px);
   }
   .site-header a {
-    color: #FF002C;
+    color: #898989;
     transition: color .15s ease-in-out;
   }
 
@@ -113,7 +113,7 @@
     bottom: -30%;
     width: 300px;
     height: 540px;
-    background-color: #333;
+    background-color: #898989;
     border-radius: 21px;
     transform: rotate(30deg);
   }
@@ -162,7 +162,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255); //white
     font-size:50px
   }
   
