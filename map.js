@@ -144,11 +144,26 @@ function imagePopup(e) {
     var pixelData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight);
     //console.log(pixelData);
     //console.log(pixelData.data[0]);
-    
+    let red = pixelData.data[0];
+    let green = pixelData.data[1];
+    let blue = pixelData.data[2];
+    let max_color = Math.max(pixelData.data[0], pixelData.data[1], pixelData.data[2]);
+    var risk = 0;
+    if (max_color == red) {
+        risk = 3;
+    }
+    else if (max_color == green) {
+        risk = 1;
+    }
+    else {
+        if (red > green) {
+            risk = 2;
+        }
+    }                
     popup
         .setLatLng(e.latlng)
         //.setContent("R: " + pixelData.data[0] + ", G: " + pixelData.data[1] + ", B: " + pixelData.data[2])
-        .setContent('<H6>' + x.toString() + ", " + y.toString() + '</H6><br><p>' + "R: " + pixelData.data[0] + ", G: " + pixelData.data[1] + ", B: " + pixelData.data[2] + '</p>')
+        .setContent('<H6>' + risk + '</H6><br><p>' + "R: " + pixelData.data[0] + ", G: " + pixelData.data[1] + ", B: " + pixelData.data[2] + '</p>')
         .openOn(mymap);
    
 }
