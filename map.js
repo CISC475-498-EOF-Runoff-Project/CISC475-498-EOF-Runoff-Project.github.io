@@ -136,8 +136,8 @@ function imagePopup(e) {
     console.log(x, y);
     popup
         .setLatLng(e.latlng)
-        .setContent("You clicked map at " + e.latlng.toString())
-        .openOn(imageOverlay);
+        .setContent("You clicked map at " + x.toString() + " " + y.toString())
+        .openOn(mymap);
    
 }
 
