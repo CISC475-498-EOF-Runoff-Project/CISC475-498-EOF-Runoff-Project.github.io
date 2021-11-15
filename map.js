@@ -109,6 +109,8 @@ var heatmapLayer = new HeatmapOverlay(cfg);
 var mymap = new L.Map('mapid', {
   center: new L.LatLng(45.00, -87.00),
   zoom: 5,
+  minZoom: 4,
+  maxZoom: 6,
   //layers: [baseLayer, imageOverlay, heatmapLayer]
   layers: [baseLayer, imageOverlay]
 });
