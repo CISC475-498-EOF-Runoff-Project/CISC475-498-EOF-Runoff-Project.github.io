@@ -142,7 +142,7 @@ function imagePopup(e) {
     canvas.width = imgWidth;
     canvas.height = imgHeight;
     canvas.getContext('2d').drawImage(imgToCheck, 0, 0, imgWidth, imgHeight);
-    var pixelData = canvas.getContext('2d).getImageData(x, y, imgWidth, imgHeight);
+    var pixelData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight);
     console.log(pixelData);
     
     popup
