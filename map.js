@@ -114,6 +114,10 @@ var mymap = new L.Map('mapid', {
 });
 heatmapLayer.setData(data);
 imageOverlay.setOpacity(0.5);
+mymap.fitBounds([
+    [50.73, -98.49],
+    [30.13, -64.72]
+]);
 //imageOverlay.bindPopup(imagePopup);
 
 var popup = L.popup();
