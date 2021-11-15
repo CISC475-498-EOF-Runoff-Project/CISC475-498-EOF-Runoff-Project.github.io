@@ -148,7 +148,7 @@ function imagePopup(e) {
     popup
         .setLatLng(e.latlng)
         //.setContent("R: " + pixelData.data[0] + ", G: " + pixelData.data[1] + ", B: " + pixelData.data[2])
-        .setContent('<H1>HereisH1</H1><br /><p>This is paragraph</p>')
+        .setContent('<H3>' + x.toString() + ", " + y.toString() + '</H3><br /><p>' + "R: " + pixelData.data[0] + ", G: " + pixelData.data[1] + ", B: " + pixelData.data[2] + '</p>')
         .openOn(mymap);
    
 }
