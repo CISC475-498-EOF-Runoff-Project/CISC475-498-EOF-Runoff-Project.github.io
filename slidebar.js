@@ -12,7 +12,7 @@ var val = document.getElementById("valR").value;
           if(newVal == 1)               
             document.getElementById("plugin").src = "https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_day0.pdf";            
           else if(newVal == 2) {              
-            document.getElementById("plugin").src = "https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_day1.pdf";
+            //document.getElementById("plugin").src = "https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_day1.pdf";
             console.log(document.getElementById("mapid"));
           }
           else if(newVal == 3)
