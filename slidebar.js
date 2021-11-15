@@ -17,7 +17,8 @@ var val = document.getElementById("valR").value;
             window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_diff.png");
           }
           else if(newVal == 3)
-            document.getElementById("plugin").src = "https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_day2.pdf";
+            console.log(document.getElementById("mapid"));
+            //document.getElementById("plugin").src = "https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_day2.pdf";
           else if(newVal == 4)
             document.getElementById("plugin").src = "https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_day3.pdf";
           else if(newVal == 5)
