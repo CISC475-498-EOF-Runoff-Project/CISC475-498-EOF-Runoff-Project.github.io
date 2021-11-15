@@ -65,8 +65,9 @@ var imageUrl = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_cl
             imageBounds = [[51.2 + 2.0, -100.0 - 2.0], [35.0 - 2.0, -70.0 + 2.0]],
             imageOverlay = L.imageOverlay(imageUrl, imageBounds);
 */
+var imageUrl = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_clear.png';
 var imageOverlay = L.imageOverlay(
-    'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_clear.png',
+    imageUrl,
     [[51.2 + 2.0, -100.0 - 2.0], [35.0 - 2.0, -70.0 + 2.0]],
     {
         opacity: 0.5,
