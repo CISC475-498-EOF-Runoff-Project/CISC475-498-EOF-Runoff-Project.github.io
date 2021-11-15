@@ -142,11 +142,12 @@ function imagePopup(e) {
     canvas.height = imgHeight;
     canvas.getContext('2d').drawImage(imageToCheck, 0, 0, imgWidth, imgHeight);
     var pixelData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight);
-    console.log(pixelData);
+    //console.log(pixelData);
+    console.log(pixelData.data[0]);
     
     popup
         .setLatLng(e.latlng)
-        .setContent("You clicked map at " + x.toString() + " " + y.toString())
+        .setContent("You clicked map at x=" + x.toString() + ", y=" + y.toString())
         .openOn(mymap);
    
 }
