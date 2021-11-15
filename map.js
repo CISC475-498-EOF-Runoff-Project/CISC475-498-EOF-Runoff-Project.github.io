@@ -147,7 +147,7 @@ function imagePopup(e) {
     
     popup
         .setLatLng(e.latlng)
-        .setContent("R: " + pixelData.data[0] + ", G: " + pixelData.data[1] + ", B: " + pixelData.data[2]);
+        .setContent("R: " + pixelData.data[0] + ", G: " + pixelData.data[1] + ", B: " + pixelData.data[2])
         .openOn(mymap);
    
 }
