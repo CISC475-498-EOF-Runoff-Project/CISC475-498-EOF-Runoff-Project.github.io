@@ -138,8 +138,11 @@ function imagePopup(e) {
     //var imageToCheck = document.querySelector("img");
     var imageToCheck = document.querySelectorAll("a[href='https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_clear.png']");
     //imageToCheck.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_clear.png';
-    var imageContext = imageToCheck.getContext("2d");
-    var pixelData = imageContext.getImageData(x, y, imgWidth, imgHeight);
+    var canvas = document.createElement('canvas');
+    canvas.width = imgWidth;
+    canvas.height = imgHeight;
+    canvas.getContext('2d').drawImage(imgToCheck, 0, 0, imgWidth, imgHeight);
+    var pixelData = canvas.getContext('2d).getImageData(x, y, imgWidth, imgHeight);
     console.log(pixelData);
     
     popup
