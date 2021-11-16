@@ -164,7 +164,7 @@ function imagePopup(e) {
     let blue = pixelData.data[2];
     let max_color = Math.max(pixelData.data[0], pixelData.data[1], pixelData.data[2]);
     var risk = 0;
-    if (red == null) {
+    if (red == 0) {
         risk = 0;
     } else if (max_color == red) {
         risk = 3;
