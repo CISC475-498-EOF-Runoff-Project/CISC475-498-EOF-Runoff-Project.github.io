@@ -166,14 +166,12 @@ function imagePopup(e) {
     var risk = 0;
     if (red == null) {
         risk = 0;
-    }
-    else if (max_color == red) {
+    } else if (max_color == red) {
         risk = 3;
-    }
-    else if (max_color == green) {
+        console.log(red);
+    } else if (max_color == green) {
         risk = 1;
-    }
-    else {
+    } else {
         if (red > green) {
             risk = 2;
         }
