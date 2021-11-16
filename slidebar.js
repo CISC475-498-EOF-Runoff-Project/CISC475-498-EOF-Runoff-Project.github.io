@@ -10,7 +10,8 @@ var val = document.getElementById("valR").value;
           document.getElementById("range").innerHTML=newVal;
           //call stat box display method      
           if(newVal == 1)  
-            window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_clear.png");
+            //window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_clear.png");
+            window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_accprcp.png");
             //document.getElementById("plugin").src = "https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_day0.pdf";            
           else if(newVal == 2)  
             window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event1_clear_size.png");
