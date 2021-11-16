@@ -116,7 +116,7 @@ var mymap = new L.Map('mapid', {
 });
 heatmapLayer.setData(data);
 mymap.setMaxBounds([
-    [50.73, -100.49],
+    [52.73, -100.49],
     [30.13, -64.72]
 ]);
 //imageOverlay.bindPopup(imagePopup);
