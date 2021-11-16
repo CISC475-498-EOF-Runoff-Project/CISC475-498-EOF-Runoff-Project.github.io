@@ -141,23 +141,33 @@ function imagePopup(e) {
     const y = Math.round(zoomedY * imgHeight / rect.height);
     console.log(x, y);
     
-    var imageToCheck = document.createElement('img');
-    imageToCheck.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_clear.png';
-    console.log(window.imageOverlay.getElement().src);
-    imageToCheck.src = window.imageOverlay.getElement().src;
+    var imgEvent = document.createElement('img');
+    //imgEvent.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_clear.png';
+    imgEvent.src = window.imageOverlay.getElement().src;
+    
+    var imgAccprcp = document.createElement('img');
+    let test_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_clear.png';
+    let test_arr = test_str.split("Event");
+    console.log(test_arr);
+    let temp_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event';
+    temp_str += '0';
+    temp_str += '_accprcp.png';
+    imgAccprcp.src = temp_str;
+    
     var canvas = document.createElement('canvas');
     canvas.width = imgWidth;
     canvas.height = imgHeight;
-    canvas.getContext('2d').drawImage(imageToCheck, 0, 0, imgWidth, imgHeight);
+    canvas.getContext('2d').drawImage(imgEvent, 0, 0, imgWidth, imgHeight);
     var pixelData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight);
-    //console.log(pixelData);
-    //console.log(pixelData.data[0]);
     let red = pixelData.data[0];
     let green = pixelData.data[1];
     let blue = pixelData.data[2];
     let max_color = Math.max(pixelData.data[0], pixelData.data[1], pixelData.data[2]);
     var risk = 0;
-    if (max_color == red && red != 0) {
+    if (red == green == blue) {
+        risk = 0;
+    }
+    else if (max_color == red) {
         risk = 3;
     }
     else if (max_color == green) {
@@ -168,10 +178,18 @@ function imagePopup(e) {
             risk = 2;
         }
     }                
+    //var canvas = document.createElement('canvas');
+    //canvas.width = imgWidth;
+    //canvas.height = imgHeight;
+    canvas.getContext('2d').clearRect(0, 0, imgWidth, imgHeight);
+    canvas.getContext('2d').drawImage(imgAccprcp, 0, 0, imgWidth, imgHeight);
+    var accprcpData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight); 
+    var accprcp = 0;
+    
     popup
         .setLatLng(e.latlng)
         //.setContent("R: " + pixelData.data[0] + ", G: " + pixelData.data[1] + ", B: " + pixelData.data[2])
-        .setContent('<H6>' + "RISK: " + risk + '</H6><br><p>' + "R: " + pixelData.data[0] + ", G: " + pixelData.data[1] + ", B: " + pixelData.data[2] + '</p>')
+        .setContent('<H6>RISK: ' + risk + '</H6><br><p>ACCPRCP: ' + accprcp + '</p><br><p>' + "R: " + pixelData.data[0] + ", G: " + pixelData.data[1] + ", B: " + pixelData.data[2] + '</p>')
         .openOn(mymap);
    
 }
