@@ -143,6 +143,7 @@ function imagePopup(e) {
     
     var imageToCheck = document.createElement('img');
     imageToCheck.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_clear.png';
+    console.log(window.imageOverlay.getElement().src)
     var canvas = document.createElement('canvas');
     canvas.width = imgWidth;
     canvas.height = imgHeight;
