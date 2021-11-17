@@ -215,10 +215,6 @@
     -webkit-transition: .2s;
     transition: opacity .2s;
   }
-
-  .slidetext {
-    margin:auto;
-  }
   
   .slider:hover {
     opacity: 1;
