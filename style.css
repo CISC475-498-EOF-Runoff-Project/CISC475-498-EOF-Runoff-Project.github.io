@@ -102,7 +102,7 @@
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     backdrop-filter: saturate(180%) blur(20px);
   }
-  //this is where i just changed the color
+  //this is where i just changed the color to purple
   .site-header a {
     color: #9e4fc3;
     transition: color .15s ease-in-out;
@@ -150,7 +150,7 @@
   .bg-image {
     background-image: url("https://i2.wp.com/healthylakes.org/wp-content/uploads/2018/09/brighter-In-Your-State-subject-Great-Lakes-from-Space-Credit-NOAA-Great-Lakes-CoastWatch.-2.jpg?resize=1080%2C675&ssl=1");
     background-color: #ffffff;
-    height: 400px;
+    height: 700px; //originally was fourhundred px
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
