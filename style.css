@@ -102,8 +102,9 @@
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     backdrop-filter: saturate(180%) blur(20px);
   }
+  //this is where i just changed the color
   .site-header a {
-    color: #d3d3d3;
+    color: #9e4fc3;
     transition: color .15s ease-in-out;
   }
 
