@@ -83,8 +83,19 @@
 
         <script type="text/javascript" src="jquery.csvToTable.js"></script>
 
+        <script>
+          CsvToHtmlTable.init({
+            csv_path: 'sample data.csv', 
+            element: 'table-container', 
+            allow_download: true,
+            csv_options: {separator: ',', delimiter: '"'},
+            datatables_options: {"paging": false}
+          });
+        </script>
+
         CSV to html(table)<br>
         <div id="csv_data">
+    
           </div> 
     </div>
   </div>
