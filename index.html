@@ -60,18 +60,6 @@
     </ul>
   </nav>
 
-  <div class="header">
-    <h1>Here is a template for future use</h1>
-    <p><span id="show_time"></span>.</p>
-    <script>
-      var show_time = document.getElementById("show_time");
-      var current_date = new Date();
-      var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-      var day = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
-      var pretty_time = `${day[current_date.getDay()-1]}, ${months[current_date.getMonth()]}, ${current_date.getDate()}` 
-      show_time.innerHTML = pretty_time;
-    </script>
-  </div>
 
 
   <div class="d-md-flex flex-md-equal w-100 my-md-0 ps-md-3">
@@ -106,6 +94,15 @@
   <div class="slidecontainer">
     <input class="slider" id="valR" type="range" min="1" max="10" value="1" step="1" oninput="showVal(this.value)" onchange="showVal(this.value)" />
     <p>Day:<span id="range"></span></p>
+    <p><span id="show_time"></span></p>
+    <script>
+      var show_time = document.getElementById("show_time");
+      var current_date = new Date();
+      var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+      var day = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+      var pretty_time = `${day[current_date.getDay()-1]}, ${months[current_date.getMonth()]}, ${current_date.getDate()}` 
+      show_time.innerHTML = pretty_time;
+    </script>
     <img id="img">
   </div>
 </section>
