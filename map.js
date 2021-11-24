@@ -182,6 +182,9 @@ function imagePopup(e) {
     canvas.getContext('2d').clearRect(0, 0, imgWidth, imgHeight);
     canvas.getContext('2d').drawImage(imgAccprcp, 0, 0, imgWidth, imgHeight);
     var accprcpData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight); 
+    let any_color = pixelData.data[0];
+    let result = Math.abs((any_color - 255) / 255);
+    
     var accprcp = 0;
     
     popup
