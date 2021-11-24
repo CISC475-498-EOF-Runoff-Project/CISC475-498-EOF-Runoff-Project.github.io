@@ -91,6 +91,14 @@
     background-color: white;
   }
 
+  #popupStatsTable {
+    color: #FFFFFF;
+  }
+
+  #statsTableBody {
+    color: #FFFFFF;
+  }
+
   #mapid {
       height: 600px;
       width: 600px;
