@@ -91,8 +91,11 @@
     background-color: white;
   }
 
-  #popupStatsTable {
-    color: #FFFFFF;
+  #popupStatsTable{
+    color:#FFFFFF;
+    margin:auto;
+    width:80%;
+    border-bottom: 1px solid white;
   }
 
   #statsTableBody {
