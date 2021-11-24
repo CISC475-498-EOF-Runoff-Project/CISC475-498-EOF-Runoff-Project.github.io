@@ -14,7 +14,8 @@ var val = document.getElementById("valR").value;
             window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_accprcp.png");
             //document.getElementById("plugin").src = "https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_day0.pdf";            
           else if(newVal == 2)  
-            window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event1_clear_size.png");
+            //window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event1_clear_size.png");
+            window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_new5.png");
             //document.getElementById("plugin").src = "https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_day1.pdf";
           else if(newVal == 3)
             window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event2_clear_size.png");
