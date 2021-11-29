@@ -106,7 +106,7 @@ function imagePopup(e) {
     for(var j = 1; j < statsTable.rows.length; j++) {
         //iterate through cells in row
         for (var k = 0; k < statsTable.rows[j].cells.length; k++) {
-            statsTable.rows[j].cells[k].innerHTML = data_by_day[k];
+            statsTable.rows[j].cells[k].innerHTML = data_by_day[k].toFixed(3);
         }
     }
        
