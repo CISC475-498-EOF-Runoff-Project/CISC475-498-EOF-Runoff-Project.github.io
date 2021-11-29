@@ -93,12 +93,12 @@ function imagePopup(e) {
     canvas.getContext('2d').clearRect(0, 0, imgWidth, imgHeight);
     canvas.getContext('2d').drawImage(imgVars, 0, 0, imgWidth, imgHeight);
     var varsData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight); 
-    let red = varsData.data[0];
-    let green = varsData.data[1];
-    let blue = varsData.data[2];
-    var accprcp = red * 200.0;
-    var acsnom = green * 200.0;
-    var qsnow = blue * 200.0;
+    red = varsData.data[0];
+    green = varsData.data[1];
+    blue = varsData.data[2];
+    let accprcp = red * 200.0;
+    let acsnom = green * 200.0;
+    let qsnow = blue * 200.0;
     
     var data_by_day = [1, risk, accprcp, acsnom, qsnow]
     var statsTable = document.getElementById("popupStatsTable");
