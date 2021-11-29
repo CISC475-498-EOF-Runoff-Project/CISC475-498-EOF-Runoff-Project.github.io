@@ -95,9 +95,9 @@ function imagePopup(e) {
     red = varsData.data[0];
     green = varsData.data[1];
     blue = varsData.data[2];
-    let accprcp = (red / 255) * 200.0;
-    let acsnom = (green / 255) * 200.0;
-    let qsnow = (blue / 255) * 200.0;
+    let accprcp = ((red / 255) * 200).toFixed(3);
+    let acsnom = ((green / 255) * 200).toFixed(3);
+    let qsnow = ((blue / 255) * 200).toFixed(3);
     
     var data_by_day = [1, risk, accprcp, acsnom, qsnow]
     var statsTable = document.getElementById("popupStatsTable");
@@ -106,7 +106,7 @@ function imagePopup(e) {
     for(var j = 1; j < statsTable.rows.length; j++) {
         //iterate through cells in row
         for (var k = 0; k < statsTable.rows[j].cells.length; k++) {
-            statsTable.rows[j].cells[k].innerHTML = data_by_day[k].toFixed(3);
+            statsTable.rows[j].cells[k].innerHTML = data_by_day[k];
         }
     }
        
