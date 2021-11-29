@@ -22,10 +22,9 @@ var mymap = new L.Map('mapid', {
   zoom: 5,
   minZoom: 4,
   maxZoom: 6,
-  //layers: [baseLayer, imageOverlay, heatmapLayer]
+  //layers: [baseLayer, imageOverlay]
   layers: [baseLayer, window.imageOverlay]
 });
-heatmapLayer.setData(data);
 mymap.setMaxBounds([
     [52.73, -100.49],
     [30.13, -64.72]
