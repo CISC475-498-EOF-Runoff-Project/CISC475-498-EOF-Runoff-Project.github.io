@@ -133,8 +133,8 @@
       var show_time = document.getElementById("show_time");
       var current_date = new Date();
       var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-      var day = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
-      var pretty_time = `${day[current_date.getDay()-1]}, ${months[current_date.getMonth()]}, ${current_date.getDate()}` 
+      var day = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+      var pretty_time = `${day[current_date.getDay()]}, ${months[current_date.getMonth()]}, ${current_date.getDate()}` 
       show_time.innerHTML = pretty_time;
     </script>
     <img id="img">
