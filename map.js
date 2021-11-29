@@ -95,9 +95,9 @@ function imagePopup(e) {
     red = varsData.data[0];
     green = varsData.data[1];
     blue = varsData.data[2];
-    let accprcp = red * 200.0;
-    let acsnom = green * 200.0;
-    let qsnow = blue * 200.0;
+    let accprcp = (red / 255) * 200.0;
+    let acsnom = (green / 255) * 200.0;
+    let qsnow = (blue / 255) * 200.0;
     
     var data_by_day = [1, risk, accprcp, acsnom, qsnow]
     var statsTable = document.getElementById("popupStatsTable");
