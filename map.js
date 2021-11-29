@@ -192,6 +192,7 @@ function imagePopup(e) {
         //iterate through cells in row
         for (var k = 0; k < statsTable.rows[j].cells.length; k++) {
             statsTable.rows[j].cells[k].innerHTML = k;
+        }
     }
    
     var accprcp = 0;
