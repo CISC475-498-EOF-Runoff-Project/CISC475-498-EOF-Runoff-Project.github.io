@@ -110,9 +110,7 @@ function imagePopup(e) {
             statsTable.rows[j].cells[k].innerHTML = data_by_day[k];
         }
     }
-   
-    var accprcp = 0;
-    
+       
     popup
         .setLatLng(e.latlng)
         //.setContent("R: " + pixelData.data[0] + ", G: " + pixelData.data[1] + ", B: " + pixelData.data[2])
