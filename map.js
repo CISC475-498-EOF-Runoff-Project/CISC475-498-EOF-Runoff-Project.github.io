@@ -185,7 +185,7 @@ function imagePopup(e) {
     let any_color = pixelData.data[0];
     let result = Math.abs((any_color - 255) / 255);
     let test = 45;
-    statsTable = document.getElementById("popupStatsTable");
+    var statsTable = document.getElementById("popupStatsTable");
     
     //iterate through rows
     for(var j = 0; j < statsTable.rows.length; j++) {
