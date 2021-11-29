@@ -145,14 +145,14 @@ function imagePopup(e) {
     //imgEvent.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_clear.png';
     imgEvent.src = window.imageOverlay.getElement().src;
     
-    var imgAccprcp = document.createElement('img');
+    var imgVars = document.createElement('img');
     let test_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_clear.png';
     let test_arr = test_str.split("Event");
     console.log(test_arr);
     let temp_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event';
     temp_str += '0';
-    temp_str += '_accprcp.png';
-    imgAccprcp.src = temp_str;
+    temp_str += '_vars.png';
+    imgVars.src = temp_str;
     
     var canvas = document.createElement('canvas');
     canvas.width = imgWidth;
@@ -180,18 +180,23 @@ function imagePopup(e) {
     //canvas.width = imgWidth;
     //canvas.height = imgHeight;
     canvas.getContext('2d').clearRect(0, 0, imgWidth, imgHeight);
-    canvas.getContext('2d').drawImage(imgAccprcp, 0, 0, imgWidth, imgHeight);
-    var accprcpData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight); 
-    let any_color = pixelData.data[0];
-    let result = Math.abs((any_color - 255) / 255);
-    let test = 45;
+    canvas.getContext('2d').drawImage(imgVars, 0, 0, imgWidth, imgHeight);
+    var varsData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight); 
+    let red = varsData.data[0];
+    let green = varsData.data[1];
+    let blue = varsData.data[2];
+    var accprcp = red * 200.0;
+    var acsnom = green * 200.0;
+    var qsnow = blue * 200.0;
+    
+    var data_by_day = [1, risk, accprcp, acsnom, qsnow]
     var statsTable = document.getElementById("popupStatsTable");
     
     //iterate through rows
     for(var j = 1; j < statsTable.rows.length; j++) {
         //iterate through cells in row
         for (var k = 0; k < statsTable.rows[j].cells.length; k++) {
-            statsTable.rows[j].cells[k].innerHTML = k;
+            statsTable.rows[j].cells[k].innerHTML = data_by_day[k];
         }
     }
    
