@@ -217,6 +217,7 @@
   
   .slider {
     margin: auto;
+    margin-left: 150px;
     -webkit-appearance: none;
     width: 25%;
     height: 25px;
