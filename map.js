@@ -188,7 +188,7 @@ function imagePopup(e) {
     var statsTable = document.getElementById("popupStatsTable");
     
     //iterate through rows
-    for(var j = 0; j < statsTable.rows.length; j++) {
+    for(var j = 1; j < statsTable.rows.length; j++) {
         //iterate through cells in row
         for (var k = 0; k < statsTable.rows[j].cells.length; k++) {
             statsTable.rows[j].cells[k].innerHTML = k;
