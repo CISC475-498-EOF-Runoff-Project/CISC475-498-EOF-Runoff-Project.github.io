@@ -184,7 +184,16 @@ function imagePopup(e) {
     var accprcpData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight); 
     let any_color = pixelData.data[0];
     let result = Math.abs((any_color - 255) / 255);
+    let test = 45;
+    statsTable = document.getElementById("popupStatsTable");
     
+    //iterate through rows
+    for(var j = 0; j < statsTable.rows.length; j++) {
+        //iterate through cells in row
+        for (var k = 0; k < statsTable.rows[j].cells.length; k++) {
+            statsTable.rows[j].cells[k].innerHTML = k;
+    }
+   
     var accprcp = 0;
     
     popup
