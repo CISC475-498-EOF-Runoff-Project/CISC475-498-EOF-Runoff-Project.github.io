@@ -89,7 +89,7 @@ function imagePopup(e) {
 
     var data_10_days = new Array(10);
 
-    for (int day = 0; day < 10; day++) {
+    for(var day = 0; day < 10; day++) {
         canvas.getContext('2d').clearRect(0, 0, imgWidth, imgHeight);
         canvas.getContext('2d').drawImage(imgVars, 0, 0, imgWidth, imgHeight);
         var varsData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight); 
