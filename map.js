@@ -60,7 +60,7 @@ function imagePopup(e) {
 
     const x = Math.round(zoomedX * imgWidth / rect.width);
     const y = Math.round(zoomedY * imgHeight / rect.height);
-    /*
+    
     var imgEvent = document.createElement('img');
     
     //imgEvent.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_clear.png';
@@ -88,31 +88,30 @@ function imagePopup(e) {
             risk = 2;
         }
     }                
-    */
-    var imgVars = document.createElement('img');
+    
+    //var imgVars = document.createElement('img');
     var data_10_days = [];    
     for(var day = 0; day < 10; day++) {
-        let canvas = document.createElement('canvas');
-        canvas.width = imgWidth;
-        canvas.height = imgHeight;
-        //canvas.getContext('2d').drawImage(imgEvent, 0, 0, imgWidth, imgHeight);
-        
+        // set html element to correct image
+        let imgVars = document.createElement('img');
         let temp_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event';
         temp_str += day;
         temp_str += '_vars.png';
         imgVars.src = temp_str;
-        console.log(imgVars.src);
         
+        // reset canvas
         canvas.getContext('2d').clearRect(0, 0, imgWidth, imgHeight);
         canvas.getContext('2d').drawImage(imgVars, 0, 0, imgWidth, imgHeight);
-        let varsData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight); 
-        let red = varsData.data[0];
-        let green = varsData.data[1];
-        let blue = varsData.data[2];
-        let accprcp = ((red / 255) * 200).toFixed(3);
-        let acsnom = ((green / 255) * 200).toFixed(3);
-        let qsnow = ((blue / 255) * 200).toFixed(3);
         
+        let varsData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight); 
+        let varsRed = varsData.data[0];
+        let varsGreen = varsData.data[1];
+        let varsBlue = varsData.data[2];
+        let accprcp = ((varsRed / 255) * 200).toFixed(3);
+        let acsnom = ((varsGreen / 255) * 200).toFixed(3);
+        let qsnow = ((varsBlue / 255) * 200).toFixed(3);
+        risk = 0.0; //temp
+        /*
         temp_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event';
         temp_str += day;
         temp_str += '_projected.png';
@@ -137,7 +136,7 @@ function imagePopup(e) {
                 risk = 2;
             }
         }
-        
+        */
         let data_by_day = [day+1, risk, accprcp, acsnom, qsnow];
         data_10_days[day] = data_by_day;
         console.log(data_10_days[0]);
