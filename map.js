@@ -1,3 +1,6 @@
+
+/* make initial image overlay (day 0) */ 
+
 var imageUrl = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_projected.png';
 window.imageOverlay = L.imageOverlay(
     imageUrl,
@@ -6,7 +9,8 @@ window.imageOverlay = L.imageOverlay(
         opacity: 0.5,
         interactive: true
     });
-  
+
+/* build map base layer with map data from mapbox */
 
 var baseLayer = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoicmRlYW4iLCJhIjoiY2t1eWl3dnA2NzNpNTJwbzNvcHRxejdxaCJ9.tIGjuwey9icme7TC-y-U9g', {
           attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -16,6 +20,8 @@ var baseLayer = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}
           zoomOffset: -1,
           accessToken: 'pk.eyJ1IjoicmRlYW4iLCJhIjoiY2t1eWl3dnA2NzNpNTJwbzNvcHRxejdxaCJ9.tIGjuwey9icme7TC-y-U9g'
         });
+
+/* initialize map object, add in base and image layers */
 
 var mymap = new L.Map('mapid', {
   center: new L.LatLng(45.00, -87.00),
@@ -31,14 +37,19 @@ mymap.setMaxBounds([
 ]);
 //imageOverlay.bindPopup(imagePopup);
 
-var popup = L.popup();
 
+/* make popup object to display when map is clicked */
+
+var popup = L.popup();
 function makePopup(e) {
     popup
         .setLatLng(e.latlng)
         .setContent("You clicked map at " + e.latlng.toString())
         .openOn(mymap);
 }
+
+/* function that runs when map is clicked. Adds popup and
+   puts 10 days of data into stats box */
 
 function imagePopup(e) {
     //var e = leafletEvent.originalEvent;
@@ -89,13 +100,38 @@ function imagePopup(e) {
         
         canvas.getContext('2d').clearRect(0, 0, imgWidth, imgHeight);
         canvas.getContext('2d').drawImage(imgVars, 0, 0, imgWidth, imgHeight);
-        var varsData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight); 
+        let varsData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight); 
         red = varsData.data[0];
         green = varsData.data[1];
         blue = varsData.data[2];
         let accprcp = ((red / 255) * 200).toFixed(3);
         let acsnom = ((green / 255) * 200).toFixed(3);
         let qsnow = ((blue / 255) * 200).toFixed(3);
+        
+        temp_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event';
+        temp_str += day;
+        temp_str += '_projected.png';
+        imgVars.src = temp_str;
+        
+        canvas.getContext('2d').clearRect(0, 0, imgWidth, imgHeight);
+        canvas.getContext('2d').drawImage(imgVars, 0, 0, imgWidth, imgHeight);
+        varsData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight); 
+        red = varsData.data[0];
+        green = varsData.data[1];
+        blue = varsData.data[2];
+        let max_color = Math.max(varsData.data[0], varsData.data[1], varsData.data[2]);
+        if (red == 0) {
+            risk = 0;
+        } else if (max_color == red) {
+            risk = 3;
+        } else if (max_color == green) {
+            risk = 1;
+        } else {
+            if (red > green) {
+                risk = 2;
+            }
+        }
+        
         let data_by_day = [day+1, risk, accprcp, acsnom, qsnow];
         data_10_days[day] = data_by_day;
         console.log(accprcp);
@@ -117,7 +153,6 @@ function imagePopup(e) {
             statsTable.tBodies[0].rows[j].cells[k].setAttribute("border","1");
         }
     }
-    
        
     popup
         .setLatLng(e.latlng)
