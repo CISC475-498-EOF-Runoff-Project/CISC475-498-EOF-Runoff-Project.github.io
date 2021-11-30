@@ -101,19 +101,19 @@ function imagePopup(e) {
     
     var data_by_day = [1, risk, accprcp, acsnom, qsnow]
     var statsTable = document.getElementById("popupStatsTable");
-    var statsTableBody = document.getElementById("statsTableBody");
+    //var statsTableBody = document.getElementById("statsTableBody");
     
     //iterate through rows
     for(var j = 0; j < 10; j++) {
-        if (statsTable.rows.length < j+1) {
-            statsTable.insertRow(j);
+        if (statsTable.tBodies[0].rows.length < j+1) {
+            statsTable.tBodies[0].insertRow(j);
         }
         //iterate through cells in row
         for (var k = 0; k < 5; k++) {
-            if (statsTable.rows[j].cells.length < k+1) {
-                statsTable.rows[j].insertCell(k);
+            if (statsTable.tBodies[0].rows[j].cells.length < k+1) {
+                statsTable.tBodies[0].rows[j].insertCell(k);
             }
-            statsTable.rows[j].cells[k].innerHTML = data_by_day[k];
+            statsTable.tBodies[0].rows[j].cells[k].innerHTML = data_by_day[k];
         }
     }
        
