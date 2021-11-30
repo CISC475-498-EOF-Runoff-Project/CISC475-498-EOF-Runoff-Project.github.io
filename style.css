@@ -75,13 +75,6 @@
   .navigation-item-a:hover {
     background-color: rgb(68, 233, 156);
   }
-
- .green-box-text{
-    text-align:center;
-    position:absolute;
-    color: white;
-    font-size: 60px
-  }
   
   .page-header {
     background-color: white;
@@ -185,6 +178,15 @@
     font-size:50px
   }
   
+  .green-box-text{
+    text-align:center;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    color: rgb(255, 255, 255);
+    font-size: 50px
+  }
+
   .bi {
     vertical-align: -.125em;
     fill: currentColor;
