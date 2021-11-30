@@ -105,15 +105,15 @@ function imagePopup(e) {
     
     //iterate through rows
     for(var j = 0; j < 10; j++) {
-        if (statsTable.body.rows.length < j+1) {
-            statsTable.body.insertRow(j);
+        if (statsTable.rows.length < j+1) {
+            statsTable.insertRow(j);
         }
         //iterate through cells in row
         for (var k = 0; k < 5; k++) {
-            if (statsTable.body.rows[j].cells.length < k+1) {
-                statsTable.body.rows[j].insertCell(k);
+            if (statsTable.rows[j].cells.length < k+1) {
+                statsTable.rows[j].insertCell(k);
             }
-            statsTable.body.rows[j].cells[k].innerHTML = data_by_day[k];
+            statsTable.rows[j].cells[k].innerHTML = data_by_day[k];
         }
     }
        
