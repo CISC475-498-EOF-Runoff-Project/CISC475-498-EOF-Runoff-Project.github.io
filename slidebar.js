@@ -16,7 +16,7 @@ var val = document.getElementById("valR").value;
             
         d.setDate(d.getDate());
             var dNoTime = months[d.getMonth()]+' '+d.getDate()+', '+d.getFullYear();
-                  console.log(dNoTime);
+                  console.log(d.getMonth());
           document.getElementById("show_time").innerHTML = dNoTime;
             window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_vars.png");
             //document.getElementById("plugin").src = "https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_day0.pdf";            
