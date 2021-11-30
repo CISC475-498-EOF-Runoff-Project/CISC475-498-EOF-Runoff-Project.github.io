@@ -97,6 +97,10 @@ function imagePopup(e) {
     var varsData;
     
     for(var day = 0; day < 10; day++) {
+        accprcp = 0.0;
+        acsnom = 0.0;
+        qsnow = 0.0;
+        
         let temp_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event';
         temp_str += day;
         temp_str += '_vars.png';
