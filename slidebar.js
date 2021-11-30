@@ -4,7 +4,6 @@ var val = document.getElementById("valR").value;
         document.getElementById("range").innerHTML=val;
         
 //showVal() updates the (right now it is in pdf format) image of the runoff prediction based on where the user slides the slide bar
-//i (erin) am attempting to get the statistics box to show up with this action as well
 
         function showVal(newVal){
           document.getElementById("range").innerHTML=newVal;
@@ -18,13 +17,15 @@ var val = document.getElementById("valR").value;
             //document.getElementById("plugin").src = "https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_day0.pdf";            
            } else if(newVal == 2) {
             const d = new Date();
-        d.setDate(d.getDate()+1);
+            const dNoTime = d.getFullMonth()+' '+d.getDate()+1+', '+d.getFullYear();
+        d.setDate(dNoTime);
           document.getElementById("show_time").innerHTML = d;
             window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event1_projected.png");
             //document.getElementById("plugin").src = "https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_day1.pdf";
            }else if(newVal == 3){
             const d = new Date();
-        d.setDate(d.getDate()+2);
+            const dNoTime = d.getFullMonth()+' '+d.getDate()+2+', '+d.getFullYear();
+        d.setDate(dNoTime);
           document.getElementById("show_time").innerHTML = d;
             window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event2_projected.png");
             //document.getElementById("plugin").src = "https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_day2.pdf";
