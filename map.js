@@ -134,8 +134,7 @@ function imagePopup(e) {
         }
         
         let data_by_day = [day+1, risk, accprcp, acsnom, qsnow];
-        let data_test = [day+1, day, day, day, day];
-        data_10_days[day] = data_test;
+        data_10_days[day] = data_by_day;
         console.log(data_10_days[0]);
     }
     var statsTable = document.getElementById("popupStatsTable");
