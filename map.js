@@ -91,7 +91,10 @@ function imagePopup(e) {
 
     var imgVars = document.createElement('img');
     var data_10_days = new Array(10);
-
+    var accprcp = 0.0;
+    var acsnom = 0.0;
+    var qsnow = 0.0;
+    
     for(var day = 0; day < 10; day++) {
         let temp_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event';
         temp_str += day;
@@ -105,9 +108,9 @@ function imagePopup(e) {
         red = varsData.data[0];
         green = varsData.data[1];
         blue = varsData.data[2];
-        let accprcp = ((red / 255) * 200).toFixed(3);
-        let acsnom = ((green / 255) * 200).toFixed(3);
-        let qsnow = ((blue / 255) * 200).toFixed(3);
+        accprcp = ((red / 255) * 200).toFixed(3);
+        acsnom = ((green / 255) * 200).toFixed(3);
+        qsnow = ((blue / 255) * 200).toFixed(3);
         
         temp_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event';
         temp_str += day;
