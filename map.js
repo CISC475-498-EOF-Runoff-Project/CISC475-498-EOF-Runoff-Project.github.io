@@ -96,8 +96,9 @@ function imagePopup(e) {
         let accprcp = ((red / 255) * 200).toFixed(3);
         let acsnom = ((green / 255) * 200).toFixed(3);
         let qsnow = ((blue / 255) * 200).toFixed(3);
-        let data_by_day = [1, risk, accprcp, acsnom, qsnow];
+        let data_by_day = [day+1, risk, accprcp, acsnom, qsnow];
         data_10_days[day] = data_by_day;
+        console.log(accprcp);
     }
     var statsTable = document.getElementById("popupStatsTable");
     //var statsTableBody = document.getElementById("statsTableBody");
