@@ -95,7 +95,7 @@ function imagePopup(e) {
         let canvas = document.createElement('canvas');
         canvas.width = imgWidth;
         canvas.height = imgHeight;
-        canvas.getContext('2d').drawImage(imgEvent, 0, 0, imgWidth, imgHeight);
+        //canvas.getContext('2d').drawImage(imgEvent, 0, 0, imgWidth, imgHeight);
         
         let temp_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event';
         temp_str += day;
