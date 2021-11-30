@@ -54,16 +54,7 @@ function imagePopup(e) {
     var imgEvent = document.createElement('img');
     //imgEvent.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_clear.png';
     imgEvent.src = window.imageOverlay.getElement().src;
-    
-    var imgVars = document.createElement('img');
-    let test_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_clear.png';
-    let test_arr = test_str.split("Event");
-    console.log(test_arr);
-    let temp_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event';
-    temp_str += '0';
-    temp_str += '_vars.png';
-    imgVars.src = temp_str;
-    
+        
     var canvas = document.createElement('canvas');
     canvas.width = imgWidth;
     canvas.height = imgHeight;
@@ -87,9 +78,15 @@ function imagePopup(e) {
         }
     }                
 
+    var imgVars = document.createElement('img');
     var data_10_days = new Array(10);
 
     for(var day = 0; day < 10; day++) {
+        let temp_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event';
+        temp_str += day;
+        temp_str += '_vars.png';
+        imgVars.src = temp_str;
+        
         canvas.getContext('2d').clearRect(0, 0, imgWidth, imgHeight);
         canvas.getContext('2d').drawImage(imgVars, 0, 0, imgWidth, imgHeight);
         var varsData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight); 
