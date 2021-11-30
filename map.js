@@ -71,10 +71,10 @@ function imagePopup(e) {
     canvas.height = imgHeight;
     canvas.getContext('2d').drawImage(imgEvent, 0, 0, imgWidth, imgHeight);
     var pixelData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight);
-    let red = pixelData.data[0];
-    let green = pixelData.data[1];
-    let blue = pixelData.data[2];
-    let max_color = Math.max(pixelData.data[0], pixelData.data[1], pixelData.data[2]);
+    var red = pixelData.data[0];
+    var green = pixelData.data[1];
+    var blue = pixelData.data[2];
+    var max_color = Math.max(pixelData.data[0], pixelData.data[1], pixelData.data[2]);
     var risk = 0;
     if (red == 0) {
         risk = 0;
