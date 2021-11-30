@@ -94,6 +94,7 @@ function imagePopup(e) {
     var accprcp = 0.0;
     var acsnom = 0.0;
     var qsnow = 0.0;
+    var varsData;
     
     for(var day = 0; day < 10; day++) {
         let temp_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event';
@@ -104,7 +105,7 @@ function imagePopup(e) {
         
         canvas.getContext('2d').clearRect(0, 0, imgWidth, imgHeight);
         canvas.getContext('2d').drawImage(imgVars, 0, 0, imgWidth, imgHeight);
-        let varsData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight); 
+        varsData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight); 
         red = varsData.data[0];
         green = varsData.data[1];
         blue = varsData.data[2];
