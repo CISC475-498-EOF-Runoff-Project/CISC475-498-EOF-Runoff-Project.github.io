@@ -96,9 +96,8 @@ function imagePopup(e) {
         let temp_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event';
         temp_str += day;
         temp_str += '_vars.png';
-        console.log(temp_str);
         imgVars.src = temp_str;
-        
+        console.log(imgVars.src);
         
         canvas.getContext('2d').clearRect(0, 0, imgWidth, imgHeight);
         canvas.getContext('2d').drawImage(imgVars, 0, 0, imgWidth, imgHeight);
@@ -136,7 +135,7 @@ function imagePopup(e) {
         
         let data_by_day = [day+1, risk, accprcp, acsnom, qsnow];
         data_10_days[day] = data_by_day;
-        console.log(accprcp);
+        console.log(data_10_days[0]);
     }
     var statsTable = document.getElementById("popupStatsTable");
     //var statsTableBody = document.getElementById("statsTableBody");
