@@ -90,7 +90,7 @@ function imagePopup(e) {
     }                
 
     var imgVars = document.createElement('img');
-    var data_10_days = new Array(10);
+    var data_10_days = [];
     var accprcp = 0.0;
     var acsnom = 0.0;
     var qsnow = 0.0;
