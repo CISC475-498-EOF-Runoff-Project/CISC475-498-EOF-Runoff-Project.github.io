@@ -9,17 +9,26 @@ var val = document.getElementById("valR").value;
         function showVal(newVal){
           document.getElementById("range").innerHTML=newVal;
           //call stat box display method      
-          if(newVal == 1)  
+          if(newVal == 1) {
             //window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_clear.png");
+            const d = new Date();
+        d.setDate(d.getDate());
+          document.getElementById("show_time").innerHTML = d;
             window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_vars.png");
             //document.getElementById("plugin").src = "https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_day0.pdf";            
-          else if(newVal == 2)  
+           } else if(newVal == 2) {
+            const d = new Date();
+        d.setDate(d.getDate()+1);
+          document.getElementById("show_time").innerHTML = d;
             window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event1_projected.png");
             //document.getElementById("plugin").src = "https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_day1.pdf";
-          else if(newVal == 3)
+           }else if(newVal == 3){
+            const d = new Date();
+        d.setDate(d.getDate()+2);
+          document.getElementById("show_time").innerHTML = d;
             window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event2_projected.png");
             //document.getElementById("plugin").src = "https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_day2.pdf";
-          else if(newVal == 4)
+           }else if(newVal == 4)
             window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event3_projected.png");
             //document.getElementById("plugin").src = "https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_day3.pdf";
           else if(newVal == 5)
