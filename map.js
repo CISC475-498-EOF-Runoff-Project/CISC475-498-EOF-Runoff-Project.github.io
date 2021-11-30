@@ -60,9 +60,9 @@ function imagePopup(e) {
 
     const x = Math.round(zoomedX * imgWidth / rect.width);
     const y = Math.round(zoomedY * imgHeight / rect.height);
-    console.log(x, y);
-    
+    /*
     var imgEvent = document.createElement('img');
+    
     //imgEvent.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_clear.png';
     imgEvent.src = window.imageOverlay.getElement().src;
         
@@ -88,18 +88,14 @@ function imagePopup(e) {
             risk = 2;
         }
     }                
-
+    */
     var imgVars = document.createElement('img');
-    var data_10_days = [];
-    var accprcp = 0.0;
-    var acsnom = 0.0;
-    var qsnow = 0.0;
-    var varsData;
-    
+    var data_10_days = [];    
     for(var day = 0; day < 10; day++) {
-        accprcp = 0.0;
-        acsnom = 0.0;
-        qsnow = 0.0;
+        let canvas = document.createElement('canvas');
+        canvas.width = imgWidth;
+        canvas.height = imgHeight;
+        canvas.getContext('2d').drawImage(imgEvent, 0, 0, imgWidth, imgHeight);
         
         let temp_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event';
         temp_str += day;
@@ -109,13 +105,13 @@ function imagePopup(e) {
         
         canvas.getContext('2d').clearRect(0, 0, imgWidth, imgHeight);
         canvas.getContext('2d').drawImage(imgVars, 0, 0, imgWidth, imgHeight);
-        varsData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight); 
-        red = varsData.data[0];
-        green = varsData.data[1];
-        blue = varsData.data[2];
-        accprcp = ((red / 255) * 200).toFixed(3);
-        acsnom = ((green / 255) * 200).toFixed(3);
-        qsnow = ((blue / 255) * 200).toFixed(3);
+        let varsData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight); 
+        let red = varsData.data[0];
+        let green = varsData.data[1];
+        let blue = varsData.data[2];
+        let accprcp = ((red / 255) * 200).toFixed(3);
+        let acsnom = ((green / 255) * 200).toFixed(3);
+        let qsnow = ((blue / 255) * 200).toFixed(3);
         
         temp_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event';
         temp_str += day;
