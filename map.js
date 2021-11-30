@@ -124,6 +124,7 @@ function imagePopup(e) {
         red = varsData.data[0];
         green = varsData.data[1];
         blue = varsData.data[2];
+        let risk = 0.0;
         let max_color = Math.max(varsData.data[0], varsData.data[1], varsData.data[2]);
         if (red == 0) {
             risk = 0;
