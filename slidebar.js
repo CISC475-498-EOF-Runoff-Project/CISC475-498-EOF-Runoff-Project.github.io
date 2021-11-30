@@ -16,6 +16,7 @@ var val = document.getElementById("valR").value;
             
         d.setDate(d.getDate());
             var dNoTime = months[d.getMonth()]+' '+d.getDate()+', '+d.getFullYear();
+                  console.log(dNoTime);
           document.getElementById("show_time").innerHTML = dNoTime;
             window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_vars.png");
             //document.getElementById("plugin").src = "https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_day0.pdf";            
@@ -24,6 +25,7 @@ var val = document.getElementById("valR").value;
             
         d.setDate(dNoTime);
             var dNoTime = months[d.getMonth()]+' '+(d.getDate()+1)+', '+d.getFullYear();
+                   console.log(dNoTime);
           document.getElementById("show_time").innerHTML = dNoTime;
             window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event1_projected.png");
             //document.getElementById("plugin").src = "https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_day1.pdf";
@@ -32,6 +34,7 @@ var val = document.getElementById("valR").value;
            
         d.setDate(dNoTime);
             var dNoTime = months[d.getMonth()]+' '+(d.getDate()+2)+', '+d.getFullYear();
+                   console.log(dNoTime);
           document.getElementById("show_time").innerHTML = dNoTime;
             window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event2_projected.png");
             //document.getElementById("plugin").src = "https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_day2.pdf";
