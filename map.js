@@ -114,8 +114,10 @@ function imagePopup(e) {
                 statsTable.tBodies[0].rows[j].insertCell(k);
             }
             statsTable.tBodies[0].rows[j].cells[k].innerHTML = data_by_day[k];
+            statsTable.tBodies[0].rows[j].cells[k].setAttribute("border","1");
         }
     }
+    
        
     popup
         .setLatLng(e.latlng)
