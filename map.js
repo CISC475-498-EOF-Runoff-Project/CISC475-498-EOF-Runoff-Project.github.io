@@ -108,34 +108,32 @@ function imagePopup(e) {
         let accprcp = ((varsRed / 255) * 200).toFixed(2);
         let acsnom = ((varsGreen / 255) * 200).toFixed(2);
         let qsnow = ((varsBlue / 255) * 200).toFixed(2);
-        risk = 0.0; //temp
         
-        temp_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event';
-        temp_str += day;
-        temp_str += '_projected.png';
-        imgVars.src = temp_str;
+        let imgRisk = document.createElement('img');
+        let risk_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_projected.png';
+        imgRisk.src = risk_str;
         
         canvas.getContext('2d').clearRect(0, 0, imgWidth, imgHeight);
-        canvas.getContext('2d').drawImage(imgVars, 0, 0, imgWidth, imgHeight);
-        varsData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight); 
-        red = varsData.data[0];
-        green = varsData.data[1];
-        blue = varsData.data[2];
-        //risk = 0.0;
-        max_color = Math.max(varsData.data[0], varsData.data[1], varsData.data[2]);
+        canvas.getContext('2d').drawImage(imgRisk, 0, 0, imgWidth, imgHeight);
+        let riskData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight); 
+        let riskRed = riskData.data[0];
+        let riskGreen = riskData.data[1];
+        let riskBlue = riskData.data[2];
+        let daily_risk = 0.0;
+        let max_risk_color = Math.max(varsData.data[0], varsData.data[1], varsData.data[2]);
         if (red == 0) {
-            risk = 0;
-        } else if (max_color == red) {
-            risk = 3;
-        } else if (max_color == green) {
-            risk = 1;
+            daily_risk = 0;
+        } else if (max_risk_color == red) {
+            daily_risk = 3;
+        } else if (max_risk_color == green) {
+            daily_risk = 1;
         } else {
             if (red > green) {
-                risk = 2;
+                daily_risk = 2;
             }
         }
         
-        let data_by_day = [day+1, risk, accprcp, acsnom, qsnow];
+        let data_by_day = [day+1, daily_risk, accprcp, acsnom, qsnow];
         data_10_days[day] = data_by_day;
         //console.log(data_10_days[0]);
     }
