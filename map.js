@@ -107,9 +107,9 @@ function imagePopup(e) {
         let varsRed = varsData.data[0];
         let varsGreen = varsData.data[1];
         let varsBlue = varsData.data[2];
-        let accprcp = ((varsRed / 255) * 200).toFixed(3);
-        let acsnom = ((varsGreen / 255) * 200).toFixed(3);
-        let qsnow = ((varsBlue / 255) * 200).toFixed(3);
+        let accprcp = ((varsRed / 255) * 200).toFixed(2);
+        let acsnom = ((varsGreen / 255) * 200).toFixed(2);
+        let qsnow = ((varsBlue / 255) * 200).toFixed(2);
         risk = 0.0; //temp
         
         temp_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event';
@@ -162,7 +162,7 @@ function imagePopup(e) {
     popup
         .setLatLng(e.latlng)
         //.setContent("R: " + pixelData.data[0] + ", G: " + pixelData.data[1] + ", B: " + pixelData.data[2])
-        .setContent('<H6>RISK: ' + risk + '</H6><br><p>' + "R: " + pixelData.data[0] + ", G: " + pixelData.data[1] + ", B: " + pixelData.data[2] + '</p>')
+        .setContent('<H6>RISK: ' + risk + '</H6>')
         .openOn(mymap);
    
 }
