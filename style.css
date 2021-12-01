@@ -234,15 +234,13 @@
     -moz-user-select: none;
     user-select: none;
   }
-  .slidecontainer {
-    width: 100%;
-  }
+  
   
   .slider {
     margin: auto;
-    margin-left: 150px;
+    margin-left: 0px;
     -webkit-appearance: none;
-    width: 25%;
+    width: 50%;
     height: 25px;
     background: #d3d3d3;
     outline: none;
