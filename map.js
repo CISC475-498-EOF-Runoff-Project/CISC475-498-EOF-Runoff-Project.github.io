@@ -121,14 +121,14 @@ function imagePopup(e) {
         let riskBlue = riskData.data[2];
         let daily_risk = 0.0;
         let max_risk_color = Math.max(riskData.data[0], riskData.data[1], riskData.data[2]);
-        if (red == 0) {
+        if (riskRed == 0) {
             daily_risk = 0;
-        } else if (max_risk_color == red) {
+        } else if (max_risk_color == riskRed) {
             daily_risk = 3;
-        } else if (max_risk_color == green) {
+        } else if (max_risk_color == riskGreen) {
             daily_risk = 1;
         } else {
-            if (red > green) {
+            if (riskRed > riskGreen) {
                 daily_risk = 2;
             }
         }
