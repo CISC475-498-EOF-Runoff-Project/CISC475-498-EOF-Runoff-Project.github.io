@@ -132,12 +132,12 @@ function imagePopup(e) {
                 daily_risk = 2;
             }
         }
-        
-        let data_by_day = [day+1, daily_risk, accprcp, acsnom, qsnow];
+        let formatted_day = new Date();
+        formatted_day = formatted_day.getDate()+day;
+        let data_by_day = [formatted_day, daily_risk, accprcp, acsnom, qsnow];
         data_10_days[day] = data_by_day;
     }
     var statsTable = document.getElementById("popupStatsTable");
-    //var statsTableBody = document.getElementById("statsTableBody");
     
     //iterate through rows
     for(var j = 0; j < 10; j++) {
