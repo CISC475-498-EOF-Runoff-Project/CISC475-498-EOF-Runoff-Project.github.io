@@ -14,7 +14,7 @@ function showVal(newVal) {
   if(newVal == 1) {
     targetDate.setDate(targetDate.getDate() + 0);
     var date_to_show = days[targetDate.getDay()] + ", " + months[targetDate.getMonth()] + " " + targetDate.getDate() + ", " + targetDate.getFullYear();
-    document.getElementById("show_time").innerHTML = <strong>Currently Viewing: </strong>date_to_show;
+    document.getElementById("show_time").innerHTML = date_to_show;
     window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_vars.png");
     var table = document.getElementById("popupStatsTable");
     //if (table.tBodies[0].rows.length >= newVal) {
