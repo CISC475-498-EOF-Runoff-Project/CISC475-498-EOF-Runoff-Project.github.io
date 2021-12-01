@@ -19,7 +19,7 @@ function showVal(newVal) {
     var table = document.getElementById("popupStatsTable");
     var tableBody = document.getElementById("statsTableBody");
     if (table.tBodies[0].rows.length >= newVal) {
-      table.tBodies[0].rows[newVal-1].style.color="blue";
+      table.tBodies[0].rows[newVal-1].style.backgroundColor="grey";
     }
   }
   else if(newVal == 2) {
