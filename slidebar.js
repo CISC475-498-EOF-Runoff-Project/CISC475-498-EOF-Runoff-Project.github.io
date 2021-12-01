@@ -9,18 +9,19 @@ var val = document.getElementById("valR").value;
           const months =  ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
           
           document.getElementById("range").innerHTML=newVal;
-          var today = new Date();
+          var targetDate = new Date();
           
           //call stat box display method      
           if(newVal == 1) {
+            var targetDate.setDate(targetDate.getDate() + 0);
             //var date_to_show = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-            var date_to_show = months[today.getMonth()] + " " + today.getDate() + ", " + today.getFullYear();
+            var date_to_show = months[targetDate.getMonth()] + " " + targetDate.getDate() + ", " + targetDate.getFullYear();
             document.getElementById("show_time").innerHTML = date_to_show;
             window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_vars.png");
           } 
           else if(newVal == 2) {
-            var day = today + 1;
-            var date_to_show = day.getFullYear()+'-'+(day.getMonth()+1)+'-'+day.getDate();
+            var targetDate.setDate(targetDate.getDate() + 0);
+            var date_to_show = targetDate.getFullYear()+'-'+(targetDate.getMonth()+1)+'-'+targetDate.getDate();
             document.getElementById("show_time").innerHTML = date_to_show;
             window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event1_projected.png");
           } 
