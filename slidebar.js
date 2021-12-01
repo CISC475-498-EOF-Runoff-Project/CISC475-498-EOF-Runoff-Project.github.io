@@ -10,17 +10,12 @@ function showVal(newVal) {
   document.getElementById("range").innerHTML=newVal;
   var targetDate = new Date();
 
-  //call stat box display method      
+  //call stat box display method   
   if(newVal == 1) {
     targetDate.setDate(targetDate.getDate() + 0);
     var date_to_show = days[targetDate.getDay()] + ", " + months[targetDate.getMonth()] + " " + targetDate.getDate() + ", " + targetDate.getFullYear();
     document.getElementById("show_time").innerHTML = date_to_show;
-    window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_vars.png");
-    var table = document.getElementById("popupStatsTable");
-    var tableBody = document.getElementById("statsTableBody");
-    if (table.tBodies[0].rows.length >= newVal) {
-      table.tBodies[0].rows[newVal-1].style.backgroundColor="grey";
-    }
+    window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_projecte.png");
   }
   else if(newVal == 2) {
     targetDate.setDate(targetDate.getDate() + 1);
@@ -76,4 +71,16 @@ function showVal(newVal) {
     document.getElementById("show_time").innerHTML = date_to_show;
     window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event9_projected.png");
   }
+  var table = document.getElementById("popupStatsTable");
+  //if (table.tBodies[0].rows.length >= newVal) {
+  //  table.tBodies[0].rows[newVal-1].style.backgroundColor="grey";
+  //}
+  for (var i = 0; i < table.tBodies[0].rows.length; i++) {
+    if (i == newVal-1) {
+      table.tBodies[0].rows[i].style.backgroundColor="grey";
+    }
+    else {
+      table.tBodies[0].rows[i].style.backgroundColor="transparent";
+    }
 }
+
