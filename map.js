@@ -120,7 +120,7 @@ function imagePopup(e) {
         let riskGreen = riskData.data[1];
         let riskBlue = riskData.data[2];
         let daily_risk = 0.0;
-        let max_risk_color = Math.max(varsData.data[0], varsData.data[1], varsData.data[2]);
+        let max_risk_color = Math.max(riskData.data[0], riskData.data[1], riskData.data[2]);
         if (red == 0) {
             daily_risk = 0;
         } else if (max_risk_color == red) {
@@ -135,7 +135,6 @@ function imagePopup(e) {
         
         let data_by_day = [day+1, daily_risk, accprcp, acsnom, qsnow];
         data_10_days[day] = data_by_day;
-        //console.log(data_10_days[0]);
     }
     var statsTable = document.getElementById("popupStatsTable");
     //var statsTableBody = document.getElementById("statsTableBody");
