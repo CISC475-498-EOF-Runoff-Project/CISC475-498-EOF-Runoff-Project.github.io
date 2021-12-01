@@ -83,5 +83,6 @@ function showVal(newVal) {
       table.tBodies[0].rows[i].style.backgroundColor="transparent";
     }
   }
+  window.popup.update()
 }
 
