@@ -12,15 +12,15 @@ function showVal(newVal) {
 
   //call stat box display method      
   if(newVal == 1) {
-    targetDate.setDate(targetDate.getDate() + 31);
+    targetDate.setDate(targetDate.getDate() + 0);
     var date_to_show = days[targetDate.getDay()] + ", " + months[targetDate.getMonth()] + " " + targetDate.getDate() + ", " + targetDate.getFullYear();
     document.getElementById("show_time").innerHTML = date_to_show;
     window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_vars.png");
     var table = document.getElementById("popupStatsTable");
     var tableBody = document.getElementById("statsTableBody");
-    //if (table.tBodies[0].rows.length >= newVal) {
-    //  table.tBodies[0].rows[newVal-1].style.color = #ffffff;
-    //}
+    if (table.tBodies[0].rows.length >= newVal) {
+      table.tBodies[0].rows[newVal-1].style.color="blue";
+    }
   }
   else if(newVal == 2) {
     targetDate.setDate(targetDate.getDate() + 1);
