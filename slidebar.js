@@ -19,9 +19,10 @@ function showVal(newVal) {
     document.getElementById("show_time").innerHTML = date_to_show;
     window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_vars.png");
     var table = document.getElementById("statsTable");
-    if (table.tBodies[0].rows.length >= newVal) {
-      table.tBodies[0].rows[newVal-1].style.color = #ffffff;
-    }
+    
+    //if (table.tBodies[0].rows.length >= newVal) {
+    //  table.tBodies[0].rows[newVal-1].style.color = #ffffff;
+    //}
 
   } 
   else if(newVal == 2) {
