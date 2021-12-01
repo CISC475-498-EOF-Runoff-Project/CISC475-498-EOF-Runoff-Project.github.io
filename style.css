@@ -77,11 +77,11 @@
   }
   
   .page-header {
-    background-color: white;
+    background-color: rgb(185, 32, 32);
   }
 
   .page-title {
-    margin-right: 5px;
+    margin-right: 115px;
   }
 
   .header-link {
@@ -183,7 +183,7 @@
   .bg-image {
     background-image: url("https://i2.wp.com/healthylakes.org/wp-content/uploads/2018/09/brighter-In-Your-State-subject-Great-Lakes-from-Space-Credit-NOAA-Great-Lakes-CoastWatch.-2.jpg?resize=1080%2C675&ssl=1");
     background-color: #ffffff;
-    height: 700px; //originally was fourhundred px
+    height: 600px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -196,8 +196,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: rgb(255, 255, 255); //white
-    font-size:50px
+    color: rgb(185, 239, 248); //white
+    font: size 100px;
   }
   
   
