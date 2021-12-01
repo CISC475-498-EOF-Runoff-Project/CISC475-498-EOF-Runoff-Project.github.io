@@ -133,7 +133,7 @@ function imagePopup(e) {
             }
         }
         let formatted_day = new Date();
-        formatted_day = formatted_day.getDate()+day;
+        formatted_day.setDate(formatted_day.getDate() + day);
         let data_by_day = [formatted_day, daily_risk, accprcp, acsnom, qsnow];
         data_10_days[day] = data_by_day;
     }
