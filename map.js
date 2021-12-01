@@ -40,13 +40,7 @@ mymap.setMaxBounds([
 
 /* make popup object to display when map is clicked */
 
-var popup = L.popup();
-function makePopup(e) {
-    popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked map at " + e.latlng.toString())
-        .openOn(mymap);
-}
+window.popup = L.popup();
 
 /* function that runs when map is clicked. Adds popup and
    puts 10 days of data into stats box */
@@ -155,7 +149,7 @@ function imagePopup(e) {
         }
     }
        
-    popup
+    window.popup
         .setLatLng(e.latlng)
         //.setContent("R: " + pixelData.data[0] + ", G: " + pixelData.data[1] + ", B: " + pixelData.data[2])
         .setContent('<H6>RISK: ' + risk + '</H6>')
