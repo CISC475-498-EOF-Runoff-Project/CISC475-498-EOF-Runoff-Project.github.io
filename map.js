@@ -111,7 +111,7 @@ function imagePopup(e) {
         let acsnom = ((varsGreen / 255) * 200).toFixed(3);
         let qsnow = ((varsBlue / 255) * 200).toFixed(3);
         risk = 0.0; //temp
-        /*
+        
         temp_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event';
         temp_str += day;
         temp_str += '_projected.png';
@@ -123,8 +123,8 @@ function imagePopup(e) {
         red = varsData.data[0];
         green = varsData.data[1];
         blue = varsData.data[2];
-        let risk = 0.0;
-        let max_color = Math.max(varsData.data[0], varsData.data[1], varsData.data[2]);
+        //risk = 0.0;
+        max_color = Math.max(varsData.data[0], varsData.data[1], varsData.data[2]);
         if (red == 0) {
             risk = 0;
         } else if (max_color == red) {
@@ -136,7 +136,7 @@ function imagePopup(e) {
                 risk = 2;
             }
         }
-        */
+        
         let data_by_day = [day+1, risk, accprcp, acsnom, qsnow];
         data_10_days[day] = data_by_day;
         console.log(data_10_days[0]);
