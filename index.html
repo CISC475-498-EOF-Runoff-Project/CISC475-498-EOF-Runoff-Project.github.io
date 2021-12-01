@@ -120,6 +120,14 @@
     <input class="slider" id="valR" type="range" min="1" max="10" value="1" step="1" oninput="showVal(this.value)" onchange="showVal(this.value)" />
     <p>Day:<span id="range"></span></p>
     <p><span id="show_time"></span></p>
+    <script>
+      var show_time = document.getElementById("show_time");
+      var current_date = new Date();
+      var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+      var day = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+      var pretty_time = `${day[current_date.getDay()]}, ${months[current_date.getMonth()]} ${current_date.getDate()}, ${current_date.getFullYear()}`
+      show_time.innerHTML = pretty_time;
+    </script>
     <img id="img">
   </div>
 </section>
