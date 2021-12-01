@@ -12,7 +12,7 @@ function showVal(newVal) {
 
   //call stat box display method      
   if(newVal == 1) {
-    targetDate.setDate(targetDate.getDate() + 30);
+    targetDate.setDate(targetDate.getDate() + 31);
     var date_to_show = days[targetDate.getDay()] + ", " + months[targetDate.getMonth()] + " " + targetDate.getDate() + ", " + targetDate.getFullYear();
     document.getElementById("show_time").innerHTML = date_to_show;
     window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_vars.png");
