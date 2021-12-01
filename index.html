@@ -120,6 +120,14 @@
     <input class="slider" id="valR" type="range" min="1" max="10" value="1" step="1" oninput="showVal(this.value)" onchange="showVal(this.value)" />
     <p>Day:<span id="range"></span></p>
     <p><span id="show_time"></span></p>
+    <script>
+      var show_time = document.getElementById("show_time");
+      var current_date = new Date();
+      var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+      var day = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+      var pretty_time = `${day[current_date.getDay()]}, ${months[current_date.getMonth()]} ${current_date.getDate()}, ${current_date.getFullYear()}`
+      show_time.innerHTML = pretty_time;
+    </script>
     <img id="img">
   </div>
 </section>
@@ -135,22 +143,22 @@
         <div class="slideshow-container">
     
           <div class="mySlides fade">
-            <div class="numbertext">1 / 4</div>
+            <div class="numbertext">1 / 5</div>
             <img src="https://github.com/CISC475-498-EOF-Runoff-Project/CISC475-498-EOF-Runoff-Project.github.io/blob/main/images/BackgroundImage1.png?raw=true" style="width:100%">
           </div>
           
           <div class="mySlides fade">
-            <div class="numbertext">2 / 4</div>
+            <div class="numbertext">2 / 5</div>
             <img src="https://github.com/CISC475-498-EOF-Runoff-Project/CISC475-498-EOF-Runoff-Project.github.io/blob/main/images/BackgroundImage2.png?raw=true" style="width:100%">
           </div>
           
           <div class="mySlides fade">
-            <div class="numbertext">3 / 4</div>
+            <div class="numbertext">3 / 5</div>
             <img src="https://github.com/CISC475-498-EOF-Runoff-Project/CISC475-498-EOF-Runoff-Project.github.io/blob/main/images/BackgroundImage3.png?raw=true" style="width:100%">
           </div>
 
           <div class="mySlides fade">
-            <div class="numbertext">4 / 4</div>
+            <div class="numbertext">4 / 5</div>
             <img src="https://github.com/CISC475-498-EOF-Runoff-Project/CISC475-498-EOF-Runoff-Project.github.io/blob/main/images/BackgroundImage4.png?raw=true" style="width:100%">
           </div>
           
