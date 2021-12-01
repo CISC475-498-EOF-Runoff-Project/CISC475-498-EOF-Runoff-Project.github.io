@@ -82,5 +82,6 @@ function showVal(newVal) {
     else {
       table.tBodies[0].rows[i].style.backgroundColor="transparent";
     }
+  }
 }
 
