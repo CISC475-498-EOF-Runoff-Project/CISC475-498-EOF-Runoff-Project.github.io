@@ -5,9 +5,9 @@ var val = document.getElementById("valR").value;
         
 //showVal() updates the (right now it is in pdf format) image of the runoff prediction based on where the user slides the slide bar
 
-function showVal(newVal){
+function showVal(newVal) {
   const months =  ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
   document.getElementById("range").innerHTML=newVal;
   var targetDate = new Date();
