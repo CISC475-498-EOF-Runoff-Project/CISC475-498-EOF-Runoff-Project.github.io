@@ -13,12 +13,14 @@ var val = document.getElementById("valR").value;
           
           //call stat box display method      
           if(newVal == 1) {
-            var date_to_show = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+            //var date_to_show = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+            var date_to_show = months[(today.getMonth()+1)] + " " + today.getDate() + ", " + today.getFullYear();
             document.getElementById("show_time").innerHTML = date_to_show;
             window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_vars.png");
           } 
           else if(newVal == 2) {
-            var date_to_show = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+            var day = today + 1;
+            var date_to_show = day.getFullYear()+'-'+(day.getMonth()+1)+'-'+day.getDate();
             document.getElementById("show_time").innerHTML = date_to_show;
             window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event1_projected.png");
           } 
