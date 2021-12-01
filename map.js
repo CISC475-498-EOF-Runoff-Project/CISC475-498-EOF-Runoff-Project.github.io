@@ -62,8 +62,6 @@ function imagePopup(e) {
     const y = Math.round(zoomedY * imgHeight / rect.height);
     
     var imgEvent = document.createElement('img');
-    
-    //imgEvent.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event_clear.png';
     imgEvent.src = window.imageOverlay.getElement().src;
         
     var canvas = document.createElement('canvas');
