@@ -20,15 +20,21 @@ var val = document.getElementById("valR").value;
             window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_vars.png");
           } 
           else if(newVal == 2) {
-            var targetDate.setDate(targetDate.getDate() + 0);
+            var targetDate.setDate(targetDate.getDate() + 1);
             var date_to_show = targetDate.getFullYear()+'-'+(targetDate.getMonth()+1)+'-'+targetDate.getDate();
             document.getElementById("show_time").innerHTML = date_to_show;
             window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event1_projected.png");
           } 
           else if(newVal == 3){
+            var targetDate.setDate(targetDate.getDate() + 1);
+            var date_to_show = targetDate.getFullYear()+'-'+(targetDate.getMonth()+1)+'-'+targetDate.getDate();
+            document.getElementById("show_time").innerHTML = date_to_show;
             window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event2_projected.png");
           }
           else if(newVal == 4) {
+            var targetDate.setDate(targetDate.getDate() + 1);
+            var date_to_show = targetDate.getFullYear()+'-'+(targetDate.getMonth()+1)+'-'+targetDate.getDate();
+            document.getElementById("show_time").innerHTML = date_to_show;
             window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event3_projected.png");
           }
           else if(newVal == 5) {
