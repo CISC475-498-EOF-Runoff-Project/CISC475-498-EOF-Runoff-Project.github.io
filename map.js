@@ -163,6 +163,7 @@ function imagePopup(e) {
    
 }
 
-const imgWidth = 1500, imgHeight = 1200;
+//const imgWidth = 1500, imgHeight = 1200;
+const imgWidth = 1600, imgHeight = 1600;
 window.imageOverlay.on('click', imagePopup);
 //mymap.on('click', makePopup);
