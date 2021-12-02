@@ -113,17 +113,17 @@ function imagePopup(e) {
         let riskRed = riskData.data[0];
         let riskGreen = riskData.data[1];
         let riskBlue = riskData.data[2];
-        let daily_risk = 0.0;
+        let daily_risk = "minimal";
         let max_risk_color = Math.max(riskData.data[0], riskData.data[1], riskData.data[2]);
         if (riskRed == 0) {
-            daily_risk = 0;
+            daily_risk = "minimal";
         } else if (max_risk_color == riskRed) {
-            daily_risk = 3;
+            daily_risk = "high";
         } else if (max_risk_color == riskGreen) {
-            daily_risk = 1;
+            daily_risk = "low";
         } else {
             if (riskRed > riskGreen) {
-                daily_risk = 2;
+                daily_risk = "moderate";
             }
         }
         let formatted_day = new Date();
