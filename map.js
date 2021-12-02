@@ -145,7 +145,9 @@ function imagePopup(e) {
                 statsTable.tBodies[0].rows[j].insertCell(k);
             }
             statsTable.tBodies[0].rows[j].cells[k].innerHTML = data_10_days[j][k];
-            statsTable.tBodies[0].rows[j].cells[k].setAttribute("border","1");
+        }
+        if (data_10_days[j][1] == "minimal") {
+            statsTable.tBodies[0].rows[j].cells[1].setAttribute("color","green");
         }
     }
        
