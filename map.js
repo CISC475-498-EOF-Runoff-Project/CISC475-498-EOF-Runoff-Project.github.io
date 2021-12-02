@@ -116,14 +116,14 @@ function imagePopup(e) {
         let daily_risk = "minimal";
         let max_risk_color = Math.max(riskData.data[0], riskData.data[1], riskData.data[2]);
         if (riskRed == 0) {
-            daily_risk = "minimal";
-        } else if (max_risk_color == riskRed) {
-            daily_risk = "high";
-        } else if (max_risk_color == riskGreen) {
             daily_risk = "low";
+        } else if (max_risk_color == riskRed) {
+            daily_risk = "very high";
+        } else if (max_risk_color == riskGreen) {
+            daily_risk = "moderate";
         } else {
             if (riskRed > riskGreen) {
-                daily_risk = "moderate";
+                daily_risk = "high";
             }
         }
         let formatted_day = new Date();
