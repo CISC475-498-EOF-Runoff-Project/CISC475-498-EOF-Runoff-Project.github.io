@@ -116,14 +116,14 @@ function imagePopup(e) {
         let daily_risk = "minimal";
         let max_risk_color = Math.max(riskData.data[0], riskData.data[1], riskData.data[2]);
         if (riskRed == 0) {
-            daily_risk = "low";
+            daily_risk = "minimal";
         } else if (max_risk_color == riskRed) {
-            daily_risk = "very high";
+            daily_risk = "high";
         } else if (max_risk_color == riskGreen) {
-            daily_risk = "moderate";
+            daily_risk = "low";
         } else {
             if (riskRed > riskGreen) {
-                daily_risk = "high";
+                daily_risk = "moderate";
             }
         }
         let formatted_day = new Date();
@@ -147,7 +147,16 @@ function imagePopup(e) {
             statsTable.tBodies[0].rows[j].cells[k].innerHTML = data_10_days[j][k];
         }
         if (data_10_days[j][1] == "minimal") {
-            statsTable.tBodies[0].rows[j].cells[1].setAttribute("color","green");
+            statsTable.tBodies[0].rows[j].cells[1].setAttribute("style","color: green");
+        }
+        else if (data_10_days[j][1] == "low") {
+            statsTable.tBodies[0].rows[j].cells[1].setAttribute("style","color: white");
+        }
+        else if (data_10_days[j][1] == "moderate") {
+            statsTable.tBodies[0].rows[j].cells[1].setAttribute("style","color: yellow");
+        }
+        else {
+            statsTable.tBodies[0].rows[j].cells[1].setAttribute("style","color: red");
         }
     }
        
