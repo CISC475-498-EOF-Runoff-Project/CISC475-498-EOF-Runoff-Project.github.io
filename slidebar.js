@@ -77,7 +77,7 @@ function showVal(newVal) {
   //}
   for (var i = 0; i < table.tBodies[0].rows.length; i++) {
     if (i == newVal-1) {
-      table.tBodies[0].rows[i].style.backgroundColor="grey";
+      table.tBodies[0].rows[i].style.backgroundColor="#707070";
     }
     else {
       table.tBodies[0].rows[i].style.backgroundColor="transparent";
