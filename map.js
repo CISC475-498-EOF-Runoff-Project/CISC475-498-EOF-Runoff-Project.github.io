@@ -153,7 +153,7 @@ function imagePopup(e) {
             }
         }
         if (data_10_days[j][1] == "minimal") {
-            statsTable.tBodies[0].rows[j].cells[1].setAttribute("style","color: lightgreen");
+            statsTable.tBodies[0].rows[j].cells[1].setAttribute("style","color: #BBFFBB");
         }
         else if (data_10_days[j][1] == "low") {
             statsTable.tBodies[0].rows[j].cells[1].setAttribute("style","color: white");
