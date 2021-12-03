@@ -9,6 +9,7 @@ function showVal(newVal) {
 
   document.getElementById("range").innerHTML=newVal;
   var targetDate = new Date();
+  clearpopups();
 
   //call stat box display method   
   if(newVal == 1) {
