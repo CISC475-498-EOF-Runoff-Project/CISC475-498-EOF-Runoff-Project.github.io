@@ -43,9 +43,11 @@ mymap.setMaxBounds([
 window.popup = L.popup();
 
 var statsTableHolder = document.getElementById("statsTableHolder");
+var helperSpan = document.createElement('span');
+helperSpan.setAttribute('style','color:white');
 var helperText = document.createTextNode("Click a region on the map to get more detailed information!");
-helperText.setAttribute("style", "color:white");
-statsTableHolder.appendChild(helperText);
+helperSpan.append(helperText);
+statsTableHolder.appendChild(helperSpan);
 
 
 /* function that runs when map is clicked. Adds popup and
@@ -139,11 +141,18 @@ function imagePopup(e) {
         let data_by_day = [date_to_show, daily_risk, accprcp, acsnom, qsnow];
         data_10_days[day] = data_by_day;
     }
+    
     var statsTable = document.getElementById("popupStatsTable");
+    
+    /*
     for (let i = 0; i < statsTableHolder.childNodes.length; i++) {
         if (statsTableHolder.childNodes[i] == helperText) {
             statsTableHolder.removeChild(helperText);
         }
+    }
+    */
+    if (statsTable.tBodies[0].rows.length == 0) {
+        statsTableHolder.removeChild(helperSpan);
     }
     
     //iterate through rows
