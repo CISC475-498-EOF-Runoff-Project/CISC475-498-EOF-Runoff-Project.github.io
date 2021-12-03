@@ -103,6 +103,7 @@ function imagePopup(e) {
         let acsnom = ((varsGreen / 255) * 200).toFixed(2);
         let qsnow = ((varsBlue / 255) * 200).toFixed(2);
         
+        
         let imgRisk = document.createElement('img');
         let risk_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_projected.png';
         imgRisk.src = risk_str;
@@ -144,7 +145,12 @@ function imagePopup(e) {
             if (statsTable.tBodies[0].rows[j].cells.length < k+1) {
                 statsTable.tBodies[0].rows[j].insertCell(k);
             }
-            statsTable.tBodies[0].rows[j].cells[k].innerHTML = data_10_days[j][k];
+            if (data_10_days[j][k] == 0.00) {
+                statsTable.tBodies[0].rows[j].cells[k].innerHTML = "--";
+            }
+            else {
+                statsTable.tBodies[0].rows[j].cells[k].innerHTML = data_10_days[j][k];
+            }
         }
         if (data_10_days[j][1] == "minimal") {
             statsTable.tBodies[0].rows[j].cells[1].setAttribute("style","color: lightgreen");
