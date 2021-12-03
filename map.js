@@ -159,10 +159,10 @@ function imagePopup(e) {
             statsTable.tBodies[0].rows[j].cells[1].setAttribute("style","color: white");
         }
         else if (data_10_days[j][1] == "moderate") {
-            statsTable.tBodies[0].rows[j].cells[1].setAttribute("style","color: lightyellow");
+            statsTable.tBodies[0].rows[j].cells[1].setAttribute("style","color: #FFA600");
         }
         else {
-            statsTable.tBodies[0].rows[j].cells[1].setAttribute("style","color: lightred");
+            statsTable.tBodies[0].rows[j].cells[1].setAttribute("style","color: #FFAAAA");
         }
     }
        
