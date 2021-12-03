@@ -42,6 +42,12 @@ mymap.setMaxBounds([
 
 window.popup = L.popup();
 
+var statsTable = document.getElementById("popupStatsTable");
+statsTable.tBodies[0].insertRow(0);
+statsTable.tBodies[0].rows[0].insertCell(0);
+statsTable.tBodies[0].
+
+
 /* function that runs when map is clicked. Adds popup and
    puts 10 days of data into stats box */
 
@@ -133,7 +139,7 @@ function imagePopup(e) {
         let data_by_day = [date_to_show, daily_risk, accprcp, acsnom, qsnow];
         data_10_days[day] = data_by_day;
     }
-    var statsTable = document.getElementById("popupStatsTable");
+    //var statsTable = document.getElementById("popupStatsTable");
     
     //iterate through rows
     for(var j = 0; j < 10; j++) {
@@ -174,7 +180,7 @@ function imagePopup(e) {
 }
 
 function clearpopups() {
-    mymap.clearPopup();
+    mymap.closePopup();
 }
 
 //const imgWidth = 1500, imgHeight = 1200;
