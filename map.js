@@ -147,7 +147,7 @@ function imagePopup(e) {
             statsTable.tBodies[0].rows[j].cells[k].innerHTML = data_10_days[j][k];
         }
         if (data_10_days[j][1] == "minimal") {
-            statsTable.tBodies[0].rows[j].cells[1].setAttribute("style","color: green");
+            statsTable.tBodies[0].rows[j].cells[1].setAttribute("style","color: lightgreen");
         }
         else if (data_10_days[j][1] == "low") {
             statsTable.tBodies[0].rows[j].cells[1].setAttribute("style","color: white");
