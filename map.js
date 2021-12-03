@@ -44,7 +44,7 @@ window.popup = L.popup();
 
 var statsTableHolder = document.getElementById("statsTableHolder");
 var helperText = document.createTextNode("Click a region on the map to get more detailed information!");
-var helperText.setAttribute("style", "color:white");
+helperText.setAttribute("style", "color:white");
 statsTableHolder.appendChild(helperText);
 
 
