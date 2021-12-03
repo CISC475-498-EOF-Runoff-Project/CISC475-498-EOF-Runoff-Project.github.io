@@ -1,6 +1,9 @@
 var val = document.getElementById("valR").value;
         document.getElementById("range").innerHTML=val;
-        
+
+// initialize to day 1
+showVal(1);
+
 //showVal() updates the (right now it is in pdf format) image of the runoff prediction based on where the user slides the slide bar
 
 function showVal(newVal) {
