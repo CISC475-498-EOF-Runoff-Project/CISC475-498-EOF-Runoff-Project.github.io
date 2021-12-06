@@ -149,6 +149,9 @@ function imagePopup(e) {
     }
     
     let str = window.imageOverlay.getElement().src;
+    console.log(str):
+    str = window.imageOverlay.getUrl();
+    console.log(str);
     let popupday = str.charAt(-15);
     console.log(popupday);
     popup
