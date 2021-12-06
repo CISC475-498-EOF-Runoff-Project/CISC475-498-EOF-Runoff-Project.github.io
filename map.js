@@ -148,11 +148,10 @@ function imagePopup(e) {
         }
     }
     
-    
+    let str = window.imageOverlay.getElement().src;
+    let popupday = str.charAt(-15);
     popup
         //.setLatLng(e.latlng)
-        let str = window.imageOverlay.getElement().src;
-        let popupday = str.charAt(-15);
         .setContent('<H6>RISK: ' + statsTable.tBodies[0].rows[popupday].cells[1].innerHTML + '</H6>')
         .openOn(mymap);   
 }
