@@ -203,6 +203,7 @@ function clearpopups(newDay) {
     //mymap.closePopup();
     //console.log(window.imageOverlay);
     //console.log(window.imageOverlay.getUrl());
+    let statsTable = document.getElementById("popupStatsTable");
     popup.setContent('<H6>RISK: ' + statsTable.tBodies[0].rows[newDay].cells[1] + '</H6>')
 }
 
