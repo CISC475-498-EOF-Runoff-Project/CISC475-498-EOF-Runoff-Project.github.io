@@ -75,16 +75,16 @@ function imagePopup(e) {
     var green = pixelData.data[1];
     var blue = pixelData.data[2];
     var max_color = Math.max(pixelData.data[0], pixelData.data[1], pixelData.data[2]);
-    var risk = "minimal";
+    var risk = "MINIMAL";
     if (red == 0) {
-        risk = "minimal";
+        risk = "MINIMAL";
     } else if (max_color == red) {
-        risk = "high";
+        risk = "HIGH";
     } else if (max_color == green) {
-        risk = "low";
+        risk = "LOW";
     } else {
         if (red > green) {
-            risk = "moderate";
+            risk = "MODERATE";
         }
     }                
     
@@ -126,18 +126,18 @@ function imagePopup(e) {
         let riskRed = riskData.data[0];
         let riskGreen = riskData.data[1];
         let riskBlue = riskData.data[2];
-        let daily_risk = "minimal";
+        let daily_risk = "MINIMAL";
 
         let max_risk_color = Math.max(riskData.data[0], riskData.data[1], riskData.data[2]);
         if (riskRed == 0) {
-            daily_risk = "minimal";
+            daily_risk = "MINIMAL";
         } else if (max_risk_color == riskRed) {
-            daily_risk = "high";
+            daily_risk = "HIGH";
         } else if (max_risk_color == riskGreen) {
-            daily_risk = "low";
+            daily_risk = "LOW";
         } else {
             if (riskRed > riskGreen) {
-                daily_risk = "moderate";
+                daily_risk = "MODERATE";
             }
         }
         
@@ -178,13 +178,13 @@ function imagePopup(e) {
                 statsTable.tBodies[0].rows[j].cells[k].innerHTML = data_10_days[j][k];
             }
         }
-        if (data_10_days[j][1] == "minimal") {
+        if (data_10_days[j][1] == "MINIMAL") {
             statsTable.tBodies[0].rows[j].cells[1].setAttribute("style","color: #BBFFBB");
         }
-        else if (data_10_days[j][1] == "low") {
+        else if (data_10_days[j][1] == "LOW") {
             statsTable.tBodies[0].rows[j].cells[1].setAttribute("style","color: white");
         }
-        else if (data_10_days[j][1] == "moderate") {
+        else if (data_10_days[j][1] == "MODERATE") {
             statsTable.tBodies[0].rows[j].cells[1].setAttribute("style","color: #FFDDBB");
         }
         else {
@@ -204,7 +204,7 @@ function clearpopups(newDay) {
     //console.log(window.imageOverlay);
     //console.log(window.imageOverlay.getUrl());
     let statsTable = document.getElementById("popupStatsTable");
-    popup.setContent('<H6>RISK: ' + statsTable.tBodies[0].rows[newDay].cells[1] + '</H6>')
+    popup.setContent('<H6>RISK: ' + statsTable.tBodies[0].rows[newDay].cells[1].innerHTML + '</H6>')
 }
 
 //const imgWidth = 1500, imgHeight = 1200;
