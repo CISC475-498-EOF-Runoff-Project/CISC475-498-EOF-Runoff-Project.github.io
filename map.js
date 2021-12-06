@@ -75,16 +75,16 @@ function imagePopup(e) {
     var green = pixelData.data[1];
     var blue = pixelData.data[2];
     var max_color = Math.max(pixelData.data[0], pixelData.data[1], pixelData.data[2]);
-    var risk = 0;
+    var risk = "minimal";
     if (red == 0) {
-        risk = 0;
+        risk = "minimal";
     } else if (max_color == red) {
-        risk = 3;
+        risk = "high";
     } else if (max_color == green) {
-        risk = 1;
+        risk = "low";
     } else {
         if (red > green) {
-            risk = 2;
+            risk = "moderate";
         }
     }                
     
