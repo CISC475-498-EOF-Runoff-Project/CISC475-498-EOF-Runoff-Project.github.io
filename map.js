@@ -98,9 +98,9 @@ function imagePopup(e) {
         //imgVars.src = vars_str;
         let imgVars = new Image();
         imgVars.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_vars.png';
-        let accprcp = 0.0;
-        let acsnom = 0.0;
-        let qsnow = 0.0;
+        var accprcp = 0.0;
+        var acsnom = 0.0;
+        var qsnow = 0.0;
         imgVars.onload = function() {
             
         
@@ -126,7 +126,7 @@ function imagePopup(e) {
         //imgRisk.src = risk_str;
         let imgRisk = new Image();
         imgRisk.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_projected.png';
-        let daily_risk = "minimal";
+        var daily_risk = "minimal";
         imgRisk.onload = function() {
         
             //canvas.getContext('2d').fillStyle = "rgba(0, 0, 0, 0)";
