@@ -150,9 +150,8 @@ function imagePopup(e) {
     
     let str = window.imageOverlay.getElement().src;
     let popupday = str.charAt(str.length - 15);
-    console.log(popupday);
     popup
-        //.setLatLng(e.latlng)
+        .setLatLng(e.latlng)
         .setContent('<H6>RISK: ' + statsTable.tBodies[0].rows[popupday].cells[1].innerHTML + '</H6>')
         .openOn(mymap);   
 }
