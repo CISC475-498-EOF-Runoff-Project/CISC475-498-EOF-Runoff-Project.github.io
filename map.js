@@ -92,14 +92,11 @@ function imagePopup(e) {
     //var imgVars = document.createElement('img');
     var data_10_days = [];    
     for(var day = 0; day < 10; day++) {
+        
         // set html element to correct image
         let imgVars = document.createElement('img');
-        let temp_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event';
-        temp_str += day;
-        temp_str += '_vars.png';
-        imgVars.src = temp_str;
-        
-        // reset canvas
+        let vars_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_projected.png';
+        imgVars.src = vars_str;
         canvas.getContext('2d').clearRect(0, 0, imgWidth, imgHeight);
         canvas.getContext('2d').drawImage(imgVars, 0, 0, imgWidth, imgHeight);
         
