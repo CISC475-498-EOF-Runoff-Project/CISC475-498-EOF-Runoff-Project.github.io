@@ -63,10 +63,10 @@ function imagePopup(e) {
     const x = Math.round(zoomedX * imgWidth / rect.width);
     const y = Math.round(zoomedY * imgHeight / rect.height);
         
-    var canvas = document.createElement('canvas');
-    var ctx = canvas.getContext('2d');
-    canvas.width = imgWidth;
-    canvas.height = imgHeight;
+    //var canvas = document.createElement('canvas');
+    //var ctx = canvas.getContext('2d');
+    //canvas.width = imgWidth;
+    //canvas.height = imgHeight;
     
     var data_10_days = [];    
     for(var day = 0; day < 10; day++) {
@@ -113,7 +113,7 @@ function imagePopup(e) {
         let data_by_day = [date_to_show, daily_risk, accprcp, acsnom, qsnow];
         data_10_days[day] = data_by_day;
         */
-        fillGridRow(day);
+        fillGridRow(x, y, day);
     }
     /*
     var statsTable = document.getElementById("popupStatsTable");
@@ -173,9 +173,13 @@ window.imageOverlay.on('click', imagePopup);
 //mymap.on('click', makePopup);
 
 
-function fillGridRow(img_day) {
+function fillGridRow(x, y, img_day) {
+    
     let imgCanvas = document.createElement('canvas');
+    imgCanvas.width = imgWidth;
+    imgCanvas.height = imgHeight;
     let img_ctx = imgCanvas.getContext('2d');
+    
 
     let imgVars = new Image();
     imgVars.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + img_day + '_vars.png';
