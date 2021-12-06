@@ -201,6 +201,9 @@ function imagePopup(e) {
 
 function clearpopups() {
     mymap.closePopup();
+    console.log(window.imageOverlay);
+    console.log(window.imageOverlay.getUrl());
+    //window.popup.setContent('<H6>RISK: ' + statsTable.tBodies[0].rows[ + '</H6>')
 }
 
 //const imgWidth = 1500, imgHeight = 1200;
