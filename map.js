@@ -70,7 +70,7 @@ function imagePopup(e) {
     
     var data_10_days = [];    
     for(var day = 0; day < 10; day++) {
-        
+        /*
         // set html element to correct image
         let imgVars = new Image();
         imgVars.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_vars.png';
@@ -81,11 +81,11 @@ function imagePopup(e) {
         let acsnom = ((varsData.data[1] / 255) * 200).toFixed(2);
         let qsnow = ((varsData.data[2] / 255) * 200).toFixed(2);
 
-        //let imgRisk = new Image();
-        imgVars.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_projected.png';
+        let imgRisk = new Image();
+        imgRisk.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_projected.png';
         
         ctx.clearRect(0, 0, imgWidth, imgHeight);
-        ctx.drawImage(imgVars, 0, 0, imgWidth, imgHeight);
+        ctx.drawImage(imgRisk, 0, 0, imgWidth, imgHeight);
         let riskData = ctx.getImageData(x, y, imgWidth, imgHeight); 
         let riskRed = riskData.data[0];
         let riskGreen = riskData.data[1];
@@ -112,8 +112,10 @@ function imagePopup(e) {
         }
         let data_by_day = [date_to_show, daily_risk, accprcp, acsnom, qsnow];
         data_10_days[day] = data_by_day;
+        */
+        fillGridRow(day);
     }
-    
+    /*
     var statsTable = document.getElementById("popupStatsTable");
   
     if (statsTable.tBodies[0].rows.length == 0) {
@@ -150,7 +152,7 @@ function imagePopup(e) {
             statsTable.tBodies[0].rows[j].cells[1].setAttribute("style","color: #FFBBBB");
         }
     }
-    
+    */
     let str = window.imageOverlay.getElement().src;
     let popupday = str.charAt(str.length - 15);
     popup
@@ -170,18 +172,71 @@ const imgWidth = 1600, imgHeight = 1600;
 window.imageOverlay.on('click', imagePopup);
 //mymap.on('click', makePopup);
 
-/*
-function fillGrid(img_day) {
+
+function fillGridRow(img_day) {
+    let imgCanvas = document.createElement('canvas');
+    let img_ctx = canvas.getContext('2d');
+
     let imgVars = new Image();
     imgVars.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + img_day + '_vars.png';
-    imgVars.onload = function() {
-        ctx.clearRect(0, 0, imgWidth, imgHeight);
-        ctx.drawImage(imgVars, 0, 0, imgWidth, imgHeight);
-        let varsData = ctx.getImageData(x, y, imgWidth, imgHeight); 
-        let accprcp = ((varsData.data[0] / 255) * 200).toFixed(2);
-        let acsnom = ((varsData.data[1] / 255) * 200).toFixed(2);
-        let qsnow = ((varsData.data[2] / 255) * 200).toFixed(2);
-        
+    
+    img_ctx.clearRect(0, 0, imgWidth, imgHeight);
+    img_ctx.drawImage(imgVars, 0, 0, imgWidth, imgHeight);
+    
+    let varsData = img_ctx.getImageData(x, y, imgWidth, imgHeight); 
+    let accprcp = ((varsData.data[0] / 255) * 200).toFixed(2);
+    let acsnom = ((varsData.data[1] / 255) * 200).toFixed(2);
+    let qsnow = ((varsData.data[2] / 255) * 200).toFixed(2);
+    
+    let imgRisk = new Image();
+    imgRisk.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + img_day + '_projected.png';
+    
+    img_ctx.clearRect(0, 0, imgWidth, imgHeight);
+    img_ctx.drawImage(imgVars, 0, 0, imgWidth, imgHeight);
+    
+    let riskData = img_ctx.getImageData(x, y, imgWidth, imgHeight); 
+    let riskRed = riskData.data[0];
+    let riskGreen = riskData.data[1];
+    let riskBlue = riskData.data[2];
+    let daily_risk = "MINIMAL";
+    let max_risk_color = Math.max(riskData.data[0], riskData.data[1], riskData.data[2]);
+    if (riskRed == 0) {
+        daily_risk = "MINIMAL";
+    } else if (max_risk_color == riskRed) {
+        daily_risk = "HIGH";
+    } else if (max_risk_color == riskGreen) {
+        daily_risk = "LOW";
+    } else {
+        if (riskRed > riskGreen) {
+            daily_risk = "MODERATE";
+        }
     }
+    
+    let dailyArr = [date_to_show, daily_risk, accprcp, acsnom, qsnow];
+    
+    var statsTable = document.getElementById("popupStatsTable");
+  
+    if (statsTable.tBodies[0].rows.length == 0) {
+        statsTableHolder.removeChild(helperSpan);
+    }
+    
+    for(var j = 0; j < img_day; j++) {
+        if (statsTable.tBodies[0].rows.length < j+1) {
+            statsTable.tBodies[0].insertRow(j);
+        }
+        if (j == img_day) {
+            //iterate through cells in row
+            for (var k = 0; k < 5; k++) {
+                if (statsTable.tBodies[0].rows[j].cells.length < k+1) {
+                    statsTable.tBodies[0].rows[j].insertCell(k);
+                }
+                if (dailyArr[k] == 0.00) {
+                    statsTable.tBodies[0].rows[j].cells[k].innerHTML = "--";
+                }
+                else {
+                    statsTable.tBodies[0].rows[j].cells[k].innerHTML = dailyArr[k];
+                }
+            }
+        }
 }
-*/
+
