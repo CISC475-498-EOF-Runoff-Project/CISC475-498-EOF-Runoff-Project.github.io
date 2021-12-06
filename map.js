@@ -113,13 +113,14 @@ function imagePopup(e) {
             let varsRed = varsData.data[0];
             let varsGreen = varsData.data[1];
             let varsBlue = varsData.data[2];
-            console.log(imgVars);
-            console.log(varsData);
+            //console.log(imgVars);
+            //console.log(varsData);
             accprcp = ((varsRed / 255) * 200).toFixed(2);
             acsnom = ((varsGreen / 255) * 200).toFixed(2);
             qsnow = ((varsBlue / 255) * 200).toFixed(2);
+            console.log(accprcp);
         }
-        
+        console.log(accprcp);
         
         //let imgRisk = document.createElement('img');
         //let risk_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_projected.png';
