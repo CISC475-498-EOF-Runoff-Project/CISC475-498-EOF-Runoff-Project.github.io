@@ -40,7 +40,7 @@ mymap.setMaxBounds([
 
 /* make popup object to display when map is clicked */
 
-window.popup = L.popup();
+var popup = L.popup();
 
 var statsTableHolder = document.getElementById("statsTableHolder");
 var helperSpan = document.createElement('span');
@@ -192,7 +192,7 @@ function imagePopup(e) {
         }
     }
        
-    window.popup
+    popup
         .setLatLng(e.latlng)
         //.setContent("R: " + pixelData.data[0] + ", G: " + pixelData.data[1] + ", B: " + pixelData.data[2])
         .setContent('<H6>RISK: ' + risk + '</H6>')
@@ -200,10 +200,10 @@ function imagePopup(e) {
 }
 
 function clearpopups() {
-    mymap.closePopup();
-    console.log(window.imageOverlay);
-    console.log(window.imageOverlay.getUrl());
-    //window.popup.setContent('<H6>RISK: ' + statsTable.tBodies[0].rows[ + '</H6>')
+    //mymap.closePopup();
+    //console.log(window.imageOverlay);
+    //console.log(window.imageOverlay.getUrl());
+    popup.setContent('<H6>RISK: ' + statsTable.tBodies[0].rows[globalDay].cells[1] + '</H6>')
 }
 
 //const imgWidth = 1500, imgHeight = 1200;
