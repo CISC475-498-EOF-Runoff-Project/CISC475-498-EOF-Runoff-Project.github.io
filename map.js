@@ -93,51 +93,64 @@ function imagePopup(e) {
     for(var day = 0; day < 10; day++) {
         
         // set html element to correct image
-        let imgVars = document.createElement('img');
-        let vars_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_projected.png';
-        imgVars.src = vars_str;
+        //let imgVars = document.createElement('img');
+        //let vars_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_vars.png';
+        //imgVars.src = vars_str;
+        let imgVars = new Image();
+        imgVars.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_vars.png';
+        let accprcp = 0.0;
+        let acsnom = 0.0;
+        let qsnow = 0.0;
+        imgVars.onload = function() {
+            
         
-        canvas.getContext('2d').fillStyle = "rgba(0, 0, 0, 0)";
-        canvas.getContext('2d').fillRect(0, 0, imgWidth, imgHeight);
-        //canvas.getContext('2d').clearRect(0, 0, imgWidth, imgHeight);
-        //canvas.getContext('2d').drawImage(imgVars, 0, 0, imgWidth, imgHeight);
-        let varsData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight); 
+            //canvas.getContext('2d').fillStyle = "rgba(0, 0, 0, 0)";
+            //canvas.getContext('2d').fillRect(0, 0, imgWidth, imgHeight);
+            canvas.getContext('2d').clearRect(0, 0, imgWidth, imgHeight);
+            canvas.getContext('2d').drawImage(imgVars, 0, 0, imgWidth, imgHeight);
+            let varsData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight); 
+
+            let varsRed = varsData.data[0];
+            let varsGreen = varsData.data[1];
+            let varsBlue = varsData.data[2];
+            console.log(imgVars);
+            console.log(varsData);
+            accprcp = ((varsRed / 255) * 200).toFixed(2);
+            acsnom = ((varsGreen / 255) * 200).toFixed(2);
+            qsnow = ((varsBlue / 255) * 200).toFixed(2);
+        }
         
-        let varsRed = varsData.data[0];
-        let varsGreen = varsData.data[1];
-        let varsBlue = varsData.data[2];
-        console.log(imgVars);
-        console.log(varsData);
-        let accprcp = ((varsRed / 255) * 200).toFixed(2);
-        let acsnom = ((varsGreen / 255) * 200).toFixed(2);
-        let qsnow = ((varsBlue / 255) * 200).toFixed(2);
         
-        
-        let imgRisk = document.createElement('img');
-        let risk_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_projected.png';
-        imgRisk.src = risk_str;
-        
-        canvas.getContext('2d').fillStyle = "rgba(0, 0, 0, 0)";
-        canvas.getContext('2d').fillRect(0, 0, imgWidth, imgHeight);
-        //canvas.getContext('2d').clearRect(0, 0, imgWidth, imgHeight);
-        //canvas.getContext('2d').drawImage(imgRisk, 0, 0, imgWidth, imgHeight);
-        let riskData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight); 
-        
-        let riskRed = riskData.data[0];
-        let riskGreen = riskData.data[1];
-        let riskBlue = riskData.data[2];
+        //let imgRisk = document.createElement('img');
+        //let risk_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_projected.png';
+        //imgRisk.src = risk_str;
+        let imgRisk = new Image();
+        imgRisk.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_projected.png';
         let daily_risk = "minimal";
-       
-        let max_risk_color = Math.max(riskData.data[0], riskData.data[1], riskData.data[2]);
-        if (riskRed == 0) {
-            daily_risk = "minimal";
-        } else if (max_risk_color == riskRed) {
-            daily_risk = "high";
-        } else if (max_risk_color == riskGreen) {
-            daily_risk = "low";
-        } else {
-            if (riskRed > riskGreen) {
-                daily_risk = "moderate";
+        imgRisk.onload = function() {
+        
+            //canvas.getContext('2d').fillStyle = "rgba(0, 0, 0, 0)";
+            //canvas.getContext('2d').fillRect(0, 0, imgWidth, imgHeight);
+            canvas.getContext('2d').clearRect(0, 0, imgWidth, imgHeight);
+            canvas.getContext('2d').drawImage(imgRisk, 0, 0, imgWidth, imgHeight);
+            let riskData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight); 
+
+            let riskRed = riskData.data[0];
+            let riskGreen = riskData.data[1];
+            let riskBlue = riskData.data[2];
+            //let daily_risk = "minimal";
+
+            let max_risk_color = Math.max(riskData.data[0], riskData.data[1], riskData.data[2]);
+            if (riskRed == 0) {
+                daily_risk = "minimal";
+            } else if (max_risk_color == riskRed) {
+                daily_risk = "high";
+            } else if (max_risk_color == riskGreen) {
+                daily_risk = "low";
+            } else {
+                if (riskRed > riskGreen) {
+                    daily_risk = "moderate";
+                }
             }
         }
         let formatted_day = new Date();
