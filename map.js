@@ -68,6 +68,11 @@ function imagePopup(e) {
     //canvas.width = imgWidth;
     //canvas.height = imgHeight;
     
+    let statsTable = document.getElementById("popupStatsTable");
+    if (statsTable.tBodies[0].rows.length == 0) {
+        statsTableHolder.removeChild(helperSpan);
+    }
+    
     var data_10_days = [];    
     for(var day = 0; day < 10; day++) {
         /*
@@ -225,11 +230,7 @@ function fillGridRow(x, y, img_day) {
 
     let dailyArr = [date_to_show, daily_risk, accprcp, acsnom, qsnow];
     
-    var statsTable = document.getElementById("popupStatsTable");
-  
-    if (statsTable.tBodies[0].rows.length == 0) {
-        statsTableHolder.removeChild(helperSpan);
-    }
+    let statsTable = document.getElementById("popupStatsTable");
     
     for(var j = 0; j < img_day; j++) {
         if (statsTable.tBodies[0].rows.length < j+1) {
