@@ -105,8 +105,11 @@ function imagePopup(e) {
         }
         
         let formatted_day = new Date();
-        formatted_day.setDate(formatted_day.getDate() + day);
-        let date_to_show = (formatted_day.getMonth()+1) + "/" + formatted_day.getDate()
+        let date_to_show = "Today";
+        if (day != 0) {
+            formatted_day.setDate(formatted_day.getDate() + day);
+            date_to_show = (formatted_day.getMonth()+1) + "/" + formatted_day.getDate();
+        }
         let data_by_day = [date_to_show, daily_risk, accprcp, acsnom, qsnow];
         data_10_days[day] = data_by_day;
     }
