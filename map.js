@@ -199,11 +199,11 @@ function imagePopup(e) {
         .openOn(mymap);   
 }
 
-function clearpopups() {
+function clearpopups(newDay) {
     //mymap.closePopup();
     //console.log(window.imageOverlay);
     //console.log(window.imageOverlay.getUrl());
-    popup.setContent('<H6>RISK: ' + statsTable.tBodies[0].rows[globalDay].cells[1] + '</H6>')
+    popup.setContent('<H6>RISK: ' + statsTable.tBodies[0].rows[newDay].cells[1] + '</H6>')
 }
 
 //const imgWidth = 1500, imgHeight = 1200;
