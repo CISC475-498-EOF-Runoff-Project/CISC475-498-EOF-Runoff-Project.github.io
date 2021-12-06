@@ -81,11 +81,11 @@ function imagePopup(e) {
         let acsnom = ((varsData.data[1] / 255) * 200).toFixed(2);
         let qsnow = ((varsData.data[2] / 255) * 200).toFixed(2);
 
-        let imgRisk = new Image();
-        imgRisk.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_projected.png';
+        //let imgRisk = new Image();
+        imgVars.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_projected.png';
         
         ctx.clearRect(0, 0, imgWidth, imgHeight);
-        ctx.drawImage(imgRisk, 0, 0, imgWidth, imgHeight);
+        ctx.drawImage(imgVars, 0, 0, imgWidth, imgHeight);
         let riskData = ctx.getImageData(x, y, imgWidth, imgHeight); 
         let riskRed = riskData.data[0];
         let riskGreen = riskData.data[1];
@@ -169,3 +169,19 @@ function clearpopups(newDay) {
 const imgWidth = 1600, imgHeight = 1600;
 window.imageOverlay.on('click', imagePopup);
 //mymap.on('click', makePopup);
+
+/*
+function fillGrid(img_day) {
+    let imgVars = new Image();
+    imgVars.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + img_day + '_vars.png';
+    imgVars.onload = function() {
+        ctx.clearRect(0, 0, imgWidth, imgHeight);
+        ctx.drawImage(imgVars, 0, 0, imgWidth, imgHeight);
+        let varsData = ctx.getImageData(x, y, imgWidth, imgHeight); 
+        let accprcp = ((varsData.data[0] / 255) * 200).toFixed(2);
+        let acsnom = ((varsData.data[1] / 255) * 200).toFixed(2);
+        let qsnow = ((varsData.data[2] / 255) * 200).toFixed(2);
+        
+    }
+}
+*/
