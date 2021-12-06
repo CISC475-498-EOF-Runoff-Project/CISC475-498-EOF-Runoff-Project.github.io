@@ -123,6 +123,9 @@ function imagePopup(e) {
         let riskGreen = riskData.data[1];
         let riskBlue = riskData.data[2];
         let daily_risk = "minimal";
+        console.log(accprcp);
+        console.log(acsnom);
+        console.log(qsnow);
         let max_risk_color = Math.max(riskData.data[0], riskData.data[1], riskData.data[2]);
         if (riskRed == 0) {
             daily_risk = "minimal";
