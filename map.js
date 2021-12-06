@@ -49,7 +49,6 @@ var helperText = document.createTextNode("Click a region on the map to get more 
 helperSpan.append(helperText);
 statsTableHolder.appendChild(helperSpan);
 
-
 /* function that runs when map is clicked. Adds popup and
    puts 10 days of data into stats box */
 
@@ -162,7 +161,7 @@ function imagePopup(e) {
     let popupday = str.charAt(str.length - 15);
     popup
         .setLatLng(e.latlng)
-        .setContent('<H6>RISK: ' + statsTable.tBodies[0].rows[popupday].cells[1].innerHTML + '</H6>')
+        //.setContent('<H6>RISK: ' + statsTable.tBodies[0].rows[popupday].cells[1].innerHTML + '</H6>')
         .openOn(mymap);   
 }
 
