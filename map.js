@@ -238,5 +238,6 @@ function fillGridRow(img_day) {
                 }
             }
         }
+    }
 }
 
