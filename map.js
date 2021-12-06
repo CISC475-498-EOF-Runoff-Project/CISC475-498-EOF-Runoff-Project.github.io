@@ -62,72 +62,35 @@ function imagePopup(e) {
 
     const x = Math.round(zoomedX * imgWidth / rect.width);
     const y = Math.round(zoomedY * imgHeight / rect.height);
-    
-    var imgEvent = document.createElement('img');
-    imgEvent.src = window.imageOverlay.getElement().src;
         
     var canvas = document.createElement('canvas');
+    var ctx = canvas.getContext('2d');
     canvas.width = imgWidth;
     canvas.height = imgHeight;
-    canvas.getContext('2d').drawImage(imgEvent, 0, 0, imgWidth, imgHeight);
-    var pixelData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight);
-    var red = pixelData.data[0];
-    var green = pixelData.data[1];
-    var blue = pixelData.data[2];
-    var max_color = Math.max(pixelData.data[0], pixelData.data[1], pixelData.data[2]);
-    var risk = "MINIMAL";
-    if (red == 0) {
-        risk = "MINIMAL";
-    } else if (max_color == red) {
-        risk = "HIGH";
-    } else if (max_color == green) {
-        risk = "LOW";
-    } else {
-        if (red > green) {
-            risk = "MODERATE";
-        }
-    }                
     
-    //var imgVars = document.createElement('img');
     var data_10_days = [];    
     for(var day = 0; day < 10; day++) {
         
         // set html element to correct image
-        //let imgVars = document.createElement('img');
-        //let vars_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_vars.png';
-        //imgVars.src = vars_str;
         let imgVars = new Image();
         imgVars.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_vars.png';
-        canvas.getContext('2d').clearRect(0, 0, imgWidth, imgHeight);
-        canvas.getContext('2d').drawImage(imgVars, 0, 0, imgWidth, imgHeight);
-        let varsData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight); 
+        ctx.clearRect(0, 0, imgWidth, imgHeight);
+        ctx.drawImage(imgVars, 0, 0, imgWidth, imgHeight);
+        let varsData = ctx.getImageData(x, y, imgWidth, imgHeight); 
+        let accprcp = ((varsData.data[0] / 255) * 200).toFixed(2);
+        let acsnom = ((varsData.data[1] / 255) * 200).toFixed(2);
+        let qsnow = ((varsData.data[2] / 255) * 200).toFixed(2);
 
-        let varsRed = varsData.data[0];
-        let varsGreen = varsData.data[1];
-        let varsBlue = varsData.data[2];
-
-        let accprcp = ((varsRed / 255) * 200).toFixed(2);
-        let acsnom = ((varsGreen / 255) * 200).toFixed(2);
-        let qsnow = ((varsBlue / 255) * 200).toFixed(2);
-
-        
-        //let imgRisk = document.createElement('img');
-        //let risk_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_projected.png';
-        //imgRisk.src = risk_str;
         let imgRisk = new Image();
         imgRisk.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_projected.png';
         
-        //canvas.getContext('2d').fillStyle = "rgba(0, 0, 0, 0)";
-        //canvas.getContext('2d').fillRect(0, 0, imgWidth, imgHeight);
-        canvas.getContext('2d').clearRect(0, 0, imgWidth, imgHeight);
-        canvas.getContext('2d').drawImage(imgRisk, 0, 0, imgWidth, imgHeight);
-        let riskData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight); 
-
+        ctx.clearRect(0, 0, imgWidth, imgHeight);
+        ctx.drawImage(imgRisk, 0, 0, imgWidth, imgHeight);
+        let riskData = ctx.getImageData(x, y, imgWidth, imgHeight); 
         let riskRed = riskData.data[0];
         let riskGreen = riskData.data[1];
         let riskBlue = riskData.data[2];
         let daily_risk = "MINIMAL";
-
         let max_risk_color = Math.max(riskData.data[0], riskData.data[1], riskData.data[2]);
         if (riskRed == 0) {
             daily_risk = "MINIMAL";
@@ -149,14 +112,7 @@ function imagePopup(e) {
     }
     
     var statsTable = document.getElementById("popupStatsTable");
-    
-    /*
-    for (let i = 0; i < statsTableHolder.childNodes.length; i++) {
-        if (statsTableHolder.childNodes[i] == helperText) {
-            statsTableHolder.removeChild(helperText);
-        }
-    }
-    */
+  
     if (statsTable.tBodies[0].rows.length == 0) {
         statsTableHolder.removeChild(helperSpan);
     }
@@ -191,18 +147,18 @@ function imagePopup(e) {
             statsTable.tBodies[0].rows[j].cells[1].setAttribute("style","color: #FFBBBB");
         }
     }
-       
+    
+    
     popup
-        .setLatLng(e.latlng)
-        //.setContent("R: " + pixelData.data[0] + ", G: " + pixelData.data[1] + ", B: " + pixelData.data[2])
-        .setContent('<H6>RISK: ' + risk + '</H6>')
+        //.setLatLng(e.latlng)
+        let str = window.imageOverlay.getElement().src;
+        let day = str.charAt(-15);
+        .setContent('<H6>RISK: ' + statsTable.tBodies[0].rows[day].cells[1].innerHTML + '</H6>')
         .openOn(mymap);   
 }
 
 function clearpopups(newDay) {
     //mymap.closePopup();
-    //console.log(window.imageOverlay);
-    //console.log(window.imageOverlay.getUrl());
     let statsTable = document.getElementById("popupStatsTable");
     popup.setContent('<H6>RISK: ' + statsTable.tBodies[0].rows[newDay].cells[1].innerHTML + '</H6>')
 }
