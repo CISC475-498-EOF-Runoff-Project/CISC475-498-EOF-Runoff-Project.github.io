@@ -62,19 +62,14 @@ function imagePopup(e) {
     const x = Math.round(zoomedX * imgWidth / rect.width);
     const y = Math.round(zoomedY * imgHeight / rect.height);
         
-    //var canvas = document.createElement('canvas');
-    //var ctx = canvas.getContext('2d');
-    //canvas.width = imgWidth;
-    //canvas.height = imgHeight;
-    
-    let statsTable = document.getElementById("popupStatsTable");
-    if (statsTable.tBodies[0].rows.length == 0) {
-        statsTableHolder.removeChild(helperSpan);
-    }
+    var canvas = document.createElement('canvas');
+    var ctx = canvas.getContext('2d');
+    canvas.width = imgWidth;
+    canvas.height = imgHeight;
     
     var data_10_days = [];    
     for(var day = 0; day < 10; day++) {
-        /*
+        
         // set html element to correct image
         let imgVars = new Image();
         imgVars.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_vars.png';
@@ -116,10 +111,10 @@ function imagePopup(e) {
         }
         let data_by_day = [date_to_show, daily_risk, accprcp, acsnom, qsnow];
         data_10_days[day] = data_by_day;
-        */
-        fillGridRow(x, y, day);
+        
+        //fillGridRow(x, y, day);
     }
-    /*
+    
     var statsTable = document.getElementById("popupStatsTable");
   
     if (statsTable.tBodies[0].rows.length == 0) {
@@ -156,12 +151,12 @@ function imagePopup(e) {
             statsTable.tBodies[0].rows[j].cells[1].setAttribute("style","color: #FFBBBB");
         }
     }
-    */
+    
     let str = window.imageOverlay.getElement().src;
     let popupday = str.charAt(str.length - 15);
     popup
         .setLatLng(e.latlng)
-        //.setContent('<H6>RISK: ' + statsTable.tBodies[0].rows[popupday].cells[1].innerHTML + '</H6>')
+        .setContent('<H6>RISK: ' + statsTable.tBodies[0].rows[popupday].cells[1].innerHTML + '</H6>')
         .openOn(mymap);   
 }
 
@@ -176,7 +171,7 @@ const imgWidth = 1600, imgHeight = 1600;
 window.imageOverlay.on('click', imagePopup);
 //mymap.on('click', makePopup);
 
-
+/*
 function fillGridRow(x, y, img_day) {
     
     let imgCanvas = document.createElement('canvas');
@@ -251,4 +246,4 @@ function fillGridRow(x, y, img_day) {
         }
     }
 }
-
+*/
