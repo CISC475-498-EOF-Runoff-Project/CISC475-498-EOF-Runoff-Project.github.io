@@ -97,8 +97,10 @@ function imagePopup(e) {
         let vars_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_projected.png';
         imgVars.src = vars_str;
         
-        canvas.getContext('2d').clearRect(0, 0, imgWidth, imgHeight);
-        canvas.getContext('2d').drawImage(imgVars, 0, 0, imgWidth, imgHeight);
+        canvas.getContext('2d').fillStyle = "rgba(0, 0, 0, 0)";
+        canvas.getContext('2d').fillRect(0, 0, imgWidth, imgHeight);
+        //canvas.getContext('2d').clearRect(0, 0, imgWidth, imgHeight);
+        //canvas.getContext('2d').drawImage(imgVars, 0, 0, imgWidth, imgHeight);
         let varsData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight); 
         
         let varsRed = varsData.data[0];
@@ -115,8 +117,10 @@ function imagePopup(e) {
         let risk_str = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_projected.png';
         imgRisk.src = risk_str;
         
-        canvas.getContext('2d').clearRect(0, 0, imgWidth, imgHeight);
-        canvas.getContext('2d').drawImage(imgRisk, 0, 0, imgWidth, imgHeight);
+        canvas.getContext('2d').fillStyle = "rgba(0, 0, 0, 0)";
+        canvas.getContext('2d').fillRect(0, 0, imgWidth, imgHeight);
+        //canvas.getContext('2d').clearRect(0, 0, imgWidth, imgHeight);
+        //canvas.getContext('2d').drawImage(imgRisk, 0, 0, imgWidth, imgHeight);
         let riskData = canvas.getContext('2d').getImageData(x, y, imgWidth, imgHeight); 
         
         let riskRed = riskData.data[0];
