@@ -80,7 +80,6 @@ function imagePopup(e) {
         risk = 0;
     } else if (max_color == red) {
         risk = 3;
-        console.log(red);
     } else if (max_color == green) {
         risk = 1;
     } else {
@@ -104,6 +103,7 @@ function imagePopup(e) {
         let varsRed = varsData.data[0];
         let varsGreen = varsData.data[1];
         let varsBlue = varsData.data[2];
+        console.log(varsData);
         let accprcp = ((varsRed / 255) * 200).toFixed(2);
         let acsnom = ((varsGreen / 255) * 200).toFixed(2);
         let qsnow = ((varsBlue / 255) * 200).toFixed(2);
@@ -120,9 +120,7 @@ function imagePopup(e) {
         let riskGreen = riskData.data[1];
         let riskBlue = riskData.data[2];
         let daily_risk = "minimal";
-        console.log(accprcp);
-        console.log(acsnom);
-        console.log(qsnow);
+       
         let max_risk_color = Math.max(riskData.data[0], riskData.data[1], riskData.data[2]);
         if (riskRed == 0) {
             daily_risk = "minimal";
