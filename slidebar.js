@@ -9,8 +9,8 @@ function showVal(newVal) {
 
   document.getElementById("range").innerHTML=newVal;
   var targetDate = new Date();
-  window.globalDay = newVal-1;
-  clearpopups();
+  //window.globalDay = newVal-1;
+  clearpopups(newVal-1);
     
   //call stat box display method   
   if(newVal == 1) {
