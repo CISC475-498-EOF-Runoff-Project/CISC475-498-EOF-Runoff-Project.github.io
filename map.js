@@ -216,6 +216,13 @@ function fillGridRow(x, y, img_day) {
         }
     }
     
+    let formatted_day = new Date();
+    let date_to_show = "Today";
+    if (day != 0) {
+        formatted_day.setDate(formatted_day.getDate() + day);
+        date_to_show = (formatted_day.getMonth()+1) + "/" + formatted_day.getDate();
+    }
+
     let dailyArr = [date_to_show, daily_risk, accprcp, acsnom, qsnow];
     
     var statsTable = document.getElementById("popupStatsTable");
