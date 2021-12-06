@@ -175,7 +175,7 @@ window.imageOverlay.on('click', imagePopup);
 
 function fillGridRow(img_day) {
     let imgCanvas = document.createElement('canvas');
-    let img_ctx = canvas.getContext('2d');
+    let img_ctx = imgCanvas.getContext('2d');
 
     let imgVars = new Image();
     imgVars.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + img_day + '_vars.png';
