@@ -98,9 +98,9 @@ function imagePopup(e) {
         //imgVars.src = vars_str;
         let imgVars = new Image();
         imgVars.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_vars.png';
-        var accprcp = 0.0;
-        var acsnom = 0.0;
-        var qsnow = 0.0;
+        //let accprcp = 0.0;
+        //let acsnom = 0.0;
+        //let qsnow = 0.0;
         imgVars.onload = function() {
             
         
@@ -115,9 +115,9 @@ function imagePopup(e) {
             let varsBlue = varsData.data[2];
             //console.log(imgVars);
             //console.log(varsData);
-            accprcp = ((varsRed / 255) * 200).toFixed(2);
-            acsnom = ((varsGreen / 255) * 200).toFixed(2);
-            qsnow = ((varsBlue / 255) * 200).toFixed(2);
+            var accprcp = ((varsRed / 255) * 200).toFixed(2);
+            var acsnom = ((varsGreen / 255) * 200).toFixed(2);
+            var qsnow = ((varsBlue / 255) * 200).toFixed(2);
             console.log(accprcp);
         }
         console.log(accprcp);
