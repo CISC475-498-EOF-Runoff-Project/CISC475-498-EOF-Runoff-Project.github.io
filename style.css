@@ -177,8 +177,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: rgb(185, 239, 248); //white
-    font: size 100px;
+    color: rgb(137, 247, 232); 
+    font-size: 100px;
   }
   
   
