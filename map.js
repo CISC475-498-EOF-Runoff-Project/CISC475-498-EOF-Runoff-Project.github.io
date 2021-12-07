@@ -83,41 +83,40 @@ function imagePopup(e) {
             accprcp = ((varsData.data[0] / 255) * 200).toFixed(2);
             acsnom = ((varsData.data[1] / 255) * 200).toFixed(2);
             qsnow = ((varsData.data[2] / 255) * 200).toFixed(2);
-        }
-        let imgRisk = new Image();
-        imgRisk.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_projected.png';
-        let daily_risk = "MINIMAL";
-        imgRisk.onload = function() {
-            ctx.clearRect(0, 0, imgWidth, imgHeight);
-            ctx.drawImage(imgRisk, 0, 0, imgWidth, imgHeight);
-            let riskData = ctx.getImageData(x, y, imgWidth, imgHeight); 
-            let riskRed = riskData.data[0];
-            let riskGreen = riskData.data[1];
-            let riskBlue = riskData.data[2];
-            //var daily_risk = "MINIMAL";
-            let max_risk_color = Math.max(riskData.data[0], riskData.data[1], riskData.data[2]);
-            if (riskRed == 0) {
-                daily_risk = "MINIMAL";
-            } else if (max_risk_color == riskRed) {
-                daily_risk = "HIGH";
-            } else if (max_risk_color == riskGreen) {
-                daily_risk = "LOW";
-            } else {
-                if (riskRed > riskGreen) {
-                    daily_risk = "MODERATE";
+        
+            let imgRisk = new Image();
+            imgRisk.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_projected.png';
+            let daily_risk = "MINIMAL";
+            imgRisk.onload = function() {
+                ctx.clearRect(0, 0, imgWidth, imgHeight);
+                ctx.drawImage(imgRisk, 0, 0, imgWidth, imgHeight);
+                let riskData = ctx.getImageData(x, y, imgWidth, imgHeight); 
+                let riskRed = riskData.data[0];
+                let riskGreen = riskData.data[1];
+                let riskBlue = riskData.data[2];
+                //var daily_risk = "MINIMAL";
+                let max_risk_color = Math.max(riskData.data[0], riskData.data[1], riskData.data[2]);
+                if (riskRed == 0) {
+                    daily_risk = "MINIMAL";
+                } else if (max_risk_color == riskRed) {
+                    daily_risk = "HIGH";
+                } else if (max_risk_color == riskGreen) {
+                    daily_risk = "LOW";
+                } else {
+                    if (riskRed > riskGreen) {
+                        daily_risk = "MODERATE";
+                    }
                 }
+                let formatted_day = new Date();
+                let date_to_show = "Today";
+                if (day != 0) {
+                    formatted_day.setDate(formatted_day.getDate() + day);
+                    date_to_show = (formatted_day.getMonth()+1) + "/" + formatted_day.getDate();
+                }
+                let data_by_day = [date_to_show, daily_risk, accprcp, acsnom, qsnow];
+                data_10_days[day] = data_by_day;     
             }
         }
-        let formatted_day = new Date();
-        let date_to_show = "Today";
-        if (day != 0) {
-            formatted_day.setDate(formatted_day.getDate() + day);
-            date_to_show = (formatted_day.getMonth()+1) + "/" + formatted_day.getDate();
-        }
-        let data_by_day = [date_to_show, daily_risk, accprcp, acsnom, qsnow];
-        data_10_days[day] = data_by_day;
-        
-        //fillGridRow(x, y, day);
     }
     
     var statsTable = document.getElementById("popupStatsTable");
