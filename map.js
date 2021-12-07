@@ -175,7 +175,7 @@ function fillGridRow(x, y, img_day, popupday, e) {
             statsTable.tBodies[0].rows[img_day].cells[1].setAttribute("style","color: #BBFFBB");
         }
         else if (daily_risk == "LOW") {
-            statsTable.tBodies[0].rows[img_day].cells[1].setAttribute("style","color: white");
+            statsTable.tBodies[0].rows[img_day].cells[1].setAttribute("style","color: #FFFFBB");
         }
         else if (daily_risk == "MODERATE") {
             statsTable.tBodies[0].rows[img_day].cells[1].setAttribute("style","color: #FFDDBB");
