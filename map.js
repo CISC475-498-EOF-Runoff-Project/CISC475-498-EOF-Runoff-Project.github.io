@@ -89,7 +89,7 @@ function imagePopup(e) {
     
     
     var data_10_days = [];    
-    for(var day = 0; day < 10; day++) {
+    for(var day = 0; day < 9; day++) {
         console.log(day);
         // set html element to correct image
         let imgVars = new Image();
