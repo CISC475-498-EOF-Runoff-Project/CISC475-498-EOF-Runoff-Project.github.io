@@ -137,7 +137,7 @@ function imagePopup(e) {
                     daily_risk = "MODERATE";
                 }
             }
-            
+            console.log(day);
             statsTable.tBodies[0].rows[day].cells[1].innerHTML = daily_risk;
             if (daily_risk == "MINIMAL") {
                 statsTable.tBodies[0].rows[day].cells[1].setAttribute("style","color: #BBFFBB");
