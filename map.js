@@ -90,7 +90,7 @@ function imagePopup(e) {
     
     var data_10_days = [];    
     for(var day = 0; day < 10; day++) {
-        
+        console.log(day);
         // set html element to correct image
         let imgVars = new Image();
         imgVars.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_vars.png';
@@ -137,7 +137,7 @@ function imagePopup(e) {
                     daily_risk = "MODERATE";
                 }
             }
-            console.log(day);
+            
             statsTable.tBodies[0].rows[day].cells[1].innerHTML = daily_risk;
             if (daily_risk == "MINIMAL") {
                 statsTable.tBodies[0].rows[day].cells[1].setAttribute("style","color: #BBFFBB");
