@@ -296,7 +296,7 @@ function fillGridRow(x, y, img_day) {
     let formatted_day = new Date();
     let date_to_show = "Today";
     if (img_day != 0) {
-        formatted_day.setDate(formatted_day.getDate() + day);
+        formatted_day.setDate(formatted_day.getDate() + img_day);
         date_to_show = (formatted_day.getMonth()+1) + "/" + formatted_day.getDate();
     }
     statsTable.tBodies[0].rows[img_day].cells[0].innerHTML = date_to_show;
