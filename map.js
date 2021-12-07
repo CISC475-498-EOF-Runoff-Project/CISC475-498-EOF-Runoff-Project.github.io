@@ -192,17 +192,12 @@ function imagePopup(e) {
             }
         }
     }
-    
-    for(var day = 0; day < 10; day++) {
-        fillGridRow(x, y, day);
-    }
-    
     let str = window.imageOverlay.getElement().src;
     let popupday = str.charAt(str.length - 15);
-    popup
-        .setLatLng(e.latlng)
-        .setContent('<H6>RISK: ' + statsTable.tBodies[0].rows[popupday].cells[1].innerHTML + '</H6>')
-        .openOn(mymap);   
+    
+    for(var day = 0; day < 10; day++) {
+        fillGridRow(x, y, day, popupday, e);
+    }   
 }
 
 function clearpopups(newDay) {
@@ -219,7 +214,7 @@ window.imageOverlay.on('click', imagePopup);
 //mymap.on('click', makePopup);
 
 
-function fillGridRow(x, y, img_day) {
+function fillGridRow(x, y, img_day, popupday, e) {
     
     var statsTable = document.getElementById("popupStatsTable");
     let imgVars = new Image();
@@ -279,7 +274,12 @@ function fillGridRow(x, y, img_day) {
         }
         
         statsTable.tBodies[0].rows[img_day].cells[1].innerHTML = daily_risk;
-        
+        if (img_day == popupday) {
+            popup
+                .setLatLng(e.latlng)
+                .setContent('<H6>RISK: ' + statsTable.tBodies[0].rows[popupday].cells[1].innerHTML + '</H6>')
+                .openOn(mymap);
+        }
         if (daily_risk == "MINIMAL") {
             statsTable.tBodies[0].rows[img_day].cells[1].setAttribute("style","color: #BBFFBB");
         }
