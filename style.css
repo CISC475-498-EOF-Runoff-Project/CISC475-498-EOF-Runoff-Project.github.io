@@ -4,6 +4,8 @@
   }
   body {
     margin: 0;
+    background-color: #e1fcf8;
+
   }
   .search-container{
     float: right;
@@ -14,7 +16,7 @@
     border: none;
     cursor: pointer;
   }
-    
+ 
   .leftcolumn {   
     float: left;
     width: 50%;
@@ -54,36 +56,14 @@
     background-color: #1c8f8c;
   }
   
-  .navigation-bar {
+  .searchbar {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #147557;
-  }
-  .navigation-item {
-    float: left;
-  }
-  .navigation-item-a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+    
   }
   
-  .navigation-item-a:hover {
-    background-color: rgb(68, 233, 156);
-  }
-  
-  .page-header {
-    background-color: rgb(185, 32, 32);
-  }
-
-  .page-title {
-    margin-right: 115px;
-  }
-
   .header-link {
     display: inline-block;
     margin-right: 10px;
@@ -243,9 +223,8 @@
     -webkit-appearance: none;
     width: 50%;
     height: 25px;
-    background: #6be9de;
+    background: #bef7ef;
     outline: none;
-    opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
   }
