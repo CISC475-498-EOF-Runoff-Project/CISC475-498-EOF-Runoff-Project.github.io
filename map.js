@@ -71,7 +71,7 @@ function imagePopup(e) {
             }
         }
     }
-        
+    console.log("!!! " + statsTable.tBodies[0].rows.length);
         
     //var e = leafletEvent.originalEvent;
     var temp_event = e.originalEvent;
@@ -137,7 +137,7 @@ function imagePopup(e) {
                     daily_risk = "MODERATE";
                 }
             }
-            
+            console.log("vs " + day);
             statsTable.tBodies[0].rows[day].cells[1].innerHTML = daily_risk;
             if (daily_risk == "MINIMAL") {
                 statsTable.tBodies[0].rows[day].cells[1].setAttribute("style","color: #BBFFBB");
