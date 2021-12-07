@@ -50,7 +50,7 @@ statsTableHolder.appendChild(helperSpan);
 
 /* function that runs when map is clicked. Adds popup and
    puts 10 days of data into stats box */
-
+/*
 function imagePopup(e) {
     //var e = leafletEvent.originalEvent;
     var temp_event = e.originalEvent;
@@ -158,6 +158,52 @@ function imagePopup(e) {
         .setContent('<H6>RISK: ' + statsTable.tBodies[0].rows[popupday].cells[1].innerHTML + '</H6>')
         .openOn(mymap);   
 }
+*/
+function imagePopup(e) {
+    //var e = leafletEvent.originalEvent;
+    var temp_event = e.originalEvent;
+    var rect = temp_event.target.getBoundingClientRect();
+    var zoomedX = temp_event.clientX - rect.left; //x position within the element.
+    var zoomedY = temp_event.clientY - rect.top;  //y position within the element
+
+    const x = Math.round(zoomedX * imgWidth / rect.width);
+    const y = Math.round(zoomedY * imgHeight / rect.height);
+    /*    
+    var canvas = document.createElement('canvas');
+    var ctx = canvas.getContext('2d');
+    canvas.width = imgWidth;
+    canvas.height = imgHeight;
+    */
+    var statsTable = document.getElementById("popupStatsTable");
+  
+    if (statsTable.tBodies[0].rows.length == 0) {
+        statsTableHolder.removeChild(helperSpan);
+    }
+    
+    //iterate through rows
+    for(var j = 0; j < 10; j++) {
+        if (statsTable.tBodies[0].rows.length < j+1) {
+            statsTable.tBodies[0].insertRow(j);
+        }
+        //iterate through cells in row
+        for (var k = 0; k < 5; k++) {
+            if (statsTable.tBodies[0].rows[j].cells.length < k+1) {
+                statsTable.tBodies[0].rows[j].insertCell(k);
+            }
+        }
+    }
+    
+    for(var day = 0; day < 10; day++) {
+        fillGridRow(x, y, day);
+    }
+    
+    let str = window.imageOverlay.getElement().src;
+    let popupday = str.charAt(str.length - 15);
+    popup
+        .setLatLng(e.latlng)
+        .setContent('<H6>RISK: ' + statsTable.tBodies[0].rows[popupday].cells[1].innerHTML + '</H6>')
+        .openOn(mymap);   
+}
 
 function clearpopups(newDay) {
     //mymap.closePopup();
@@ -172,80 +218,86 @@ const imgWidth = 1600, imgHeight = 1600;
 window.imageOverlay.on('click', imagePopup);
 //mymap.on('click', makePopup);
 
-/*
+
 function fillGridRow(x, y, img_day) {
-    
-    var imgCanvas = document.createElement('canvas');
-    imgCanvas.width = imgWidth;
-    imgCanvas.height = imgHeight;
-    var img_ctx = imgCanvas.getContext('2d');
     
     let imgVars = new Image();
     imgVars.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + img_day + '_vars.png';
     imgVars.onload = function() {
-    
-        img_ctx.clearRect(0, 0, imgWidth, imgHeight);
-        img_ctx.drawImage(imgVars, 0, 0, imgWidth, imgHeight);
+        
+        let tempCanvas = document.createElement('canvas');
+        tempCanvas.width = imgWidth;
+        tempCanvas.height = imgHeight;
+        let tempCtx = tempCanvas.getContext('2d');
+        
+        tempCtx.clearRect(0, 0, imgWidth, imgHeight);
+        tempCtx.drawImage(imgVars, 0, 0, imgWidth, imgHeight);
 
-        let varsData = img_ctx.getImageData(x, y, imgWidth, imgHeight); 
+        let varsData = tempCtx.getImageData(x, y, imgWidth, imgHeight); 
         let accprcp = ((varsData.data[0] / 255) * 200).toFixed(2);
         let acsnom = ((varsData.data[1] / 255) * 200).toFixed(2);
         let qsnow = ((varsData.data[2] / 255) * 200).toFixed(2);
-        
+        statsTable.tBodies[0].rows[img_day].cells[2].innerHTML = accprcp;
+        statsTable.tBodies[0].rows[img_day].cells[3].innerHTML = acsnom;
+        statsTable.tBodies[0].rows[img_day].cells[4].innerHTML = qsnow;
+        for (var iter = 2; iter < 5; iter++) {
+            if (statsTable.tBodies[0].rows[img_day].cells[iter].innerHTML == 0.00) {
+                statsTable.tBodies[0].rows[img_day].cells[iter].innerHTML = "--";
+            }
+        }
     }
     
     let imgRisk = new Image();
     imgRisk.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + img_day + '_projected.png';
-    
-    img_ctx.clearRect(0, 0, imgWidth, imgHeight);
-    img_ctx.drawImage(imgVars, 0, 0, imgWidth, imgHeight);
-    
-    let riskData = img_ctx.getImageData(x, y, imgWidth, imgHeight); 
-    let riskRed = riskData.data[0];
-    let riskGreen = riskData.data[1];
-    let riskBlue = riskData.data[2];
-    let daily_risk = "MINIMAL";
-    let max_risk_color = Math.max(riskData.data[0], riskData.data[1], riskData.data[2]);
-    if (riskRed == 0) {
-        daily_risk = "MINIMAL";
-    } else if (max_risk_color == riskRed) {
-        daily_risk = "HIGH";
-    } else if (max_risk_color == riskGreen) {
-        daily_risk = "LOW";
-    } else {
-        if (riskRed > riskGreen) {
-            daily_risk = "MODERATE";
+    imgRisk.onload = function() {
+        
+        let tempCanvas = document.createElement('canvas');
+        tempCanvas.width = imgWidth;
+        tempCanvas.height = imgHeight;
+        let tempCtx = tempCanvas.getContext('2d');
+        
+        tempCtx.clearRect(0, 0, imgWidth, imgHeight);
+        tempCtx.drawImage(imgRisk, 0, 0, imgWidth, imgHeight);
+
+        let riskData = tempCtx.getImageData(x, y, imgWidth, imgHeight); 
+        let riskRed = riskData.data[0];
+        let riskGreen = riskData.data[1];
+        let riskBlue = riskData.data[2];
+        let daily_risk = "MINIMAL";
+        let max_risk_color = Math.max(riskData.data[0], riskData.data[1], riskData.data[2]);
+        if (riskRed == 0) {
+            daily_risk = "MINIMAL";
+        } else if (max_risk_color == riskRed) {
+            daily_risk = "HIGH";
+        } else if (max_risk_color == riskGreen) {
+            daily_risk = "LOW";
+        } else {
+            if (riskRed > riskGreen) {
+                daily_risk = "MODERATE";
+            }
+        }
+        
+        statsTable.tBodies[0].rows[img_day].cells[1].innerHTML = daily_risk;
+        
+        if (daily_risk == "MINIMAL") {
+            statsTable.tBodies[0].rows[img_day].cells[1].setAttribute("style","color: #BBFFBB");
+        }
+        else if (daily_risk == "LOW") {
+            statsTable.tBodies[0].rows[img_day].cells[1].setAttribute("style","color: white");
+        }
+        else if (daily_risk == "MODERATE") {
+            statsTable.tBodies[0].rows[img_day].cells[1].setAttribute("style","color: #FFDDBB");
+        }
+        else {
+            statsTable.tBodies[0].rows[img_day].cells[1].setAttribute("style","color: #FFBBBB");
         }
     }
-    
     let formatted_day = new Date();
     let date_to_show = "Today";
     if (img_day != 0) {
         formatted_day.setDate(formatted_day.getDate() + day);
         date_to_show = (formatted_day.getMonth()+1) + "/" + formatted_day.getDate();
     }
-    let dailyArr = [date_to_show, daily_risk, accprcp, acsnom, qsnow];
-    
-    let statsTable = document.getElementById("popupStatsTable");
-    
-    for(var j = 0; j < img_day; j++) {
-        if (statsTable.tBodies[0].rows.length < j+1) {
-            statsTable.tBodies[0].insertRow(j);
-        }
-        if (j == img_day) {
-            //iterate through cells in row
-            for (var k = 0; k < 5; k++) {
-                if (statsTable.tBodies[0].rows[j].cells.length < k+1) {
-                    statsTable.tBodies[0].rows[j].insertCell(k);
-                }
-                if (dailyArr[k] == 0.00) {
-                    statsTable.tBodies[0].rows[j].cells[k].innerHTML = "--";
-                }
-                else {
-                    statsTable.tBodies[0].rows[j].cells[k].innerHTML = dailyArr[k];
-                }
-            }
-        }
-    }
+    statsTable.tBodies[0].rows[img_day].cells[0].innerHTML = date_to_show;
 }
-*/
+
