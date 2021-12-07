@@ -114,11 +114,12 @@ function imagePopup(e) {
                     date_to_show = (formatted_day.getMonth()+1) + "/" + formatted_day.getDate();
                 }
                 let data_by_day = [date_to_show, daily_risk, accprcp, acsnom, qsnow];
-                data_10_days[day] = data_by_day;     
+                data_10_days[day] = data_by_day;    
             }
         }
     }
     
+    console.log(data_10_days.length);
     var statsTable = document.getElementById("popupStatsTable");
   
     if (statsTable.tBodies[0].rows.length == 0) {
