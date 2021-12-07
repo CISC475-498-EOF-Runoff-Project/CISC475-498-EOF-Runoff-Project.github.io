@@ -221,6 +221,7 @@ window.imageOverlay.on('click', imagePopup);
 
 function fillGridRow(x, y, img_day) {
     
+    var statsTable = document.getElementById("popupStatsTable");
     let imgVars = new Image();
     imgVars.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + img_day + '_vars.png';
     imgVars.onload = function() {
