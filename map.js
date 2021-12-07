@@ -200,10 +200,10 @@ function imagePopup(e) {
             statsTable.tBodies[0].rows[j].cells[1].setAttribute("style","color: #FFBBBB");
         }
     }
-    
+    */
     let str = window.imageOverlay.getElement().src;
     let popupday = str.charAt(str.length - 15);
-    */
+    
     popup
         .setLatLng(e.latlng)
         .setContent('<H6>RISK: ' + statsTable.tBodies[0].rows[popupday].cells[1].innerHTML + '</H6>')
