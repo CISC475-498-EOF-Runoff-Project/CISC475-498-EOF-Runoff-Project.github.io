@@ -73,36 +73,41 @@ function imagePopup(e) {
         // set html element to correct image
         let imgVars = new Image();
         imgVars.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_vars.png';
-        ctx.clearRect(0, 0, imgWidth, imgHeight);
-        ctx.drawImage(imgVars, 0, 0, imgWidth, imgHeight);
-        let varsData = ctx.getImageData(x, y, imgWidth, imgHeight); 
-        let accprcp = ((varsData.data[0] / 255) * 200).toFixed(2);
-        let acsnom = ((varsData.data[1] / 255) * 200).toFixed(2);
-        let qsnow = ((varsData.data[2] / 255) * 200).toFixed(2);
-
+        let accprcp = 0.00;
+        let acsnom = 0.00;
+        let qsnow = 0.00;
+        imgVars.onload = function() {
+            ctx.clearRect(0, 0, imgWidth, imgHeight);
+            ctx.drawImage(imgVars, 0, 0, imgWidth, imgHeight);
+            let varsData = ctx.getImageData(x, y, imgWidth, imgHeight); 
+            accprcp = ((varsData.data[0] / 255) * 200).toFixed(2);
+            acsnom = ((varsData.data[1] / 255) * 200).toFixed(2);
+            qsnow = ((varsData.data[2] / 255) * 200).toFixed(2);
+        }
         let imgRisk = new Image();
         imgRisk.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + day + '_projected.png';
-        
-        ctx.clearRect(0, 0, imgWidth, imgHeight);
-        ctx.drawImage(imgRisk, 0, 0, imgWidth, imgHeight);
-        let riskData = ctx.getImageData(x, y, imgWidth, imgHeight); 
-        let riskRed = riskData.data[0];
-        let riskGreen = riskData.data[1];
-        let riskBlue = riskData.data[2];
         let daily_risk = "MINIMAL";
-        let max_risk_color = Math.max(riskData.data[0], riskData.data[1], riskData.data[2]);
-        if (riskRed == 0) {
-            daily_risk = "MINIMAL";
-        } else if (max_risk_color == riskRed) {
-            daily_risk = "HIGH";
-        } else if (max_risk_color == riskGreen) {
-            daily_risk = "LOW";
-        } else {
-            if (riskRed > riskGreen) {
-                daily_risk = "MODERATE";
+        imgRisk.onload = function() {
+            ctx.clearRect(0, 0, imgWidth, imgHeight);
+            ctx.drawImage(imgRisk, 0, 0, imgWidth, imgHeight);
+            let riskData = ctx.getImageData(x, y, imgWidth, imgHeight); 
+            let riskRed = riskData.data[0];
+            let riskGreen = riskData.data[1];
+            let riskBlue = riskData.data[2];
+            //var daily_risk = "MINIMAL";
+            let max_risk_color = Math.max(riskData.data[0], riskData.data[1], riskData.data[2]);
+            if (riskRed == 0) {
+                daily_risk = "MINIMAL";
+            } else if (max_risk_color == riskRed) {
+                daily_risk = "HIGH";
+            } else if (max_risk_color == riskGreen) {
+                daily_risk = "LOW";
+            } else {
+                if (riskRed > riskGreen) {
+                    daily_risk = "MODERATE";
+                }
             }
         }
-        
         let formatted_day = new Date();
         let date_to_show = "Today";
         if (day != 0) {
