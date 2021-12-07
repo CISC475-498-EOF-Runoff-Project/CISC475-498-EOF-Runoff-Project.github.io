@@ -163,7 +163,9 @@ function imagePopup(e) {
 function clearpopups(newDay) {
     //mymap.closePopup();
     let statsTable = document.getElementById("popupStatsTable");
-    popup.setContent('<H6>RISK: ' + statsTable.tBodies[0].rows[newDay].cells[1].innerHTML + '</H6>')
+    if (statsTable.tBodies[0].rows.length > 1) {
+        popup.setContent('<H6>RISK: ' + statsTable.tBodies[0].rows[newDay].cells[1].innerHTML + '</H6>');
+    }
 }
 
 //const imgWidth = 1500, imgHeight = 1200;
