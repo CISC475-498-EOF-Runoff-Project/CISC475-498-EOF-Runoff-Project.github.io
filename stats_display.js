@@ -1,4 +1,4 @@
-// from https://www.freecodecamp.org/news/how-to-make-your-first-javascript-chart/
+/*** from https://www.freecodecamp.org/news/how-to-make-your-first-javascript-chart/
 <scriptsrc="https://code.jscharting.com/2.9.0/jscharting.js"></script>
 <script src="js/index.js"></script>
 
@@ -68,3 +68,4 @@ function generateData(xCount, yCount) {
   }
   return points;
 }
+***/
