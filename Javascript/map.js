@@ -1,3 +1,5 @@
+/*controls map functionality, over functionality, statistics box functionality*/
+
 /* make initial image overlay (day 0) */ 
 
 var imageUrl = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_projected.png';
