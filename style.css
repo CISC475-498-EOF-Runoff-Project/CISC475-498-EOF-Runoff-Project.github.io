@@ -58,6 +58,13 @@
     background-color: #1c8f8c;
   }
   
+  .searchbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+  }
   
   .header-link {
     display: inline-block;
@@ -110,7 +117,6 @@
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     backdrop-filter: saturate(180%) blur(20px);
   }
-  //this is where i just changed the color to purple
   .site-header a {
     color: #9e4fc3;
     transition: color .15s ease-in-out;

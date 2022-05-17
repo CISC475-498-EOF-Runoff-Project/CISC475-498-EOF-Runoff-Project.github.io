@@ -39,9 +39,15 @@
   <!---The onClick handling for each of the 10 day tabs--->
   
   <section id = Forecast>
-  
-
-
+	<script src="Javascript/searchbar.js"></script>
+	<nav>
+		<ul class = "searchbar">
+		  <div class="search-container">
+			  <input type="text" placeholder="Enter Street Address" name="Street" id="addressInput">
+			  <button type="submit" onclick="geocodeAddress()">Submit</button>
+		</ul>
+	  </nav>
+	
   <div class="d-md-flex flex-md-equal w-100 my-md-0 ps-md-3">
     <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-0 text-center text-white">
       <div class="my-3 py-3">
@@ -242,7 +248,8 @@
    crossorigin=""></script>
   <script src="Javascript/Background.js"></script>
   <script src="Javascript/slidebar.js"></script>   
-  <script src="Javascript/map.js"></script>   
+  <script src="Javascript/map.js"></script> 
+  
 
 </html>
  
