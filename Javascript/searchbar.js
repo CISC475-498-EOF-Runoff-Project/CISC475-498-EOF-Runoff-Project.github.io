@@ -10,11 +10,11 @@ function geocodeAddress(){
 	}
 	
 	const geocodeURL = 'https://api.geoapify.com/v1/geocode/search?text=' + encodeURIComponent(address) + '&apiKey=209bb934353745d3ace852db14dc31a2';
-
   	fetch(geocodeURL, requestOptions)
 		.then(response => response.json())
-		.then(result => console.log(result))
-		.catch(error => console.log('error', error));
-	  
-	//alert(result);
+		.then(result => {
+			document.getElementById("longVal").value = result.features[0].geometry.coordinates[0];
+			document.getElementById("latVal").value = result.features[0].geometry.coordinates[1];
+		});
+
 	}
