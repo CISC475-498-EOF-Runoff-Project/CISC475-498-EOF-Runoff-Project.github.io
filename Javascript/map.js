@@ -109,7 +109,9 @@ window.imageOverlay.on('click', imagePopup);
 
 function fillGridRow(x, y, img_day, popupday, e) {
     
+    
     var statsTable = document.getElementById("popupStatsTable");
+    /*
     let imgVars = new Image();
     imgVars.src = 'https://CISC475-498-EOF-Runoff-Project.github.io/images/Event' + img_day + '_vars.png';
     imgVars.onload = function() {
@@ -186,6 +188,8 @@ function fillGridRow(x, y, img_day, popupday, e) {
             statsTable.tBodies[0].rows[img_day].cells[1].setAttribute("style","color: #FFBBBB");
         }
     }
+    
+    */
     let formatted_day = new Date();
     let date_to_show = "Today";
     if (img_day != 0) {
@@ -193,5 +197,94 @@ function fillGridRow(x, y, img_day, popupday, e) {
         date_to_show = (formatted_day.getMonth()+1) + "/" + formatted_day.getDate();
     }
     statsTable.tBodies[0].rows[img_day].cells[0].innerHTML = date_to_show;
+
+    let data_arr = get_daily_data(1, 2, 1, e)
+
+    day1 = ['NONE', 0.0, 0.0, 0.0]
+    day2 = ['NONE', 0.0, 0.0, 0.0]
+    day3 = ['NONE', 0.0, 0.0, 0.0]
+    day4 = ['NONE', 0.0, 0.0, 0.0]
+    day5 = ['MINIMAL', 1.58, 1.116, 0.0]
+    day6 = ['MINIMAL', 0.73, 0.756, 0.0]
+    day7 = ['NONE', 0.0, 0.0, 0.0]
+    day8 = ['HIGH', 9.57, 9.18, 0.0]
+    day9 = ['MODERATE', 3.66, 3.528, 0.0]
+    day10 = ['MINIMAL', 2.86, 2.52, 0.0]
+
+    days = [day1, day2, day3, day4, day5, day6, day7, day8, day9, day10]
+
+    /*
+    for (let i = 1; i <= 10; i++) {
+        for (let j = 0; j <=3; j++) {
+        statsTable.tBodies[0].rows[i].cells[1].innerHTML = days[i][j];
+        }
+    }
+    */
+
+    statsTable.tBodies[0].rows[0].cells[1].innerHTML = day1[0];
+    statsTable.tBodies[0].rows[0].cells[2].innerHTML = day1[1];
+    statsTable.tBodies[0].rows[0].cells[3].innerHTML = day1[2];
+    statsTable.tBodies[0].rows[0].cells[4].innerHTML = day1[3];
+
+    statsTable.tBodies[0].rows[1].cells[1].innerHTML = day2[0];
+    statsTable.tBodies[0].rows[1].cells[2].innerHTML = day2[1];
+    statsTable.tBodies[0].rows[1].cells[3].innerHTML = day2[2];
+    statsTable.tBodies[0].rows[1].cells[4].innerHTML = day2[3];
+
+    statsTable.tBodies[0].rows[2].cells[1].innerHTML = day3[0];
+    statsTable.tBodies[0].rows[2].cells[2].innerHTML = day3[1];
+    statsTable.tBodies[0].rows[2].cells[3].innerHTML = day3[2];
+    statsTable.tBodies[0].rows[2].cells[4].innerHTML = day3[3];
+
+    statsTable.tBodies[0].rows[3].cells[1].innerHTML = day4[0];
+    statsTable.tBodies[0].rows[3].cells[2].innerHTML = day4[1];
+    statsTable.tBodies[0].rows[3].cells[3].innerHTML = day4[2];
+    statsTable.tBodies[0].rows[3].cells[4].innerHTML = day4[3];
+
+    statsTable.tBodies[0].rows[4].cells[1].innerHTML = day5[0];
+    statsTable.tBodies[0].rows[4].cells[2].innerHTML = day5[1];
+    statsTable.tBodies[0].rows[4].cells[3].innerHTML = day5[2];
+    statsTable.tBodies[0].rows[4].cells[4].innerHTML = day5[3];
+
+    statsTable.tBodies[0].rows[5].cells[1].innerHTML = day6[0];
+    statsTable.tBodies[0].rows[5].cells[2].innerHTML = day6[1];
+    statsTable.tBodies[0].rows[5].cells[3].innerHTML = day6[2];
+    statsTable.tBodies[0].rows[5].cells[4].innerHTML = day6[3];
+
+    statsTable.tBodies[0].rows[6].cells[1].innerHTML = day7[0];
+    statsTable.tBodies[0].rows[6].cells[2].innerHTML = day7[1];
+    statsTable.tBodies[0].rows[6].cells[3].innerHTML = day7[2];
+    statsTable.tBodies[0].rows[6].cells[4].innerHTML = day7[3];
+
+    statsTable.tBodies[0].rows[7].cells[1].innerHTML = day8[0];
+    statsTable.tBodies[0].rows[7].cells[2].innerHTML = day8[1];
+    statsTable.tBodies[0].rows[7].cells[3].innerHTML = day8[2];
+    statsTable.tBodies[0].rows[7].cells[4].innerHTML = day8[3];
+
+    statsTable.tBodies[0].rows[8].cells[1].innerHTML = day9[0];
+    statsTable.tBodies[0].rows[8].cells[2].innerHTML = day9[1];
+    statsTable.tBodies[0].rows[8].cells[3].innerHTML = day9[2];
+    statsTable.tBodies[0].rows[8].cells[4].innerHTML = day9[3];
+
+    statsTable.tBodies[0].rows[9].cells[1].innerHTML = day10[0];
+    statsTable.tBodies[0].rows[9].cells[2].innerHTML = day10[1];
+    statsTable.tBodies[0].rows[9].cells[3].innerHTML = day10[2];
+    statsTable.tBodies[0].rows[9].cells[4].innerHTML = day10[3];
+
+    
+    // make sure to make it so risk is colored still!!!!!!
+}
+
+function get_date(day_number) {
+    // takes in a number 0 - 9
+    // and forms it into a sql date
+}
+
+// takes in lat and lon points and a day (1-10)
+// returns an array in the following form [risk, rainfall, snomelt, snowfall]
+function get_daily_data(lat, lon, day, e) {
+    // runs python program to get info
+    // return data in array form
+    return [0, 1.5, 3.7, 3.0]
 }
 

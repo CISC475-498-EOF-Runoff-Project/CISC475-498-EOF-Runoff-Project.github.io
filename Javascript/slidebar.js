@@ -16,7 +16,8 @@ function showVal(newVal) {
     targetDate.setDate(targetDate.getDate() + 0);
     var date_to_show = "Today, " + months[targetDate.getMonth()] + " " + targetDate.getDate() + ", " + targetDate.getFullYear();
     document.getElementById("show_time").innerHTML = "<H6>"+date_to_show+"</H6>";
-    window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_projected.png");
+    // window.imageOverlay.setUrl("https://CISC475-498-EOF-Runoff-Project.github.io/images/Event0_projected.png");
+      window.imageOverlay.setUrl("C:/Users/oodle/OneDrive/Documents/INTERNSHIP/CISC475-498-EOF-Runoff-Project.github.io/new_images/Event0_projected.png");
   }
   else if(newVal == 2) {
     targetDate.setDate(targetDate.getDate() + 1);
